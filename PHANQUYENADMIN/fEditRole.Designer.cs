@@ -38,10 +38,8 @@
             this.btnApply = new System.Windows.Forms.Button();
             this.tabEditUser = new System.Windows.Forms.TabControl();
             this.tabUser = new System.Windows.Forms.TabPage();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtRename = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabRole = new System.Windows.Forms.TabPage();
@@ -105,10 +103,8 @@
             // 
             // tabUser
             // 
-            this.tabUser.Controls.Add(this.txtConfirmPassword);
-            this.tabUser.Controls.Add(this.txtPassword);
+            this.tabUser.Controls.Add(this.txtRename);
             this.tabUser.Controls.Add(this.label4);
-            this.tabUser.Controls.Add(this.label3);
             this.tabUser.Controls.Add(this.label2);
             this.tabUser.Controls.Add(this.label1);
             this.tabUser.Location = new System.Drawing.Point(4, 25);
@@ -119,19 +115,12 @@
             this.tabUser.Text = "User";
             this.tabUser.UseVisualStyleBackColor = true;
             // 
-            // txtConfirmPassword
+            // txtRename
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(171, 151);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(188, 22);
-            this.txtConfirmPassword.TabIndex = 5;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(171, 96);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(188, 22);
-            this.txtPassword.TabIndex = 4;
+            this.txtRename.Location = new System.Drawing.Point(171, 96);
+            this.txtRename.Name = "txtRename";
+            this.txtRename.Size = new System.Drawing.Size(188, 22);
+            this.txtRename.TabIndex = 4;
             // 
             // label4
             // 
@@ -142,23 +131,14 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "N\\A";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 157);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Confirm Password";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(72, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
+            this.label2.Size = new System.Drawing.Size(59, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Password";
+            this.label2.Text = "Rename";
             // 
             // label1
             // 
@@ -167,7 +147,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "User Name";
+            this.label1.Text = "Role Name";
             // 
             // tabRole
             // 
@@ -423,10 +403,8 @@
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.TabControl tabEditUser;
         private System.Windows.Forms.TabPage tabUser;
-        private System.Windows.Forms.TextBox txtConfirmPassword;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtRename;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabRole;

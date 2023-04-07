@@ -14,6 +14,7 @@ namespace PHANQUYENADMIN.DAO
 {
     internal class DataProvider
     {
+        private OracleConnection conn;
         public static DataProvider Instance { get; set; }
         public static DataProvider getInstance(string user,string password)
         {
@@ -30,11 +31,11 @@ namespace PHANQUYENADMIN.DAO
      + "localhost" + ")(PORT = " + "1521" + "))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = "
      + "xe" + ")));Password=" +"234" + ";User ID=" + "sys as sysdba";
 
-            using (OracleConnection connection = new OracleConnection(connectionString))
+            using (conn = new OracleConnection(connectionString))
             {
                 try
                 {
-                    connection.Open();
+                    conn.Open();
                     MessageBox.Show("Ket noi ok");
                 }
                 catch (Exception ex)
@@ -51,11 +52,11 @@ namespace PHANQUYENADMIN.DAO
      + "localhost" + ")(PORT = " + "1521" + "))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = "
      + "xe" + ")));Password=" + passowrd + ";User ID=" + username;
 
-            using (OracleConnection connection = new OracleConnection(connectionString))
-            {
+                conn = new OracleConnection(connectionString);
+            
                 try
                 {
-                    connection.Open();
+                    conn.Open();
                     MessageBox.Show("Ket noi ok");
                 }
                 catch (Exception ex)
@@ -63,9 +64,44 @@ namespace PHANQUYENADMIN.DAO
                     MessageBox.Show(ex.Message);
                     Console.WriteLine(ex.Message);
                 }
-            }
+        }
+        public int ExecuteNonQuery(string query)
+        {
+            int result = 0;
+
+            OracleCommand command = new OracleCommand(query, conn);
+
+            result = command.ExecuteNonQuery();
+
+            return result;
+        }
+
+        public object ExecuteScalar(string query)
+        {
+            object result = null;
+
+            OracleCommand command = new OracleCommand(query, conn);
+            result = command.ExecuteScalar();
+
+            return result;
+        }
+
+        public DataTable ExecuteQuery(string query)
+        {
+            DataTable dataTable = new DataTable();
+
+            OracleCommand command = new OracleCommand(query, conn);
+
+            OracleDataAdapter adapter = new OracleDataAdapter(command);
+                
+                    adapter.Fill(dataTable);
+                
+            
+
+            return dataTable;
         }
     }
 }
+
 
 

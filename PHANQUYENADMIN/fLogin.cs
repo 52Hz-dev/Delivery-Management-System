@@ -30,6 +30,10 @@ namespace PHANQUYENADMIN
             if(username!=null && password != null)
             {
                 DataProvider.getInstance(username, password);
+                fEditUser editUser = new fEditUser();
+                this.Hide();
+                editUser.ShowDialog();
+                this.Show();
             }
         }
     }
