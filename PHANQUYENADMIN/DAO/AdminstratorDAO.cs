@@ -22,6 +22,8 @@ namespace PHANQUYENADMIN.DAO
             }
             if (password.Equals(confirmpasword))
             {
+                String query = "ALTER USER john IDENTIFIED BY " + confirmpasword;
+                DataProvider.Instance.ExecuteNonQuery(query);
                 return true;
             }
             else
@@ -90,6 +92,127 @@ namespace PHANQUYENADMIN.DAO
             String query = "SELECT TABLE_NAME FROM DBA_TABLES WHERE TABLESPACE_NAME='USERS'";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
+        }
+        public static void Role2User(List<GrantRoleForm> grantRoles)
+        {
+            foreach (GrantRoleForm item in grantRoles)
+            {
+                if(item.Grant == true)
+                {
+                    String query = "grant " + item.RoleName.ToString() + " to " + "john ";
+                    if (item.AdminOption == false)
+                    {
+                        DataProvider.Instance.ExecuteNonQuery(query);
+                    }
+                    else
+                    {
+                        query += "with admin option";
+                        DataProvider.Instance.ExecuteNonQuery(query);
+                    }
+                }
+                else if (item.Revoke == true)
+                {
+                    String query = "revoke " + item.RoleName + " from " + "john"; 
+                }
+            }
+        }
+        public static void Privilege2User(List<GrantRoleForm> grantRoles)
+        {
+            foreach (GrantRoleForm item in grantRoles)
+            {
+                if (item.Grant == true)
+                {
+                    String query = "grant " + item.RoleName + " to " + "john ";
+                    if (item.AdminOption == false)
+                    {
+                        DataProvider.Instance.ExecuteNonQuery(query);
+                    }
+                    else
+                    {
+                        query += "with admin option";
+                        DataProvider.Instance.ExecuteNonQuery(query);
+                    }
+                }
+                else if (item.Revoke == true)
+                {
+                    String query = "revoke " + item.RoleName + " from " + "john";
+                }
+            }
+        }
+        public static void Table2User(List<GrantTableForm> grantTables)
+        {
+            foreach(GrantTableForm item in grantTables)
+            {
+                String query = "grant ";
+                String select = " select ";
+                String update = " update ";
+                String insert = " insert ";
+                String delete = " delete ";
+                String table = " on " + item.TableName+" to john";
+
+                if (item.Select == true)
+                {
+                    DataProvider.Instance.ExecuteNonQuery(query+select+table);
+                }
+                if (item.Update == true)
+                {
+                    DataProvider.Instance.ExecuteNonQuery(query + update + table);
+                }
+                if (item.Insert == true)
+                {
+                    DataProvider.Instance.ExecuteNonQuery(query + insert + table);
+                }
+                if (item.Delete == true)
+                {
+                    DataProvider.Instance.ExecuteNonQuery(query + delete + table);
+                }
+            }
+        }
+        public static void Role2Role(List<GrantRoleForm> grantRoles)
+        {
+            foreach (GrantRoleForm item in grantRoles)
+            {
+                if (item.Grant == true)
+                {
+                    String query = "grant " + item.RoleName.ToString() + " to " + "john ";
+                    if (item.AdminOption == false)
+                    {
+                        DataProvider.Instance.ExecuteNonQuery(query);
+                    }
+                    else
+                    {
+                        query += "with admin option";
+                        DataProvider.Instance.ExecuteNonQuery(query);
+                    }
+                }
+                else if (item.Revoke == true)
+                {
+                    String query = "revoke " + item.RoleName + " from " + "john";
+                }
+            }
+        }
+        public static void Privilege2Role(List<GrantRoleForm> grantRoles)
+        {
+            foreach (GrantRoleForm item in grantRoles)
+            {
+                if (item.Grant == true)
+                {
+                    String query = "grant " + item.RoleName + " to " + "john ";
+                    if (item.AdminOption == false)
+                    {
+                        DataProvider.Instance.ExecuteNonQuery(query);
+                    }
+                    else
+                    {
+                        query += "with admin option";
+                        DataProvider.Instance.ExecuteNonQuery(query);
+                    }
+                }
+                else if (item.Revoke == true)
+                {
+                    String query = "revoke " + item.RoleName + " from " + "john";
+                }
+            }
         }
     }
 }

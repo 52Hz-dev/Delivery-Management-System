@@ -1,4 +1,5 @@
 ﻿using PHANQUYENADMIN.DAO;
+using PHANQUYENADMIN.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,9 +11,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PHANQUYENADMIN
-{
+{   
+
     public partial class fEditRole : Form
     {
+        private List<GrantTableForm> newGrantTable = new List<GrantTableForm>();
+        private List<GrantRoleForm> newGrantRole = new List<GrantRoleForm>();
+        private List<GrantRoleForm> newGrantPrivilege = new List<GrantRoleForm>();
         public fEditRole()
         {
             InitializeComponent();
@@ -37,7 +42,7 @@ namespace PHANQUYENADMIN
             dgvSecurable.Columns["colTableSecurable"].DataPropertyName = "TABLE_NAME";
         }
 
-        private void dgvtabRole_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvRole_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvRole.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
             {
@@ -67,10 +72,11 @@ namespace PHANQUYENADMIN
                         cell.Value = cell.TrueValue;
                     }
                 }
+                newGrantRole.Add(getValue(dgvRole.Rows[e.RowIndex]));
             }
         }
 
-        private void dgvTabSystemPrivilege_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvSystemPrivilege_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvSystemPrivilege.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
             {
@@ -99,6 +105,7 @@ namespace PHANQUYENADMIN
                         dgvSystemPrivilege.Rows[e.RowIndex].Cells[2].Value = cell.FalseValue;
                         cell.Value = cell.TrueValue;
                     }
+                    newGrantPrivilege.Add(getValue(dgvSystemPrivilege.Rows[e.RowIndex]));
                 }
             }
         }
@@ -116,7 +123,36 @@ namespace PHANQUYENADMIN
                 {
                     cell.Value = cell.TrueValue;
                 }
+                newGrantTable.Add(getTableValue(dgvSecurable.Rows[e.RowIndex]));
             }
+        }
+        private GrantRoleForm getValue(DataGridViewRow dataGridViewRow)
+        {
+            String rolename = dataGridViewRow.Cells[0].Value.ToString();
+            bool Grant = dataGridViewRow.Cells[1].Value != null;
+            bool AdminOption = dataGridViewRow.Cells[2].Value != null;
+            bool Revoke = dataGridViewRow.Cells[3].Value != null;
+            GrantRoleForm result = new GrantRoleForm(rolename, Grant, AdminOption, Revoke);
+            return result;
+        }
+        private GrantTableForm getTableValue(DataGridViewRow dataGridViewRow)
+        {
+            string RoleName = dataGridViewRow.Cells[0].Value.ToString();
+            bool Select = dataGridViewRow.Cells[1].Value != null;
+            bool Update = dataGridViewRow.Cells[2].Value != null;
+            bool Insert = dataGridViewRow.Cells[3].Value != null;
+            bool Delete = dataGridViewRow.Cells[4].Value != null;
+            GrantTableForm result = new GrantTableForm(RoleName, Select, Update, Insert, Delete);
+            return result;
+        }
+
+
+        private void btnApply_Click_1(object sender, EventArgs e)
+        {
+            AdminstratorDAO.Role2User(newGrantRole);
+            AdminstratorDAO.Privilege2User(newGrantPrivilege);
+            MessageBox.Show("Edit sucessfully!");
+            this.Close();
         }
     }
 }

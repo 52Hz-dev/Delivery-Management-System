@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabEditUser = new System.Windows.Forms.TabControl();
             this.tabUser = new System.Windows.Forms.TabPage();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
@@ -51,25 +51,28 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabRole = new System.Windows.Forms.TabPage();
             this.dgvtabRole = new System.Windows.Forms.DataGridView();
-            this.tabSystemPrivilege = new System.Windows.Forms.TabPage();
-            this.dgvTabSystemPrivilege = new System.Windows.Forms.DataGridView();
-            this.tabSecurable = new System.Windows.Forms.TabPage();
-            this.dgvTabSecurable = new System.Windows.Forms.DataGridView();
-            this.btnApply = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.colPrivilege = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGrantPrevilege = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colWithAdminPrivilege = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colRevokePrivilege = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGrant = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colWithAdmin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colRevoke = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tabSystemPrivilege = new System.Windows.Forms.TabPage();
+            this.dgvTabSystemPrivilege = new System.Windows.Forms.DataGridView();
+            this.colPrivilege = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGrantPrevilege = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colWithAdminPrivilege = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colRevokePrivilege = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tabSecurable = new System.Windows.Forms.TabPage();
+            this.dgvTabSecurable = new System.Windows.Forms.DataGridView();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.colTableSecurable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSelectSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colUpdateSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colInsertSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colDeleteSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colGrantOption = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colWithGrant = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colTabRevoke = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabEditUser.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.tabRole.SuspendLayout();
@@ -107,6 +110,7 @@
             this.tabUser.TabIndex = 0;
             this.tabUser.Text = "User";
             this.tabUser.UseVisualStyleBackColor = true;
+            this.tabUser.Click += new System.EventHandler(this.tabUser_Click);
             // 
             // txtConfirmPassword
             // 
@@ -176,14 +180,14 @@
             this.dgvtabRole.AllowUserToResizeColumns = false;
             this.dgvtabRole.AllowUserToResizeRows = false;
             this.dgvtabRole.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvtabRole.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvtabRole.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvtabRole.ColumnHeadersHeight = 29;
             this.dgvtabRole.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvtabRole.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -191,35 +195,76 @@
             this.colGrant,
             this.colWithAdmin,
             this.colRevoke});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvtabRole.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvtabRole.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvtabRole.Location = new System.Drawing.Point(0, 0);
             this.dgvtabRole.MultiSelect = false;
             this.dgvtabRole.Name = "dgvtabRole";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvtabRole.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvtabRole.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvtabRole.RowHeadersVisible = false;
             this.dgvtabRole.RowHeadersWidth = 51;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.InfoText;
-            this.dgvtabRole.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.InfoText;
+            this.dgvtabRole.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvtabRole.RowTemplate.Height = 24;
             this.dgvtabRole.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvtabRole.Size = new System.Drawing.Size(730, 321);
             this.dgvtabRole.TabIndex = 0;
             this.dgvtabRole.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtabRole_CellContentClick);
+            // 
+            // colRole
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colRole.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colRole.HeaderText = "Role";
+            this.colRole.MinimumWidth = 6;
+            this.colRole.Name = "colRole";
+            this.colRole.ReadOnly = true;
+            this.colRole.Width = 350;
+            // 
+            // colGrant
+            // 
+            this.colGrant.FalseValue = " ";
+            this.colGrant.HeaderText = "Grant";
+            this.colGrant.MinimumWidth = 6;
+            this.colGrant.Name = "colGrant";
+            this.colGrant.ReadOnly = true;
+            this.colGrant.TrueValue = "x";
+            this.colGrant.Width = 125;
+            // 
+            // colWithAdmin
+            // 
+            this.colWithAdmin.FalseValue = " ";
+            this.colWithAdmin.HeaderText = "With Admin";
+            this.colWithAdmin.MinimumWidth = 6;
+            this.colWithAdmin.Name = "colWithAdmin";
+            this.colWithAdmin.ReadOnly = true;
+            this.colWithAdmin.TrueValue = "x";
+            this.colWithAdmin.Width = 125;
+            // 
+            // colRevoke
+            // 
+            this.colRevoke.FalseValue = " ";
+            this.colRevoke.HeaderText = "Revoke";
+            this.colRevoke.MinimumWidth = 6;
+            this.colRevoke.Name = "colRevoke";
+            this.colRevoke.ReadOnly = true;
+            this.colRevoke.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRevoke.TrueValue = "x";
+            this.colRevoke.Width = 125;
             // 
             // tabSystemPrivilege
             // 
@@ -239,38 +284,38 @@
             this.dgvTabSystemPrivilege.AllowUserToResizeColumns = false;
             this.dgvTabSystemPrivilege.AllowUserToResizeRows = false;
             this.dgvTabSystemPrivilege.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTabSystemPrivilege.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTabSystemPrivilege.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTabSystemPrivilege.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTabSystemPrivilege.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colPrivilege,
             this.colGrantPrevilege,
             this.colWithAdminPrivilege,
             this.colRevokePrivilege});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTabSystemPrivilege.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTabSystemPrivilege.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvTabSystemPrivilege.Location = new System.Drawing.Point(0, 2);
             this.dgvTabSystemPrivilege.Name = "dgvTabSystemPrivilege";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTabSystemPrivilege.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTabSystemPrivilege.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvTabSystemPrivilege.RowHeadersVisible = false;
             this.dgvTabSystemPrivilege.RowHeadersWidth = 51;
             this.dgvTabSystemPrivilege.RowTemplate.Height = 24;
@@ -278,87 +323,11 @@
             this.dgvTabSystemPrivilege.TabIndex = 1;
             this.dgvTabSystemPrivilege.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTabSystemPrivilege_CellContentClick);
             // 
-            // tabSecurable
-            // 
-            this.tabSecurable.Controls.Add(this.dgvTabSecurable);
-            this.tabSecurable.Location = new System.Drawing.Point(4, 25);
-            this.tabSecurable.Name = "tabSecurable";
-            this.tabSecurable.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSecurable.Size = new System.Drawing.Size(730, 324);
-            this.tabSecurable.TabIndex = 3;
-            this.tabSecurable.Text = "Securable";
-            this.tabSecurable.UseVisualStyleBackColor = true;
-            // 
-            // dgvTabSecurable
-            // 
-            this.dgvTabSecurable.AllowUserToAddRows = false;
-            this.dgvTabSecurable.AllowUserToDeleteRows = false;
-            this.dgvTabSecurable.AllowUserToResizeColumns = false;
-            this.dgvTabSecurable.AllowUserToResizeRows = false;
-            this.dgvTabSecurable.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTabSecurable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
-            this.dgvTabSecurable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTabSecurable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colTableSecurable,
-            this.colSelectSecurable,
-            this.colUpdateSecurable,
-            this.colInsertSecurable,
-            this.colDeleteSecurable});
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTabSecurable.DefaultCellStyle = dataGridViewCellStyle25;
-            this.dgvTabSecurable.Location = new System.Drawing.Point(0, 2);
-            this.dgvTabSecurable.Name = "dgvTabSecurable";
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTabSecurable.RowHeadersDefaultCellStyle = dataGridViewCellStyle26;
-            this.dgvTabSecurable.RowHeadersVisible = false;
-            this.dgvTabSecurable.RowHeadersWidth = 51;
-            this.dgvTabSecurable.RowTemplate.Height = 24;
-            this.dgvTabSecurable.Size = new System.Drawing.Size(730, 321);
-            this.dgvTabSecurable.TabIndex = 2;
-            this.dgvTabSecurable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTabSecurable_CellContentClick);
-            // 
-            // btnApply
-            // 
-            this.btnApply.Location = new System.Drawing.Point(532, 391);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(91, 33);
-            this.btnApply.TabIndex = 1;
-            this.btnApply.Text = "Apply";
-            this.btnApply.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(668, 391);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(94, 33);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
             // colPrivilege
             // 
             this.colPrivilege.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPrivilege.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colPrivilege.DefaultCellStyle = dataGridViewCellStyle7;
             this.colPrivilege.HeaderText = "Privilege";
             this.colPrivilege.MinimumWidth = 6;
             this.colPrivilege.Name = "colPrivilege";
@@ -396,51 +365,90 @@
             this.colRevokePrivilege.TrueValue = "x";
             this.colRevokePrivilege.Width = 125;
             // 
-            // colRole
+            // tabSecurable
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colRole.DefaultCellStyle = dataGridViewCellStyle15;
-            this.colRole.HeaderText = "Role";
-            this.colRole.MinimumWidth = 6;
-            this.colRole.Name = "colRole";
-            this.colRole.ReadOnly = true;
-            this.colRole.Width = 350;
+            this.tabSecurable.Controls.Add(this.dgvTabSecurable);
+            this.tabSecurable.Location = new System.Drawing.Point(4, 25);
+            this.tabSecurable.Name = "tabSecurable";
+            this.tabSecurable.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSecurable.Size = new System.Drawing.Size(730, 324);
+            this.tabSecurable.TabIndex = 3;
+            this.tabSecurable.Text = "Securable";
+            this.tabSecurable.UseVisualStyleBackColor = true;
             // 
-            // colGrant
+            // dgvTabSecurable
             // 
-            this.colGrant.FalseValue = " ";
-            this.colGrant.HeaderText = "Grant";
-            this.colGrant.MinimumWidth = 6;
-            this.colGrant.Name = "colGrant";
-            this.colGrant.ReadOnly = true;
-            this.colGrant.TrueValue = "X";
-            this.colGrant.Width = 125;
+            this.dgvTabSecurable.AllowUserToAddRows = false;
+            this.dgvTabSecurable.AllowUserToDeleteRows = false;
+            this.dgvTabSecurable.AllowUserToResizeColumns = false;
+            this.dgvTabSecurable.AllowUserToResizeRows = false;
+            this.dgvTabSecurable.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTabSecurable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvTabSecurable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTabSecurable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colTableSecurable,
+            this.colSelectSecurable,
+            this.colUpdateSecurable,
+            this.colInsertSecurable,
+            this.colDeleteSecurable,
+            this.colGrantOption,
+            this.colWithGrant,
+            this.colTabRevoke});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTabSecurable.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvTabSecurable.Location = new System.Drawing.Point(0, 0);
+            this.dgvTabSecurable.Name = "dgvTabSecurable";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTabSecurable.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvTabSecurable.RowHeadersVisible = false;
+            this.dgvTabSecurable.RowHeadersWidth = 51;
+            this.dgvTabSecurable.RowTemplate.Height = 24;
+            this.dgvTabSecurable.Size = new System.Drawing.Size(730, 321);
+            this.dgvTabSecurable.TabIndex = 2;
+            this.dgvTabSecurable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTabSecurable_CellContentClick);
             // 
-            // colWithAdmin
+            // btnApply
             // 
-            this.colWithAdmin.FalseValue = " ";
-            this.colWithAdmin.HeaderText = "With Admin";
-            this.colWithAdmin.MinimumWidth = 6;
-            this.colWithAdmin.Name = "colWithAdmin";
-            this.colWithAdmin.ReadOnly = true;
-            this.colWithAdmin.TrueValue = "X";
-            this.colWithAdmin.Width = 125;
+            this.btnApply.Location = new System.Drawing.Point(532, 391);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(91, 33);
+            this.btnApply.TabIndex = 1;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
-            // colRevoke
+            // btnCancel
             // 
-            this.colRevoke.FalseValue = " ";
-            this.colRevoke.HeaderText = "Revoke";
-            this.colRevoke.MinimumWidth = 6;
-            this.colRevoke.Name = "colRevoke";
-            this.colRevoke.ReadOnly = true;
-            this.colRevoke.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRevoke.TrueValue = "X";
-            this.colRevoke.Width = 125;
+            this.btnCancel.Location = new System.Drawing.Point(668, 391);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(94, 33);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // colTableSecurable
             // 
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colTableSecurable.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colTableSecurable.DefaultCellStyle = dataGridViewCellStyle11;
             this.colTableSecurable.HeaderText = "Table";
             this.colTableSecurable.MinimumWidth = 6;
             this.colTableSecurable.Name = "colTableSecurable";
@@ -489,6 +497,35 @@
             this.colDeleteSecurable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colDeleteSecurable.TrueValue = "x";
             this.colDeleteSecurable.Width = 125;
+            // 
+            // colGrantOption
+            // 
+            this.colGrantOption.FalseValue = " ";
+            this.colGrantOption.HeaderText = "Grant";
+            this.colGrantOption.MinimumWidth = 6;
+            this.colGrantOption.Name = "colGrantOption";
+            this.colGrantOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colGrantOption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colGrantOption.TrueValue = "x";
+            this.colGrantOption.Width = 125;
+            // 
+            // colWithGrant
+            // 
+            this.colWithGrant.FalseValue = " ";
+            this.colWithGrant.HeaderText = "With Grant";
+            this.colWithGrant.MinimumWidth = 6;
+            this.colWithGrant.Name = "colWithGrant";
+            this.colWithGrant.TrueValue = "x";
+            this.colWithGrant.Width = 125;
+            // 
+            // colTabRevoke
+            // 
+            this.colTabRevoke.HeaderText = "Revoke";
+            this.colTabRevoke.MinimumWidth = 6;
+            this.colTabRevoke.Name = "colTabRevoke";
+            this.colTabRevoke.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTabRevoke.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colTabRevoke.Width = 125;
             // 
             // fEditUser
             // 
@@ -545,5 +582,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn colUpdateSecurable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colInsertSecurable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colDeleteSecurable;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colGrantOption;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colWithGrant;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colTabRevoke;
     }
 }

@@ -12,6 +12,7 @@ namespace PHANQUYENADMIN
 {
     public partial class fLogin : Form
     {
+        public static String user;
         public fLogin()
         {
             InitializeComponent();
@@ -29,11 +30,23 @@ namespace PHANQUYENADMIN
             string password= textPassword.Text;
             if(username!=null && password != null)
             {
-                DataProvider.getInstance(username, password);
-                fEditUser editUser = new fEditUser();
-                this.Hide();
-                editUser.ShowDialog();
-                this.Show();
+                if (DataProvider.getInstance(username, password) != null)
+                {
+                    fEditUser editUser = new fEditUser();
+                    fEditRole editRole = new fEditRole();
+                    user = username;
+                    this.Hide();
+                    editRole.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Login fail");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Empty!");
             }
         }
     }

@@ -8,15 +8,15 @@ namespace PHANQUYENADMIN.DTO
 {
         struct GrantTableForm
         {
-            public string RoleName;
+            public string TableName;
             public bool Select;
             public bool Update;
             public bool Insert;
             public bool Delete;
 
-            public GrantTableForm(string roleName, bool select, bool update, bool insert, bool delete)
+            public GrantTableForm(string tableName, bool select, bool update, bool insert, bool delete)
             {
-                RoleName = roleName;
+                TableName = tableName;
                 Select = select;
                 Update = update;
                 Insert = insert;
