@@ -29,7 +29,7 @@ namespace PHANQUYENADMIN.DAO
 
             string connectionString = "Data Source=(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = "
      + "localhost" + ")(PORT = " + "1521" + "))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = "
-     + "xe" + ")));Password=" +"234" + ";User ID=" + "sys as sysdba";
+     + "xe" + ")));Password=" +"1" + ";User ID=" + "sys as sysdba";
 
             using (conn = new OracleConnection(connectionString))
             {
@@ -57,7 +57,7 @@ namespace PHANQUYENADMIN.DAO
                 try
                 {
                     conn.Open();
-                    MessageBox.Show("Ket noi ok");
+                    MessageBox.Show("Đăng nhập thành công!");
                 }
                 catch (Exception ex)
                 {

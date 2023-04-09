@@ -36,24 +36,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(108, 118);
+            this.label1.Location = new System.Drawing.Point(122, 148);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 16);
+            this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Role Name";
             // 
             // txtRoleName
             // 
-            this.txtRoleName.Location = new System.Drawing.Point(217, 118);
+            this.txtRoleName.Location = new System.Drawing.Point(244, 148);
+            this.txtRoleName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRoleName.Name = "txtRoleName";
-            this.txtRoleName.Size = new System.Drawing.Size(328, 22);
+            this.txtRoleName.Size = new System.Drawing.Size(368, 26);
             this.txtRoleName.TabIndex = 1;
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(399, 259);
+            this.btnCreate.Location = new System.Drawing.Point(356, 319);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(106, 36);
+            this.btnCreate.Size = new System.Drawing.Size(119, 45);
             this.btnCreate.TabIndex = 2;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -61,12 +63,13 @@
             // 
             // fCreateRole
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.txtRoleName);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fCreateRole";
             this.Text = "fCreateRole";
             this.ResumeLayout(false);

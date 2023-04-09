@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PHANQUYENADMIN.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,19 @@ namespace PHANQUYENADMIN
 
         private void Create_Click(object sender, EventArgs e)
         {
-
+            if (txtRoleName.Text =="") MessageBox.Show("Tên của role trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                int check = AdminstratorDAO.checkRoleName(txtRoleName.Text);
+                if (check == 1) MessageBox.Show("Tên role đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+                    AdminstratorDAO.createRole(txtRoleName.Text);
+                    DialogResult result = MessageBox.Show("Tạo role mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                }
+            } 
+                
         }
     }
 }
