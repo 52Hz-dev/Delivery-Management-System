@@ -70,7 +70,7 @@ namespace PHANQUYENADMIN
             }
         }
 
-        private void dgvTabSystemPrivilege_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvSystemPrivilege_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvSystemPrivilege.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
             {
@@ -103,7 +103,7 @@ namespace PHANQUYENADMIN
             }
         }
 
-        private void dgvSecurable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvSecurable_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvSecurable.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
             {
@@ -118,5 +118,12 @@ namespace PHANQUYENADMIN
                 }
             }
         }
+
+        private void tabUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+    
     }
 }
