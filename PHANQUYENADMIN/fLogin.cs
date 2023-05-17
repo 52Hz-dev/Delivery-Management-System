@@ -42,13 +42,18 @@ namespace PHANQUYENADMIN
                 }
                 else
                 {
-                    MessageBox.Show("Login fail");
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
                 }
             }
             else
             {
                 MessageBox.Show("Empty!");
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

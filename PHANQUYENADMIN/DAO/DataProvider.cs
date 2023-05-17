@@ -21,29 +21,12 @@ namespace PHANQUYENADMIN.DAO
             if(Instance == null)
             {
                 Instance = new DataProvider(user,password);
+                if (Instance.conn == null)
+                {
+                    Instance = null;
+                }
             }
             return Instance;
-        }
-        private DataProvider()
-        {
-
-            string connectionString = "Data Source=(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = "
-     + "localhost" + ")(PORT = " + "1521" + "))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = "
-     + "xe" + ")));Password=" +"234" + ";User ID=" + "sys as sysdba";
-
-            using (conn = new OracleConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    MessageBox.Show("Ket noi ok");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    Console.WriteLine(ex.Message);
-                }
-            }
         }
         private DataProvider(String username,String passowrd)
         {
@@ -59,10 +42,10 @@ namespace PHANQUYENADMIN.DAO
                     conn.Open();
                     MessageBox.Show("Đăng nhập thành công!");
                 }
-                catch (Exception ex)
+                catch (OracleException ex)
                 {
-                    MessageBox.Show(ex.Message);
-                    Console.WriteLine(ex.Message);
+                conn.Close();
+                conn = null;
                 }
         }
         public int ExecuteNonQuery(string query)
@@ -94,9 +77,7 @@ namespace PHANQUYENADMIN.DAO
 
             OracleDataAdapter adapter = new OracleDataAdapter(command);
                 
-                    adapter.Fill(dataTable);
-                
-            
+                    adapter.Fill(dataTable);            
 
             return dataTable;
         }
