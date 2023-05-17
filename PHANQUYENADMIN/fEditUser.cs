@@ -24,7 +24,8 @@ namespace PHANQUYENADMIN
 
         private void fEditUser_Load(object sender, EventArgs e)
         {
-            label4.Text = fLogin.user;
+            MessageBox.Show(fAdministrator.curUser);
+            label4.Text = fAdministrator.curUser;
             // Load user role
             DataTable roleTable= AdminstratorDAO.loadUserRole();
             dgvtabRole.AutoGenerateColumns = false;
@@ -131,30 +132,35 @@ namespace PHANQUYENADMIN
         private GrantRoleForm getValue(DataGridViewRow dataGridViewRow)
         {
             String rolename = dataGridViewRow.Cells[0].Value.ToString();
-            bool Grant = dataGridViewRow.Cells[1].Value != null;
-            bool AdminOption = dataGridViewRow.Cells[2].Value != null;
-            bool Revoke = dataGridViewRow.Cells[3].Value != null;
+            DataGridViewCheckBoxCell cell = new DataGridViewCheckBoxCell();
+            bool Grant = dataGridViewRow.Cells[1].Value == cell.TrueValue;
+            bool AdminOption = dataGridViewRow.Cells[2].Value == cell.TrueValue;
+            bool Revoke = dataGridViewRow.Cells[3].Value == cell.TrueValue;
             GrantRoleForm result = new GrantRoleForm(rolename, Grant, AdminOption, Revoke);
             return result;
         }
         private GrantTableForm getTableValue(DataGridViewRow dataGridViewRow)
         {
             string RoleName= dataGridViewRow.Cells[0].Value.ToString();
-            bool Select = dataGridViewRow.Cells[1].Value != null;
-            bool Update= dataGridViewRow.Cells[2].Value != null;
-            bool Insert= dataGridViewRow.Cells[3].Value != null;
-            bool Delete= dataGridViewRow.Cells[4].Value != null;
+            DataGridViewCheckBoxCell cell = new DataGridViewCheckBoxCell();
+            bool Select = dataGridViewRow.Cells[1].Value == cell.TrueValue;
+            bool Update= dataGridViewRow.Cells[2].Value == cell.TrueValue;
+            bool Insert= dataGridViewRow.Cells[3].Value == cell.TrueValue;
+            bool Delete= dataGridViewRow.Cells[4].Value == cell.TrueValue;
             GrantTableForm result = new GrantTableForm(RoleName, Select, Update, Insert, Delete);
             return result;
         }
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            AdminstratorDAO.Role2User(newGrantRole);
-            AdminstratorDAO.Privilege2User(newGrantPrivilege);
+            AdminstratorDAO.Role2User(fAdministrator.curUser, newGrantRole);
+            AdminstratorDAO.Privilege2User(fAdministrator.curUser, newGrantPrivilege);
             if(txtPassword.Text!=null)
-            AdminstratorDAO.changeUserPassword(txtPassword.Text,txtConfirmPassword.Text);
+            AdminstratorDAO.changeUserPassword(fAdministrator.curUser,txtPassword.Text,txtConfirmPassword.Text);
             MessageBox.Show("Edit sucessfully!");
+            newGrantRole.Clear();
+            newGrantPrivilege.Clear();
+            newGrantTable.Clear();
             this.Close();
         }
 

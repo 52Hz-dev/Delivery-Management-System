@@ -34,9 +34,10 @@ namespace PHANQUYENADMIN
                 {
                     fEditUser editUser = new fEditUser();
                     fEditRole editRole = new fEditRole();
+                    fAdministrator fAdmin = new fAdministrator();
                     user = username;
                     this.Hide();
-                    editRole.ShowDialog();
+                    fAdmin.ShowDialog();
                     this.Show();
                 }
                 else

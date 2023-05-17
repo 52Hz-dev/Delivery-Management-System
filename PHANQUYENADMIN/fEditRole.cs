@@ -25,6 +25,7 @@ namespace PHANQUYENADMIN
 
         private void fEditRole_Load(object sender, EventArgs e)
         {
+            label4.Text = fAdministrator.curRole;
             // Load user role
             DataTable roleTable = AdminstratorDAO.loadUserRole();
             dgvRole.AutoGenerateColumns = false;
@@ -76,7 +77,7 @@ namespace PHANQUYENADMIN
             }
         }
 
-        private void dgvSystemPrivilege_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvSystemPrivilege_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvSystemPrivilege.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
             {
@@ -110,7 +111,7 @@ namespace PHANQUYENADMIN
             }
         }
 
-        private void dgvSecurable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvSecurable_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvSecurable.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
             {
@@ -129,19 +130,23 @@ namespace PHANQUYENADMIN
         private GrantRoleForm getValue(DataGridViewRow dataGridViewRow)
         {
             String rolename = dataGridViewRow.Cells[0].Value.ToString();
-            bool Grant = dataGridViewRow.Cells[1].Value != null;
-            bool AdminOption = dataGridViewRow.Cells[2].Value != null;
-            bool Revoke = dataGridViewRow.Cells[3].Value != null;
+            DataGridViewCheckBoxCell cell=(DataGridViewCheckBoxCell)dataGridViewRow.Cells[1];
+            bool Grant = cell.Value == cell.TrueValue;
+            cell= (DataGridViewCheckBoxCell)dataGridViewRow.Cells[2];
+            bool AdminOption = cell.Value == cell.TrueValue;
+            cell= (DataGridViewCheckBoxCell)dataGridViewRow.Cells[3];
+            bool Revoke = cell.Value == cell.TrueValue;
             GrantRoleForm result = new GrantRoleForm(rolename, Grant, AdminOption, Revoke);
             return result;
         }
         private GrantTableForm getTableValue(DataGridViewRow dataGridViewRow)
         {
             string RoleName = dataGridViewRow.Cells[0].Value.ToString();
-            bool Select = dataGridViewRow.Cells[1].Value != null;
-            bool Update = dataGridViewRow.Cells[2].Value != null;
-            bool Insert = dataGridViewRow.Cells[3].Value != null;
-            bool Delete = dataGridViewRow.Cells[4].Value != null;
+            DataGridViewCheckBoxCell cell=new DataGridViewCheckBoxCell();
+            bool Select = dataGridViewRow.Cells[1].Value == cell.TrueValue;
+            bool Update = dataGridViewRow.Cells[2].Value == cell.TrueValue;
+            bool Insert = dataGridViewRow.Cells[3].Value == cell.TrueValue;
+            bool Delete = dataGridViewRow.Cells[4].Value == cell.TrueValue;
             GrantTableForm result = new GrantTableForm(RoleName, Select, Update, Insert, Delete);
             return result;
         }
@@ -149,10 +154,14 @@ namespace PHANQUYENADMIN
 
         private void btnApply_Click_1(object sender, EventArgs e)
         {
-            AdminstratorDAO.Role2User(newGrantRole);
-            AdminstratorDAO.Privilege2User(newGrantPrivilege);
+            AdminstratorDAO.Role2Role(fAdministrator.curRole,newGrantRole);
+            AdminstratorDAO.Privilege2Role(fAdministrator.curRole,newGrantPrivilege);
+            newGrantRole.Clear();
+            newGrantPrivilege.Clear();
+            newGrantTable.Clear();
             MessageBox.Show("Edit sucessfully!");
             this.Close();
         }
+
     }
 }

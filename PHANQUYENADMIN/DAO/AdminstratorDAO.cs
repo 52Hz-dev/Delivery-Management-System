@@ -12,23 +12,21 @@ namespace PHANQUYENADMIN.DAO
 {
     internal class AdminstratorDAO
     {
-        public static bool changeUserPassword(String password, String confirmpasword)
+        public static bool changeUserPassword(String user,String password, String confirmpasword)
         {
-            if(password == null || confirmpasword == null)
+            if(password==null && confirmpasword == null)
             {
-                MessageBox.Show("Empty");
                 return false;
                 
             }
-            if (password.Equals(confirmpasword))
+            if (password.Equals(confirmpasword)&& password!="")
             {
-                String query = "ALTER USER john IDENTIFIED BY " + confirmpasword;
+                String query = "ALTER USER "+user+" IDENTIFIED BY " + confirmpasword;
                 DataProvider.Instance.ExecuteNonQuery(query);
                 return true;
             }
             else
             {
-                MessageBox.Show("Fail to confirm password");
                 return false;
             }
         }
@@ -75,6 +73,78 @@ namespace PHANQUYENADMIN.DAO
                 }
             }
         }
+
+        public static DataTable readUsersys()
+        {
+            String query = "SELECT * FROM dba_users";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+        public static DataTable readSYSprivs(string name)
+        {
+            String query = "SELECT * FROM DBA_SYS_PRIVS WHERE GRANTEE = '" + name + "'";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+        public static DataTable readTABprivs(string name)
+        {
+            String query = "SELECT * FROM DBA_TAB_PRIVS WHERE GRANTEE = '" + name + "'";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+        public static DataTable readROLEprivs(string name)
+        {
+            String query = "SELECT * FROM DBA_ROLE_PRIVS WHERE GRANTEE = '" + name + "'";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+        public static void dropUser(string username)
+        {
+            String query = "alter session set \"_ORACLE_SCRIPT\" = TRUE";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            query = "drop user " + username;
+            result = DataProvider.Instance.ExecuteNonQuery(query);
+        }
+        public static void dropRole(string rolename)
+        {
+            String query = "alter session set \"_ORACLE_SCRIPT\" = TRUE";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            query = "drop role " + rolename;
+            result = DataProvider.Instance.ExecuteNonQuery(query);
+
+        }
+        public static int checkUserName(string username)
+        {
+            String query = "SELECT count(username) FROM all_users where username = '" + username + "'";
+            int result = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+            return result;
+        }
+        public static void createUser(string username, string pw)
+        {
+            String query = "alter session set \"_ORACLE_SCRIPT\" = TRUE";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            query = " create user " + username + " IDENTIFIED BY " + pw;
+            result = DataProvider.Instance.ExecuteNonQuery(query);
+        }
+        public static int checkRoleName(string rolename)
+        {
+            String query = "select count(ROLE) from DBA_ROLES where ROLE = '" + rolename + "'";
+            int result = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+            return result;
+        }
+        public static void createRole(string rolename)
+        {
+            String query = "alter session set \"_ORACLE_SCRIPT\" = TRUE";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            query = " create role " + rolename;
+            result = DataProvider.Instance.ExecuteNonQuery(query);
+        }
+        public static DataTable loadUser()
+        {
+            String query = "SELECT username U FROM all_users";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
         public static DataTable loadUserRole()
         {
             String query = "select ROLE R from DBA_ROLES";
@@ -93,13 +163,13 @@ namespace PHANQUYENADMIN.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
-        public static void Role2User(List<GrantRoleForm> grantRoles)
+        public static void Role2User(String user,List<GrantRoleForm> grantRoles)
         {
             foreach (GrantRoleForm item in grantRoles)
             {
                 if(item.Grant == true)
                 {
-                    String query = "grant " + item.RoleName.ToString() + " to " + "john ";
+                    String query = "grant " + item.RoleName.ToString() + " to " + user;
                     if (item.AdminOption == false)
                     {
                         DataProvider.Instance.ExecuteNonQuery(query);
@@ -112,17 +182,17 @@ namespace PHANQUYENADMIN.DAO
                 }
                 else if (item.Revoke == true)
                 {
-                    String query = "revoke " + item.RoleName + " from " + "john"; 
+                    String query = "revoke " + item.RoleName + " from " + user; 
                 }
             }
         }
-        public static void Privilege2User(List<GrantRoleForm> grantRoles)
+        public static void Privilege2User(String user,List<GrantRoleForm> grantRoles)
         {
             foreach (GrantRoleForm item in grantRoles)
             {
                 if (item.Grant == true)
                 {
-                    String query = "grant " + item.RoleName + " to " + "john ";
+                    String query = "grant " + item.RoleName + " to " + user;
                     if (item.AdminOption == false)
                     {
                         DataProvider.Instance.ExecuteNonQuery(query);
@@ -135,11 +205,11 @@ namespace PHANQUYENADMIN.DAO
                 }
                 else if (item.Revoke == true)
                 {
-                    String query = "revoke " + item.RoleName + " from " + "john";
+                    String query = "revoke " + item.RoleName + " from " + user;
                 }
             }
         }
-        public static void Table2User(List<GrantTableForm> grantTables)
+        public static void Table2User(String user,List<GrantTableForm> grantTables)
         {
             foreach(GrantTableForm item in grantTables)
             {
@@ -148,7 +218,7 @@ namespace PHANQUYENADMIN.DAO
                 String update = " update ";
                 String insert = " insert ";
                 String delete = " delete ";
-                String table = " on " + item.TableName+" to john";
+                String table = " on " + item.TableName+" to "+user;
 
                 if (item.Select == true)
                 {
@@ -168,36 +238,38 @@ namespace PHANQUYENADMIN.DAO
                 }
             }
         }
-        public static void Role2Role(List<GrantRoleForm> grantRoles)
+        public static void Role2Role(String role, List<GrantRoleForm> grantRoles)
         {
             foreach (GrantRoleForm item in grantRoles)
             {
                 if (item.Grant == true)
                 {
-                    String query = "grant " + item.RoleName.ToString() + " to " + "john ";
+                    String query = "grant " + item.RoleName.ToString() + " to " +role;
+                    
                     if (item.AdminOption == false)
                     {
                         DataProvider.Instance.ExecuteNonQuery(query);
                     }
                     else
                     {
-                        query += "with admin option";
+                        query += " with admin option";
                         DataProvider.Instance.ExecuteNonQuery(query);
                     }
                 }
                 else if (item.Revoke == true)
                 {
-                    String query = "revoke " + item.RoleName + " from " + "john";
+                    String query = "revoke " + item.RoleName + " from " + role;
+                    DataProvider.Instance.ExecuteNonQuery(query);
                 }
             }
         }
-        public static void Privilege2Role(List<GrantRoleForm> grantRoles)
+        public static void Privilege2Role(String role, List<GrantRoleForm> grantRoles)
         {
             foreach (GrantRoleForm item in grantRoles)
             {
                 if (item.Grant == true)
                 {
-                    String query = "grant " + item.RoleName + " to " + "john ";
+                    String query = "grant " + item.RoleName + " to " + role;
                     if (item.AdminOption == false)
                     {
                         DataProvider.Instance.ExecuteNonQuery(query);
@@ -210,7 +282,8 @@ namespace PHANQUYENADMIN.DAO
                 }
                 else if (item.Revoke == true)
                 {
-                    String query = "revoke " + item.RoleName + " from " + "john";
+                    String query = "revoke " + item.RoleName + " from " + role;
+                    DataProvider.Instance.ExecuteNonQuery(query);
                 }
             }
         }

@@ -57,7 +57,7 @@ namespace PHANQUYENADMIN.DAO
                 try
                 {
                     conn.Open();
-                    MessageBox.Show("Ket noi ok");
+                    MessageBox.Show("Đăng nhập thành công!");
                 }
                 catch (Exception ex)
                 {
