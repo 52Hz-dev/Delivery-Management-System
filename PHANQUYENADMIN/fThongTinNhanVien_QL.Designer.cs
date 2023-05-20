@@ -134,7 +134,7 @@
             // lbNoti
             // 
             this.lbNoti.AutoSize = true;
-            this.lbNoti.Location = new System.Drawing.Point(60, 213);
+            this.lbNoti.Location = new System.Drawing.Point(37, 220);
             this.lbNoti.Name = "lbNoti";
             this.lbNoti.Size = new System.Drawing.Size(223, 25);
             this.lbNoti.TabIndex = 1;

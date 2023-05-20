@@ -74,6 +74,22 @@ namespace PHANQUYENADMIN
                 nhanvien.ShowDialog();
                 this.Show();
             }
+            if (role == "Ban giam doc")
+            {
+                //
+            }
+            if (role == "Truong de an")
+            {
+                //
+            }
+            if (role == "Nhan su")
+            {
+                //
+            }
+            if (role == "Tai chinh")
+            {
+               //
+            }
             return 1;
         }
     }
