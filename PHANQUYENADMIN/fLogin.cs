@@ -67,7 +67,7 @@ namespace PHANQUYENADMIN
                 fAdmin.ShowDialog();
                 this.Show();
             }
-            if(role=="Nhan vien")
+            if(role=="Nhan vien"|| role=="QL truc tiep")
             {
                 fNhanVien nhanvien = new fNhanVien();
                 this.Hide();

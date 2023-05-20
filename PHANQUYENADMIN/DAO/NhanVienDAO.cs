@@ -32,5 +32,24 @@ namespace PHANQUYENADMIN.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
+        // Query cua quan ly truc tiep
+        public static DataTable loadTasks(string manv)
+        {
+            String query = "SELECT * FROM sys.vw_QLTRUCTIEP_XemThongTinPhanCong where MANV='"+manv+"'";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+        public static DataTable loadStaffInf(string manv)
+        {
+            String query = "SELECT * FROM sys.vw_QLTRUCTIEP_XemThongTinNhanVien where MANV='" + manv+"'";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+        public static DataTable loadDanhSachNhanVien()
+        {
+            String query = "SELECT * FROM sys.vw_QLTRUCTIEP_XemThongTinNhanVien";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
     }
 }

@@ -44,7 +44,10 @@ namespace PHANQUYENADMIN
             txtNgaySinh.Text= dt.Rows[0]["NGAYSINH"].ToString();
             txtDiaChi.Text= dt.Rows[0]["DIACHI"].ToString();
             txtSDT.Text= dt.Rows[0]["SODT"].ToString();
-            
+            if(lbVaiTro.Text=="QL truc tiep")
+            {
+                loadDanhSachNhanVien();
+            }
         }
         private void loadTasks()
         {
@@ -53,6 +56,14 @@ namespace PHANQUYENADMIN
             {
                 lbNoti.Visible = false;
                 dvgPhanCong.DataSource = dt;
+            }
+        }
+        private void loadDanhSachNhanVien()
+        {
+            DataTable dt = NhanVienDAO.loadDanhSachNhanVien();
+            if (dt.Rows.Count != 0)
+            {
+                dgvDanhSachNhanVien.DataSource = dt;
             }
         }
         private void dvgNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -135,6 +146,17 @@ namespace PHANQUYENADMIN
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedRowIndex = e.RowIndex;
+            DataGridViewRow row = dgvDanhSachNhanVien.Rows[selectedRowIndex];
+            string manv = row.Cells["MANV"].Value.ToString();
+            fThongTinNhanVien_QL fThongTinNhanVien_QL = new fThongTinNhanVien_QL(manv);
+            this.Hide();
+            fThongTinNhanVien_QL.ShowDialog();
+            this.Show();
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
         {
 
         }
