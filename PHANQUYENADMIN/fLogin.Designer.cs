@@ -34,32 +34,34 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textUsername
             // 
             this.textUsername.BackColor = System.Drawing.SystemColors.Info;
+            this.textUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textUsername.Location = new System.Drawing.Point(66, 190);
             this.textUsername.Multiline = true;
             this.textUsername.Name = "textUsername";
-            this.textUsername.Size = new System.Drawing.Size(336, 42);
+            this.textUsername.Size = new System.Drawing.Size(336, 40);
             this.textUsername.TabIndex = 1;
             // 
             // textPassword
             // 
             this.textPassword.BackColor = System.Drawing.SystemColors.Info;
+            this.textPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPassword.Location = new System.Drawing.Point(66, 283);
             this.textPassword.Multiline = true;
             this.textPassword.Name = "textPassword";
             this.textPassword.PasswordChar = '*';
-            this.textPassword.Size = new System.Drawing.Size(336, 42);
+            this.textPassword.Size = new System.Drawing.Size(336, 41);
             this.textPassword.TabIndex = 2;
             // 
             // label2
@@ -100,6 +102,18 @@
             this.panel1.Size = new System.Drawing.Size(391, 467);
             this.panel1.TabIndex = 6;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = global::PHANQUYENADMIN.Properties.Resources.login;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(391, 467);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -114,18 +128,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(441, 467);
             this.panel2.TabIndex = 7;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::PHANQUYENADMIN.Properties.Resources.login;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(391, 467);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -148,9 +150,9 @@
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

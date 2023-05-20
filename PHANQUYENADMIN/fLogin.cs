@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PHANQUYENADMIN.DAO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+
 namespace PHANQUYENADMIN
 {
     public partial class fLogin : Form
@@ -32,13 +34,8 @@ namespace PHANQUYENADMIN
             {
                 if (DataProvider.getInstance(username, password) != null)
                 {
-                    fEditUser editUser = new fEditUser();
-                    fEditRole editRole = new fEditRole();
-                    fAdministrator fAdmin = new fAdministrator();
                     user = username;
-                    this.Hide();
-                    fAdmin.ShowDialog();
-                    this.Show();
+                    checkUser();
                 }
                 else
                 {
@@ -54,6 +51,30 @@ namespace PHANQUYENADMIN
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+        int checkUser()
+        {
+            String role=AdminstratorDAO.get_Logged_in_Role();
+            if (role == null)
+            {
+                MessageBox.Show("Có lỗi xảy ra. Xin thử lại sau ít phút");
+                return 0;
+            }
+            if (role == "Admin")
+            {
+                fAdministrator fAdmin = new fAdministrator();
+                this.Hide();
+                fAdmin.ShowDialog();
+                this.Show();
+            }
+            if(role=="Nhan vien")
+            {
+                fNhanVien nhanvien = new fNhanVien();
+                this.Hide();
+                nhanvien.ShowDialog();
+                this.Show();
+            }
+            return 1;
         }
     }
 }
