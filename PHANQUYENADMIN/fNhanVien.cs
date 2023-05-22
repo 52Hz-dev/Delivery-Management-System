@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,7 +33,9 @@ namespace PHANQUYENADMIN
 
             lbTen.Text= dt.Rows[0]["TENNV"].ToString();
             lbGioiTinh.Text= dt.Rows[0]["PHAI"].ToString();
-            lbNgaySinh.Text= dt.Rows[0]["NGAYSINH"].ToString(); 
+            DateTime myDateTimeValue = Convert.ToDateTime
+                (dt.Rows[0]["NGAYSINH"].ToString());
+            lbNgaySinh.Text = myDateTimeValue.ToString("dd/MM/yyyy");
             lbDiaChi.Text= dt.Rows[0]["DIACHI"].ToString();
             lbVaiTro.Text= dt.Rows[0]["VAITRO"].ToString();
             lbMaNQL.Text= dt.Rows[0]["MANQL"].ToString();
@@ -41,7 +44,7 @@ namespace PHANQUYENADMIN
             lbSDT.Text = dt.Rows[0]["SODT"].ToString();
             lbMaNV.Text = dt.Rows[0]["MANV"].ToString();
             //
-            txtNgaySinh.Text= dt.Rows[0]["NGAYSINH"].ToString();
+            txtNgaySinh.Text = lbNgaySinh.Text;
             txtDiaChi.Text= dt.Rows[0]["DIACHI"].ToString();
             txtSDT.Text= dt.Rows[0]["SODT"].ToString();
             if(lbVaiTro.Text=="QL truc tiep")
@@ -93,8 +96,8 @@ namespace PHANQUYENADMIN
 
         private void button1_Click(object sender, EventArgs e)
         {
-            control = (control + 1) / 2;
-            if (control == 1)
+            control = (control + 3) % 2;
+            if (control == 0)
             {
                 btnCancel.Visible = true;
                 btnChange.Text = "Lưu";
@@ -107,6 +110,19 @@ namespace PHANQUYENADMIN
             }
             else
             {
+                try
+                {
+                    DateTime date = Convert.ToDateTime
+                    (txtNgaySinh.Text);
+                    String ngaysinh=date.ToString("yyyy-MM-dd");
+                    NhanVienDAO.update_Inf(ngaysinh, txtDiaChi.Text, txtSDT.Text);
+                    MessageBox.Show("Cập nhật thông tin thành công");
+                }
+                catch (Exception d)
+                {
+                    MessageBox.Show("Có lỗi xảy ra vui lòng thử lại sau");
+                    return;
+                }
                 btnCancel.Visible = false;
                 btnChange.Text = "Thay Đổi";
                 lbNgaySinh.Visible = true;
@@ -118,7 +134,9 @@ namespace PHANQUYENADMIN
                 DataTable dt = NhanVienDAO.loadStaff();
                 lbTen.Text = dt.Rows[0]["TENNV"].ToString();
                 lbGioiTinh.Text = dt.Rows[0]["PHAI"].ToString();
-                lbNgaySinh.Text = dt.Rows[0]["NGAYSINH"].ToString();
+                DateTime myDateTimeValue = Convert.ToDateTime
+                (dt.Rows[0]["NGAYSINH"].ToString());
+                lbNgaySinh.Text = myDateTimeValue.ToString("dd/MM/yyyy");
                 lbDiaChi.Text = dt.Rows[0]["DIACHI"].ToString();
                 lbVaiTro.Text = dt.Rows[0]["VAITRO"].ToString();
                 lbMaNQL.Text = dt.Rows[0]["MANQL"].ToString();
@@ -127,7 +145,7 @@ namespace PHANQUYENADMIN
                 lbSDT.Text = dt.Rows[0]["SODT"].ToString();
                 lbMaNV.Text = dt.Rows[0]["MANV"].ToString();
                 //
-                txtNgaySinh.Text = dt.Rows[0]["NGAYSINH"].ToString();
+                txtNgaySinh.Text = txtNgaySinh.Text = lbNgaySinh.Text;
                 txtDiaChi.Text = dt.Rows[0]["DIACHI"].ToString();
                 txtSDT.Text = dt.Rows[0]["SODT"].ToString();
             }

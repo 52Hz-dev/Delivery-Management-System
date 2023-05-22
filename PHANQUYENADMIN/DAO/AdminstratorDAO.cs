@@ -288,10 +288,10 @@ namespace PHANQUYENADMIN.DAO
             }
         }
 
-      //
+      
         public static String get_Logged_in_Role()
         {
-            String query = "SELECT * FROM sys.vw_NHANVIEN_XemThongTinCaNhan";
+            String query = "SELECT * FROM ADMIN01.vw_NHANVIEN_XemThongTinCaNhan";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             if (dt.Rows.Count == 0)
             {

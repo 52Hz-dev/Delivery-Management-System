@@ -81,6 +81,19 @@ namespace PHANQUYENADMIN.DAO
 
             return dataTable;
         }
+        public DataTable ExecuteProcedure(string query)
+        {
+            DataTable dataTable = new DataTable();
+
+            OracleCommand command = new OracleCommand(query, conn);
+            command.CommandType = CommandType.StoredProcedure;
+
+            OracleDataAdapter adapter = new OracleDataAdapter(command);
+
+            adapter.Fill(dataTable);
+
+            return dataTable;
+        }
     }
 }
 
