@@ -288,7 +288,7 @@ namespace PHANQUYENADMIN.DAO
             }
         }
 
-      
+      //
         public static String get_Logged_in_Role()
         {
             String query = "SELECT * FROM sys.vw_NHANVIEN_XemThongTinCaNhan";
