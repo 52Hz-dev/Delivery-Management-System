@@ -121,6 +121,12 @@
     <Compile Include="fCreateUser.Designer.cs">
       <DependentUpon>fCreateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="fNhanSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fNhanSu.Designer.cs">
+      <DependentUpon>fNhanSu.cs</DependentUpon>
+    </Compile>
     <Compile Include="fNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fNhanSu.resx">
+      <DependentUpon>fNhanSu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fNhanVien.resx">
       <DependentUpon>fNhanVien.cs</DependentUpon>

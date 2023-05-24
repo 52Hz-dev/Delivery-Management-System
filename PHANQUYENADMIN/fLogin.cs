@@ -84,7 +84,10 @@ namespace PHANQUYENADMIN
             }
             if (role == "Nhan su")
             {
-                //
+                fNhanSu nhanSu = new fNhanSu();
+                this.Hide();
+                nhanSu.ShowDialog();
+                this.Show();
             }
             if (role == "Tai chinh")
             {
