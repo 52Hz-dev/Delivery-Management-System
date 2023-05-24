@@ -89,7 +89,10 @@ namespace PHANQUYENADMIN
             }
             if (role == "Tai chinh")
             {
-               //
+                fTAICHINH fTC = new fTAICHINH();
+                this.Hide();
+                fTC.ShowDialog();
+                this.Show();
             }
             return 1;
         }

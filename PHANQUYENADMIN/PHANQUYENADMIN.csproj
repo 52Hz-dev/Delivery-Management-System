@@ -127,6 +127,12 @@
     <Compile Include="fNhanVien.Designer.cs">
       <DependentUpon>fNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="fTAICHINH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTAICHINH.Designer.cs">
+      <DependentUpon>fTAICHINH.cs</DependentUpon>
+    </Compile>
     <Compile Include="fThongTinNhanVien_QL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fNhanVien.resx">
       <DependentUpon>fNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTAICHINH.resx">
+      <DependentUpon>fTAICHINH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fThongTinNhanVien_QL.resx">
       <DependentUpon>fThongTinNhanVien_QL.cs</DependentUpon>

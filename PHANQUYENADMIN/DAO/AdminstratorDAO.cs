@@ -299,6 +299,20 @@ namespace PHANQUYENADMIN.DAO
             }
             return dt.Rows[0]["VaiTro"].ToString();
         }
-      
+
+        public static DataTable TAICHINH_select_NHANVIEN()
+        {
+            String query = "select * from ADMIN01.NHANVIEN" ;
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+
+        public static DataTable TAICHINH_select_PHANCONG()
+        {
+            String query = "select * from ADMIN01.PHANCONG";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+
     }
 }
