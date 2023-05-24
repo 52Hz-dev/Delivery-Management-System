@@ -1,9 +1,11 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PHANQUYENADMIN.DAO
 {
@@ -25,6 +27,14 @@ namespace PHANQUYENADMIN.DAO
                 return "Admin";
             }
             return dt.Rows[0]["VaiTro"].ToString();
+        }
+        public static int update_Inf(string date,string addr,string sodt)
+        {
+            
+            String query = "BEGIN ADMIN01.usp_NHANVIEN_SuaThongTin("
+                + "'"+date+"'" + "," + "'"+addr+"'" + "," + "'"+sodt+"'" + "); END;";     
+            return DataProvider.Instance.ExecuteNonQuery(query);
+            
         }
         public static DataTable loadTasks()
         {

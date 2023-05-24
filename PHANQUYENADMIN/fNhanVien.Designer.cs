@@ -37,6 +37,7 @@
             this.lbNoti = new System.Windows.Forms.Label();
             this.dvgPhanCong = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lbMaNV = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.lbSDT = new System.Windows.Forms.Label();
             this.lbNgaySinh = new System.Windows.Forms.Label();
             this.lbDiaChi = new System.Windows.Forms.Label();
-            this.txtNgaySinh = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.QuanLy = new System.Windows.Forms.TabPage();
@@ -186,6 +186,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.txtNgaySinh);
             this.panel4.Controls.Add(this.btnCancel);
             this.panel4.Controls.Add(this.lbMaNV);
             this.panel4.Controls.Add(this.label12);
@@ -209,7 +210,6 @@
             this.panel4.Controls.Add(this.lbSDT);
             this.panel4.Controls.Add(this.lbNgaySinh);
             this.panel4.Controls.Add(this.lbDiaChi);
-            this.panel4.Controls.Add(this.txtNgaySinh);
             this.panel4.Controls.Add(this.txtSDT);
             this.panel4.Controls.Add(this.txtDiaChi);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
@@ -219,6 +219,19 @@
             this.panel4.Size = new System.Drawing.Size(772, 784);
             this.panel4.TabIndex = 0;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // txtNgaySinh
+            // 
+            this.txtNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.txtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtNgaySinh.Location = new System.Drawing.Point(149, 326);
+            this.txtNgaySinh.MaxDate = new System.DateTime(2023, 5, 22, 0, 0, 0, 0);
+            this.txtNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.txtNgaySinh.Name = "txtNgaySinh";
+            this.txtNgaySinh.Size = new System.Drawing.Size(227, 30);
+            this.txtNgaySinh.TabIndex = 26;
+            this.txtNgaySinh.Value = new System.DateTime(2023, 5, 22, 0, 0, 0, 0);
+            this.txtNgaySinh.Visible = false;
             // 
             // btnCancel
             // 
@@ -337,10 +350,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PHANQUYENADMIN.Properties.Resources.Multimedia__253_;
-            this.pictureBox1.Location = new System.Drawing.Point(280, 28);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(249, 22);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(158, 156);
+            this.pictureBox1.Size = new System.Drawing.Size(140, 125);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -436,15 +448,6 @@
             this.lbDiaChi.TabIndex = 14;
             this.lbDiaChi.Text = "Unknown";
             // 
-            // txtNgaySinh
-            // 
-            this.txtNgaySinh.Location = new System.Drawing.Point(162, 404);
-            this.txtNgaySinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(282, 35);
-            this.txtNgaySinh.TabIndex = 24;
-            this.txtNgaySinh.Visible = false;
-            // 
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(115, 476);
@@ -532,14 +535,13 @@
             this.dgvDanhSachNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSachNhanVien.Location = new System.Drawing.Point(0, 0);
-            this.dgvDanhSachNhanVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvDanhSachNhanVien.Name = "dgvDanhSachNhanVien";
             this.dgvDanhSachNhanVien.ReadOnly = true;
             this.dgvDanhSachNhanVien.RowHeadersVisible = false;
             this.dgvDanhSachNhanVien.RowHeadersWidth = 51;
             this.dgvDanhSachNhanVien.RowTemplate.Height = 24;
             this.dgvDanhSachNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhSachNhanVien.Size = new System.Drawing.Size(1140, 676);
+            this.dgvDanhSachNhanVien.Size = new System.Drawing.Size(1012, 541);
             this.dgvDanhSachNhanVien.TabIndex = 1;
             this.dgvDanhSachNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -614,11 +616,11 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lbMaNV;
         private System.Windows.Forms.Label lbNoti;
-        private System.Windows.Forms.TextBox txtNgaySinh;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.DateTimePicker txtNgaySinh;
     }
 }
