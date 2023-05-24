@@ -74,6 +74,7 @@ namespace PHANQUYENADMIN
                 nhanvien.ShowDialog();
                 this.Show();
             }
+            // New code
             if (role == "Ban giam doc")
             {
                 //

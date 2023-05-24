@@ -37,6 +37,7 @@
             this.lbNoti = new System.Windows.Forms.Label();
             this.dvgPhanCong = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lbMaNV = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dgvDanhSachNhanVien = new System.Windows.Forms.DataGridView();
-            this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.ThongTin.SuspendLayout();
@@ -212,6 +212,19 @@
             this.panel4.Size = new System.Drawing.Size(686, 623);
             this.panel4.TabIndex = 0;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // txtNgaySinh
+            // 
+            this.txtNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.txtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtNgaySinh.Location = new System.Drawing.Point(149, 326);
+            this.txtNgaySinh.MaxDate = new System.DateTime(2023, 5, 22, 0, 0, 0, 0);
+            this.txtNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.txtNgaySinh.Name = "txtNgaySinh";
+            this.txtNgaySinh.Size = new System.Drawing.Size(227, 30);
+            this.txtNgaySinh.TabIndex = 26;
+            this.txtNgaySinh.Value = new System.DateTime(2023, 5, 22, 0, 0, 0, 0);
+            this.txtNgaySinh.Visible = false;
             // 
             // btnCancel
             // 
@@ -515,19 +528,6 @@
             this.dgvDanhSachNhanVien.Size = new System.Drawing.Size(1012, 541);
             this.dgvDanhSachNhanVien.TabIndex = 1;
             this.dgvDanhSachNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // txtNgaySinh
-            // 
-            this.txtNgaySinh.CustomFormat = "dd/MM/yyyy";
-            this.txtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtNgaySinh.Location = new System.Drawing.Point(149, 326);
-            this.txtNgaySinh.MaxDate = new System.DateTime(2023, 5, 22, 0, 0, 0, 0);
-            this.txtNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(227, 30);
-            this.txtNgaySinh.TabIndex = 26;
-            this.txtNgaySinh.Value = new System.DateTime(2023, 5, 22, 0, 0, 0, 0);
-            this.txtNgaySinh.Visible = false;
             // 
             // fNhanVien
             // 
