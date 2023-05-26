@@ -45,7 +45,7 @@ namespace PHANQUYENADMIN.DAO
         // Query cua quan ly truc tiep
         public static DataTable loadTasks(string manv)
         {
-            String query = "SELECT * FROM ADMIN01.vw_QLTRUCTIEP_XemThongTinPhanCong where MANV='"+manv+"'";
+            String query = "SELECT * FROM ADMIN01.vw_QLTRUCTIEP_XemThongTinPhanCong where MANV='" + manv+"'";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }

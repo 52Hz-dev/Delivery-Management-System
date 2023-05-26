@@ -73,7 +73,68 @@ namespace PHANQUYENADMIN.DAO
                 }
             }
         }
+        //form nhan su
 
+        public static DataTable readPHONGBAN()
+        {
+            String query = "SELECT * FROM ADMIN01.PHONGBAN";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+        public static DataTable readNHANVIEN()
+        {
+            String query = "SELECT * FROM ADMIN01.VIEW_NHANVIEN_NS";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+        public static int checkMaPHONGBAN(string MAPB)
+        {
+            String query = "SELECT count(*) FROM ADMIN01.PHONGBAN WHERE MAPB='"+MAPB+"'";
+            int result = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+            return result;
+        }
+        public static int checkMaNHANVIEN(string MANV)
+        {
+            String query = "SELECT count(*) FROM ADMIN01.VIEW_NHANVIEN_NS WHERE MANV='" + MANV + "'";
+            int result = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+            return result;
+        }
+        public static int updatePHONGBAN(string MAPB,string TENPB,string TRPHG)
+        {
+            String query = "UPDATE ADMIN01.PHONGBAN SET TEBPB='"+ TENPB + "', TRPHG='"+ TRPHG + "' WHERE MAPB='"+ MAPB + "'";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result;
+
+        }
+        public static int createPHONGBAN(string MAPB, string TENPB, string TRPHG)
+        {
+            String query = "INSERT INTO ADMIN01.PHONGBAN(MAPB,TENPB,TRPHG) VALUES ('"+ MAPB + "','"+ TENPB + "','"+ TRPHG + "')";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result;
+
+        }
+        public static int updateNHANVIEN(string MANV, string TENNV, string PHAI, string NGAYSINH, string DIACHI, string SODT, string VAITRO, string MANQL, string PHG)
+        {
+            String query = "UPDATE ADMIN01.VIEW_NHANVIEN_NS SET TENNV='"+ TENNV + "', PHAI='"+ PHAI + "', NGAYSINH=TO_DATE('"+ NGAYSINH + "', 'YYYY-MM-DD'), DIACHI='" + DIACHI + "', SODT='"+ SODT + "', VAITRO='"+ VAITRO + "', MANQL='"+ MANQL + "', PHG='"+ PHG + "' WHERE MAPB='" + MANV + "'";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result;
+
+        }
+        public static int createNHANVIEN(string MANV, string TENNV, string PHAI, string NGAYSINH, string DIACHI, string SODT, string VAITRO, string MANQL, string PHG)
+        {
+            String query = "INSERT INTO ADMIN01.VIEW_NHANVIEN_NS (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)  VALUES ('"+ MANV + "', '"+ TENNV + "', '"+ PHAI + "', TO_DATE('"+ NGAYSINH + "', 'YYYY-MM-DD'), '"+ DIACHI + "', '"+SODT+"',  '"+VAITRO+"', '"+MANQL+"', '"+PHG+"')";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result;
+
+        }
+        //end
+        public static int updateNHANVIENnv(string NGAYSINH, string DIACHI, string SODT)
+        {
+            String query = "ADMIN01.usp_NHANVIEN_SuaThongTin('"+NGAYSINH+"','"+DIACHI+"','"+SODT+"')";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result;
+
+        }
         public static DataTable readUsersys()
         {
             String query = "SELECT * FROM dba_users";
