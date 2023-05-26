@@ -180,7 +180,6 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.txtNgaySinh);
             this.panel4.Controls.Add(this.btnCancel);
             this.panel4.Controls.Add(this.lbMaNV);
             this.panel4.Controls.Add(this.label12);
@@ -206,6 +205,7 @@
             this.panel4.Controls.Add(this.lbDiaChi);
             this.panel4.Controls.Add(this.txtSDT);
             this.panel4.Controls.Add(this.txtDiaChi);
+            this.panel4.Controls.Add(this.txtNgaySinh);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
@@ -482,7 +482,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1012, 82);
+            this.panel6.Size = new System.Drawing.Size(1012, 76);
             this.panel6.TabIndex = 0;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
