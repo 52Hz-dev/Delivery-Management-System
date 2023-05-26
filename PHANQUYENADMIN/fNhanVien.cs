@@ -149,6 +149,7 @@ namespace PHANQUYENADMIN
                 txtDiaChi.Text = dt.Rows[0]["DIACHI"].ToString();
                 txtSDT.Text = dt.Rows[0]["SODT"].ToString();
             }
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
