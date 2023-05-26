@@ -228,7 +228,7 @@
             this.txtNgaySinh.MaxDate = new System.DateTime(2023, 5, 22, 0, 0, 0, 0);
             this.txtNgaySinh.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(227, 30);
+            this.txtNgaySinh.Size = new System.Drawing.Size(227, 35);
             this.txtNgaySinh.TabIndex = 26;
             this.txtNgaySinh.Value = new System.DateTime(2023, 5, 22, 0, 0, 0, 0);
             this.txtNgaySinh.Visible = false;
@@ -541,7 +541,7 @@
             this.dgvDanhSachNhanVien.RowHeadersWidth = 51;
             this.dgvDanhSachNhanVien.RowTemplate.Height = 24;
             this.dgvDanhSachNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhSachNhanVien.Size = new System.Drawing.Size(1012, 541);
+            this.dgvDanhSachNhanVien.Size = new System.Drawing.Size(1140, 676);
             this.dgvDanhSachNhanVien.TabIndex = 1;
             this.dgvDanhSachNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
