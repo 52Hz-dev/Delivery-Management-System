@@ -81,7 +81,10 @@ namespace PHANQUYENADMIN
             }
             if (role == "Truong de an")
             {
-                //
+                fTRUONGDEAN fTDA = new fTRUONGDEAN();
+                this.Hide();
+                fTDA.ShowDialog();
+                this.Show();
             }
             if (role == "Nhan su")
             {
@@ -92,7 +95,10 @@ namespace PHANQUYENADMIN
             }
             if (role == "Tai chinh")
             {
-               //
+                fTAICHINH fTC = new fTAICHINH();
+                this.Hide();
+                fTC.ShowDialog();
+                this.Show();
             }
             return 1;
         }

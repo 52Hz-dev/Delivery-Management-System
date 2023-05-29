@@ -360,6 +360,60 @@ namespace PHANQUYENADMIN.DAO
             }
             return dt.Rows[0]["VaiTro"].ToString();
         }
-      
+
+        public static DataTable TAICHINH_select_NHANVIEN()
+        {
+            String query = "select * from ADMIN01.NHANVIEN" ;
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+
+        public static DataTable TAICHINH_select_PHANCONG()
+        {
+            String query = "select * from ADMIN01.PHANCONG";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+
+        public static int updateNHANVIEN(string MANV, string LUONG, string PHUCAP)
+        {
+            String query = "UPDATE ADMIN01.NHANVIEN SET LUONG=" + LUONG + ", PHUCAP=" + PHUCAP + " WHERE MANV='" + MANV + "'";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result;
+
+        }
+
+        public static DataTable TRUONGDEAN_select_DEAN()
+        {
+            String query = "select * from ADMIN01.DEAN";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+
+        internal static int updateDEAN(string MADA, string TENDA, string NGAYBD, string PHONG)
+        {
+            String query = "UPDATE ADMIN01.DEAN SET TENDA='" + TENDA + "', NGAYBD= TO_DATE('" + NGAYBD + "', 'YYYY-MM-DD'), PHONG = '" + PHONG + "' WHERE MADA='" + MADA + "'";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result;
+        }
+
+        internal static int checkMaDEAN(string MADA)
+        {
+            String query = "SELECT count(*) FROM ADMIN01.DEAN WHERE MADA='" + MADA + "'";
+            int result = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+            return result;
+        }
+
+        internal static void TRUONGDEAN_add_DEAN(string MADA, string TENDA, string NGAYBD, string PHONG)
+        {
+            String query = "INSERT INTO ADMIN01.DEAN(MADA,TENDA,NGAYBD,PHONG) VALUES ('" + MADA + "','" + TENDA + "',TO_DATE('" + NGAYBD + "','YYYY-MM-DD'),'" + PHONG + "')";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        internal static void TRUONGDEAN_remove_DEAN(string MADA, string TENDA, string NGAYBD, string PHONG)
+        {
+            String query = "DELETE FROM ADMIN01.DEAN WHERE DEAN.MADA = '" + MADA + "'";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+        }
     }
 }
