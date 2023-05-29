@@ -57,16 +57,18 @@ namespace PHANQUYENADMIN
                 txtPHG.Text = selectedRow.Cells["PHG"].Value.ToString();
             }
         }
-
-        private void btnResetPB_Click(object sender, EventArgs e)
+        void resetPB()
         {
             loadInfo();
             txtMAPB.Text = "";
-            txtTENPB.Text ="";
+            txtTENPB.Text = "";
             txtTRPHG.Text = "";
         }
-
-        private void btnResetNV_Click(object sender, EventArgs e)
+        private void btnResetPB_Click(object sender, EventArgs e)
+        {
+            resetPB();
+        }
+        void resetNV()
         {
             loadInfo();
             txtMANV.Text = "";
@@ -81,6 +83,10 @@ namespace PHANQUYENADMIN
             txtMAQL.Text = "";
             txtPHG.Text = "";
         }
+        private void btnResetNV_Click(object sender, EventArgs e)
+        {
+            resetNV();
+        }
 
         private void btnUpdateNV_Click(object sender, EventArgs e)
         {
@@ -89,8 +95,8 @@ namespace PHANQUYENADMIN
             {
                 if (AdminstratorDAO.updateNHANVIEN(txtMANV.Text, txtTENNV.Text, txtPHAI.Text, txtNGAYSINH.Text, txtDIACHI.Text, txtSODT.Text, txtVAITRO.Text, txtMAQL.Text, txtPHG.Text) ==1)
                  MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-        } 
+                resetNV();
+            } 
                 
         }
 
@@ -101,27 +107,31 @@ namespace PHANQUYENADMIN
             {
                 if(AdminstratorDAO.createNHANVIEN(txtMANV.Text, txtTENNV.Text, txtPHAI.Text, txtNGAYSINH.Text, txtDIACHI.Text, txtSODT.Text, txtVAITRO.Text, txtMAQL.Text, txtPHG.Text)==1)
                 MessageBox.Show("Tạo nhân viên mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                resetNV();
             }
+            
         }
 
         private void btnUpdatePB_Click(object sender, EventArgs e)
         {
-            if (AdminstratorDAO.checkMaNHANVIEN(txtMAPB.Text) != 1) MessageBox.Show("Mã phòng ban không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (AdminstratorDAO.checkMaPHONGBAN(txtMAPB.Text) != 1) MessageBox.Show("Mã phòng ban không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
                 if(AdminstratorDAO.updatePHONGBAN(txtMAPB.Text,txtTENPB.Text,txtTRPHG.Text)==1)
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                resetPB();
             }
         
         }
 
         private void btnCreatePB_Click(object sender, EventArgs e)
         {
-            if (AdminstratorDAO.checkMaNHANVIEN(txtMAPB.Text) == 1) MessageBox.Show("Mã phòng ban đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (AdminstratorDAO.checkMaPHONGBAN(txtMAPB.Text) == 1) MessageBox.Show("Mã phòng ban đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
                 if (AdminstratorDAO.createPHONGBAN(txtMAPB.Text, txtTENPB.Text, txtTRPHG.Text) == 1)
                     MessageBox.Show("Tạo phòng ban mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                resetPB();
             }
         }
     }

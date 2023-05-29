@@ -29,18 +29,6 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnCreatePB = new System.Windows.Forms.Button();
-            this.btnUpdatePB = new System.Windows.Forms.Button();
-            this.btnResetPB = new System.Windows.Forms.Button();
-            this.txtTRPHG = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtTENPB = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtMAPB = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dgvPB = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtPHG = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -69,14 +57,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvNV = new System.Windows.Forms.DataGridView();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnCreatePB = new System.Windows.Forms.Button();
+            this.btnUpdatePB = new System.Windows.Forms.Button();
+            this.btnResetPB = new System.Windows.Forms.Button();
+            this.txtTRPHG = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtTENPB = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtMAPB = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvPB = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPB)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
+            this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPB)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -88,135 +88,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1367, 752);
             this.tabControl1.TabIndex = 1;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.btnCreatePB);
-            this.tabPage1.Controls.Add(this.btnUpdatePB);
-            this.tabPage1.Controls.Add(this.btnResetPB);
-            this.tabPage1.Controls.Add(this.txtTRPHG);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.txtTENPB);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.txtMAPB);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1359, 719);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Phòng ban";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // btnCreatePB
-            // 
-            this.btnCreatePB.Location = new System.Drawing.Point(1196, 354);
-            this.btnCreatePB.Name = "btnCreatePB";
-            this.btnCreatePB.Size = new System.Drawing.Size(103, 68);
-            this.btnCreatePB.TabIndex = 20;
-            this.btnCreatePB.Text = "Tạo phòng ban mới";
-            this.btnCreatePB.UseVisualStyleBackColor = true;
-            this.btnCreatePB.Click += new System.EventHandler(this.btnCreatePB_Click);
-            // 
-            // btnUpdatePB
-            // 
-            this.btnUpdatePB.Location = new System.Drawing.Point(1000, 354);
-            this.btnUpdatePB.Name = "btnUpdatePB";
-            this.btnUpdatePB.Size = new System.Drawing.Size(103, 68);
-            this.btnUpdatePB.TabIndex = 19;
-            this.btnUpdatePB.Text = "Cập nhật thông tin";
-            this.btnUpdatePB.UseVisualStyleBackColor = true;
-            this.btnUpdatePB.Click += new System.EventHandler(this.btnUpdatePB_Click);
-            // 
-            // btnResetPB
-            // 
-            this.btnResetPB.Location = new System.Drawing.Point(817, 354);
-            this.btnResetPB.Name = "btnResetPB";
-            this.btnResetPB.Size = new System.Drawing.Size(96, 68);
-            this.btnResetPB.TabIndex = 18;
-            this.btnResetPB.Text = "Reset";
-            this.btnResetPB.UseVisualStyleBackColor = true;
-            this.btnResetPB.Click += new System.EventHandler(this.btnResetPB_Click);
-            // 
-            // txtTRPHG
-            // 
-            this.txtTRPHG.Location = new System.Drawing.Point(939, 226);
-            this.txtTRPHG.Name = "txtTRPHG";
-            this.txtTRPHG.Size = new System.Drawing.Size(360, 26);
-            this.txtTRPHG.TabIndex = 17;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(763, 232);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 20);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Mã trưởng phòng:";
-            // 
-            // txtTENPB
-            // 
-            this.txtTENPB.Location = new System.Drawing.Point(939, 153);
-            this.txtTENPB.Name = "txtTENPB";
-            this.txtTENPB.Size = new System.Drawing.Size(360, 26);
-            this.txtTENPB.TabIndex = 15;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(779, 159);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 20);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Tên phòng ban:";
-            // 
-            // txtMAPB
-            // 
-            this.txtMAPB.Location = new System.Drawing.Point(939, 90);
-            this.txtMAPB.Name = "txtMAPB";
-            this.txtMAPB.Size = new System.Drawing.Size(360, 26);
-            this.txtMAPB.TabIndex = 13;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(785, 96);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 20);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Mã phòng ban:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(977, 24);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(172, 25);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Thông tin chi tiết";
-            // 
-            // dgvPB
-            // 
-            this.dgvPB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPB.Location = new System.Drawing.Point(0, 0);
-            this.dgvPB.Name = "dgvPB";
-            this.dgvPB.ReadOnly = true;
-            this.dgvPB.RowHeadersVisible = false;
-            this.dgvPB.RowHeadersWidth = 62;
-            this.dgvPB.RowTemplate.Height = 28;
-            this.dgvPB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPB.Size = new System.Drawing.Size(754, 713);
-            this.dgvPB.TabIndex = 0;
-            this.dgvPB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPB_CellContentClick);
             // 
             // tabPage2
             // 
@@ -485,7 +356,7 @@
             // dgvNV
             // 
             this.dgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNV.Location = new System.Drawing.Point(28, 25);
+            this.dgvNV.Location = new System.Drawing.Point(15, 25);
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.ReadOnly = true;
             this.dgvNV.RowHeadersWidth = 62;
@@ -495,6 +366,119 @@
             this.dgvNV.TabIndex = 0;
             this.dgvNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNV_CellContentClick);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.btnCreatePB);
+            this.tabPage1.Controls.Add(this.btnUpdatePB);
+            this.tabPage1.Controls.Add(this.btnResetPB);
+            this.tabPage1.Controls.Add(this.txtTRPHG);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.txtTENPB);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.txtMAPB);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1359, 719);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Phòng ban";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnCreatePB
+            // 
+            this.btnCreatePB.Location = new System.Drawing.Point(1196, 354);
+            this.btnCreatePB.Name = "btnCreatePB";
+            this.btnCreatePB.Size = new System.Drawing.Size(103, 68);
+            this.btnCreatePB.TabIndex = 20;
+            this.btnCreatePB.Text = "Tạo phòng ban mới";
+            this.btnCreatePB.UseVisualStyleBackColor = true;
+            this.btnCreatePB.Click += new System.EventHandler(this.btnCreatePB_Click);
+            // 
+            // btnUpdatePB
+            // 
+            this.btnUpdatePB.Location = new System.Drawing.Point(1000, 354);
+            this.btnUpdatePB.Name = "btnUpdatePB";
+            this.btnUpdatePB.Size = new System.Drawing.Size(103, 68);
+            this.btnUpdatePB.TabIndex = 19;
+            this.btnUpdatePB.Text = "Cập nhật thông tin";
+            this.btnUpdatePB.UseVisualStyleBackColor = true;
+            this.btnUpdatePB.Click += new System.EventHandler(this.btnUpdatePB_Click);
+            // 
+            // btnResetPB
+            // 
+            this.btnResetPB.Location = new System.Drawing.Point(817, 354);
+            this.btnResetPB.Name = "btnResetPB";
+            this.btnResetPB.Size = new System.Drawing.Size(96, 68);
+            this.btnResetPB.TabIndex = 18;
+            this.btnResetPB.Text = "Reset";
+            this.btnResetPB.UseVisualStyleBackColor = true;
+            this.btnResetPB.Click += new System.EventHandler(this.btnResetPB_Click);
+            // 
+            // txtTRPHG
+            // 
+            this.txtTRPHG.Location = new System.Drawing.Point(939, 226);
+            this.txtTRPHG.Name = "txtTRPHG";
+            this.txtTRPHG.Size = new System.Drawing.Size(360, 26);
+            this.txtTRPHG.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(763, 232);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(150, 20);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Mã trưởng phòng:";
+            // 
+            // txtTENPB
+            // 
+            this.txtTENPB.Location = new System.Drawing.Point(939, 153);
+            this.txtTENPB.Name = "txtTENPB";
+            this.txtTENPB.Size = new System.Drawing.Size(360, 26);
+            this.txtTENPB.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(779, 159);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(134, 20);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Tên phòng ban:";
+            // 
+            // txtMAPB
+            // 
+            this.txtMAPB.Location = new System.Drawing.Point(939, 90);
+            this.txtMAPB.Name = "txtMAPB";
+            this.txtMAPB.Size = new System.Drawing.Size(360, 26);
+            this.txtMAPB.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(785, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(128, 20);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Mã phòng ban:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(977, 24);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(172, 25);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Thông tin chi tiết";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvPB);
@@ -503,6 +487,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(754, 713);
             this.panel1.TabIndex = 21;
+            // 
+            // dgvPB
+            // 
+            this.dgvPB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPB.Location = new System.Drawing.Point(0, 0);
+            this.dgvPB.Name = "dgvPB";
+            this.dgvPB.ReadOnly = true;
+            this.dgvPB.RowHeadersVisible = false;
+            this.dgvPB.RowHeadersWidth = 62;
+            this.dgvPB.RowTemplate.Height = 28;
+            this.dgvPB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPB.Size = new System.Drawing.Size(754, 713);
+            this.dgvPB.TabIndex = 0;
+            this.dgvPB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPB_CellContentClick);
             // 
             // panel2
             // 
@@ -521,13 +521,13 @@
             this.Name = "fNhanSu";
             this.Text = "fNhanSu";
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPB)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPB)).EndInit();
             this.ResumeLayout(false);
 
         }

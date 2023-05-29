@@ -101,7 +101,7 @@ namespace PHANQUYENADMIN.DAO
         }
         public static int updatePHONGBAN(string MAPB,string TENPB,string TRPHG)
         {
-            String query = "UPDATE ADMIN01.PHONGBAN SET TEBPB='"+ TENPB + "', TRPHG='"+ TRPHG + "' WHERE MAPB='"+ MAPB + "'";
+            String query = "UPDATE ADMIN01.PHONGBAN SET TENPB='"+ TENPB + "', TRPHG='"+ TRPHG + "' WHERE MAPB='"+ MAPB + "'";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result;
 
@@ -122,7 +122,7 @@ namespace PHANQUYENADMIN.DAO
         }
         public static int createNHANVIEN(string MANV, string TENNV, string PHAI, string NGAYSINH, string DIACHI, string SODT, string VAITRO, string MANQL, string PHG)
         {
-            String query = "INSERT INTO ADMIN01.VIEW_NHANVIEN_NS (MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, LUONG, PHUCAP, VAITRO, MANQL, PHG)  VALUES ('"+ MANV + "', '"+ TENNV + "', '"+ PHAI + "', TO_DATE('"+ NGAYSINH + "', 'YYYY-MM-DD'), '"+ DIACHI + "', '"+SODT+"',  '"+VAITRO+"', '"+MANQL+"', '"+PHG+"')";
+            String query = "INSERT INTO ADMIN01.VIEW_NHANVIEN_NS (MANV, TENNV, PHAI, NGAYSINH, DIACHI, PHUCAP, VAITRO, MANQL, PHG)  VALUES ('"+ MANV + "', '"+ TENNV + "', '"+ PHAI + "', TO_DATE('"+ NGAYSINH + "', 'YYYY-MM-DD'), '"+ DIACHI + "', '"+SODT+"',  '"+VAITRO+"', '"+MANQL+"', '"+PHG+"')";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result;
 
