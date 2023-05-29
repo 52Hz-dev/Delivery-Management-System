@@ -56,5 +56,10 @@ namespace PHANQUYENADMIN
         {
 
         }
+
+        private void lbMaNV_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

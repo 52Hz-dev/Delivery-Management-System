@@ -179,10 +179,5 @@ namespace PHANQUYENADMIN
         {
 
         }
-
-        private void dgvUsersys_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

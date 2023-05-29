@@ -97,6 +97,12 @@
     <Compile Include="fCreateRole.Designer.cs">
       <DependentUpon>fCreateRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="fEditPhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEditPhanCong.Designer.cs">
+      <DependentUpon>fEditPhanCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="fEditRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,11 +133,35 @@
     <Compile Include="fNhanVien.Designer.cs">
       <DependentUpon>fNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="fNhanVien_TruongPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fNhanVien_TruongPhong.Designer.cs">
+      <DependentUpon>fNhanVien_TruongPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fPhanCong_TruongPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPhanCong_TruongPhong.Designer.cs">
+      <DependentUpon>fPhanCong_TruongPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fThemPhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThemPhanCong.Designer.cs">
+      <DependentUpon>fThemPhanCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="fThongTinNhanVien_QL.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fThongTinNhanVien_QL.Designer.cs">
       <DependentUpon>fThongTinNhanVien_QL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTruongPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTruongPhong.Designer.cs">
+      <DependentUpon>fTruongPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fCreateUser.resx">
       <DependentUpon>fCreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEditPhanCong.resx">
+      <DependentUpon>fEditPhanCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fEditRole.resx">
       <DependentUpon>fEditRole.cs</DependentUpon>
@@ -156,8 +189,20 @@
     <EmbeddedResource Include="fNhanVien.resx">
       <DependentUpon>fNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fNhanVien_TruongPhong.resx">
+      <DependentUpon>fNhanVien_TruongPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPhanCong_TruongPhong.resx">
+      <DependentUpon>fPhanCong_TruongPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThemPhanCong.resx">
+      <DependentUpon>fThemPhanCong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fThongTinNhanVien_QL.resx">
       <DependentUpon>fThongTinNhanVien_QL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTruongPhong.resx">
+      <DependentUpon>fTruongPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
