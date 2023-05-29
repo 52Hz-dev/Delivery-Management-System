@@ -139,6 +139,12 @@
     <Compile Include="fThongTinNhanVien_QL.Designer.cs">
       <DependentUpon>fThongTinNhanVien_QL.cs</DependentUpon>
     </Compile>
+    <Compile Include="fTRUONGDEAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTRUONGDEAN.Designer.cs">
+      <DependentUpon>fTRUONGDEAN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fAdministrator.resx">
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fThongTinNhanVien_QL.resx">
       <DependentUpon>fThongTinNhanVien_QL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTRUONGDEAN.resx">
+      <DependentUpon>fTRUONGDEAN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
