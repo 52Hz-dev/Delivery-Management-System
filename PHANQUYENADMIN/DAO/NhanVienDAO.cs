@@ -61,5 +61,11 @@ namespace PHANQUYENADMIN.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
+        public static string Execute_pr_CheckNhanVien(string manhanvien)
+        {
+            string query = "begin ADMIN01.pr_CheckNhanVien('" + manhanvien + "'); end;";
+            string result = DataProvider.Instance.ExecuteScalar(query).ToString();
+            return result;
+        }
     }
 }

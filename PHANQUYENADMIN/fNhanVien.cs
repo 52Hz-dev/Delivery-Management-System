@@ -20,12 +20,6 @@ namespace PHANQUYENADMIN
             InitializeComponent();
             loadTasks();
         }
-
-        private void NhanVien_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void fNhanVien_Load(object sender, EventArgs e)
         {
 
@@ -69,31 +63,6 @@ namespace PHANQUYENADMIN
                 dgvDanhSachNhanVien.DataSource = dt;
             }
         }
-        private void dvgNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             control = (control + 3) % 2;
@@ -173,11 +142,6 @@ namespace PHANQUYENADMIN
             this.Hide();
             fThongTinNhanVien_QL.ShowDialog();
             this.Show();
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

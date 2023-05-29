@@ -74,7 +74,13 @@ namespace PHANQUYENADMIN
                 nhanvien.ShowDialog();
                 this.Show();
             }
-            // New code12345932
+            if (role == "Truong phong")
+            {
+                fTruongPhong truongphong=new fTruongPhong ();
+                this.Hide();
+                truongphong.ShowDialog();   
+                this.Show ();
+            }
             if (role == "Ban giam doc")
             {
                 //
@@ -101,6 +107,11 @@ namespace PHANQUYENADMIN
                 this.Show();
             }
             return 1;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
