@@ -117,7 +117,6 @@
             this.ThongTin.TabIndex = 0;
             this.ThongTin.Text = "ThongTin";
             this.ThongTin.UseVisualStyleBackColor = true;
-            this.ThongTin.Click += new System.EventHandler(this.NhanVien_Click);
             // 
             // panel2
             // 
@@ -141,7 +140,6 @@
             this.label10.Size = new System.Drawing.Size(127, 29);
             this.label10.TabIndex = 10;
             this.label10.Text = "Phân công";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // panel5
             // 
@@ -213,7 +211,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(610, 625);
             this.panel4.TabIndex = 0;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // txtNgaySinh
             // 
@@ -311,7 +308,6 @@
             this.lbTen.Size = new System.Drawing.Size(94, 25);
             this.lbTen.TabIndex = 11;
             this.lbTen.Text = "Unknown";
-            this.lbTen.Click += new System.EventHandler(this.label12_Click);
             // 
             // btnChange
             // 
@@ -347,7 +343,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(174, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(98, 64);
+            this.pictureBox1.Size = new System.Drawing.Size(190, 125);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -360,7 +356,6 @@
             this.label7.Size = new System.Drawing.Size(73, 25);
             this.label7.TabIndex = 6;
             this.label7.Text = "Lương:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -487,14 +482,13 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1012, 39);
+            this.panel6.Size = new System.Drawing.Size(1012, 85);
             this.panel6.TabIndex = 0;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.label11);
-            this.panel7.Location = new System.Drawing.Point(318, 17);
+            this.panel7.Location = new System.Drawing.Point(335, 37);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(343, 48);
             this.panel7.TabIndex = 1;
@@ -502,7 +496,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(72, 12);
+            this.label11.Location = new System.Drawing.Point(71, 10);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(196, 25);
             this.label11.TabIndex = 0;
