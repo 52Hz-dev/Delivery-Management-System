@@ -42,6 +42,18 @@ namespace PHANQUYENADMIN.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
+        public static DataTable loadPB()
+        {
+            String query = "SELECT * FROM ADMIN01.vw_NHANVIEN_XemPhongBan";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+        public static DataTable loadDA()
+        {
+            String query = "SELECT * FROM ADMIN01.vw_NHANVIEN_XemDeAn";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
         // Query cua quan ly truc tiep
         public static DataTable loadTasks(string manv)
         {

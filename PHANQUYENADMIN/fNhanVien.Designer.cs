@@ -70,6 +70,16 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dgvDanhSachNhanVien = new System.Windows.Forms.DataGridView();
+            this.PhongBan = new System.Windows.Forms.TabPage();
+            this.DeAn = new System.Windows.Forms.TabPage();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.lbpb = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dgvPhongBan = new System.Windows.Forms.DataGridView();
+            this.dgvDeAn = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.ThongTin.SuspendLayout();
@@ -84,6 +94,14 @@
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachNhanVien)).BeginInit();
+            this.PhongBan.SuspendLayout();
+            this.DeAn.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhongBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeAn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,6 +117,8 @@
             // 
             this.tabControl1.Controls.Add(this.ThongTin);
             this.tabControl1.Controls.Add(this.QuanLy);
+            this.tabControl1.Controls.Add(this.PhongBan);
+            this.tabControl1.Controls.Add(this.DeAn);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -496,9 +516,10 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(71, 10);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(35, 13);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(196, 25);
+            this.label11.Size = new System.Drawing.Size(280, 32);
             this.label11.TabIndex = 0;
             this.label11.Text = "Danh sách nhân viên";
             // 
@@ -530,6 +551,117 @@
             this.dgvDanhSachNhanVien.TabIndex = 1;
             this.dgvDanhSachNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // PhongBan
+            // 
+            this.PhongBan.Controls.Add(this.panel10);
+            this.PhongBan.Controls.Add(this.panel9);
+            this.PhongBan.Location = new System.Drawing.Point(4, 34);
+            this.PhongBan.Name = "PhongBan";
+            this.PhongBan.Padding = new System.Windows.Forms.Padding(3);
+            this.PhongBan.Size = new System.Drawing.Size(1018, 629);
+            this.PhongBan.TabIndex = 2;
+            this.PhongBan.Text = "PhongBan";
+            this.PhongBan.UseVisualStyleBackColor = true;
+            this.PhongBan.Click += new System.EventHandler(this.PhongBan_Click);
+            // 
+            // DeAn
+            // 
+            this.DeAn.Controls.Add(this.panel12);
+            this.DeAn.Controls.Add(this.panel11);
+            this.DeAn.Location = new System.Drawing.Point(4, 34);
+            this.DeAn.Name = "DeAn";
+            this.DeAn.Size = new System.Drawing.Size(1018, 629);
+            this.DeAn.TabIndex = 3;
+            this.DeAn.Text = "DeAn";
+            this.DeAn.UseVisualStyleBackColor = true;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.lbpb);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(3, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1012, 85);
+            this.panel9.TabIndex = 0;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.dgvPhongBan);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel10.Location = new System.Drawing.Point(3, 87);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1012, 539);
+            this.panel10.TabIndex = 1;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.label13);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(0, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(1018, 85);
+            this.panel11.TabIndex = 0;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.dgvDeAn);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel12.Location = new System.Drawing.Point(0, 86);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(1018, 543);
+            this.panel12.TabIndex = 1;
+            // 
+            // lbpb
+            // 
+            this.lbpb.AutoSize = true;
+            this.lbpb.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbpb.Location = new System.Drawing.Point(414, 39);
+            this.lbpb.Name = "lbpb";
+            this.lbpb.Size = new System.Drawing.Size(194, 42);
+            this.lbpb.TabIndex = 0;
+            this.lbpb.Text = "PhongBan";
+            this.lbpb.Click += new System.EventHandler(this.lbpb_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(451, 41);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(112, 42);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "DeAn";
+            // 
+            // dgvPhongBan
+            // 
+            this.dgvPhongBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPhongBan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvPhongBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhongBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPhongBan.Location = new System.Drawing.Point(0, 0);
+            this.dgvPhongBan.Name = "dgvPhongBan";
+            this.dgvPhongBan.RowHeadersVisible = false;
+            this.dgvPhongBan.RowHeadersWidth = 51;
+            this.dgvPhongBan.RowTemplate.Height = 24;
+            this.dgvPhongBan.Size = new System.Drawing.Size(1012, 539);
+            this.dgvPhongBan.TabIndex = 0;
+            this.dgvPhongBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhongBan_CellContentClick);
+            // 
+            // dgvDeAn
+            // 
+            this.dgvDeAn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDeAn.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvDeAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeAn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDeAn.GridColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dgvDeAn.Location = new System.Drawing.Point(0, 0);
+            this.dgvDeAn.Name = "dgvDeAn";
+            this.dgvDeAn.RowHeadersVisible = false;
+            this.dgvDeAn.RowHeadersWidth = 51;
+            this.dgvDeAn.RowTemplate.Height = 24;
+            this.dgvDeAn.Size = new System.Drawing.Size(1018, 543);
+            this.dgvDeAn.TabIndex = 0;
+            // 
             // fNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -558,6 +690,16 @@
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachNhanVien)).EndInit();
+            this.PhongBan.ResumeLayout(false);
+            this.DeAn.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhongBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeAn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -606,5 +748,15 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DateTimePicker txtNgaySinh;
+        private System.Windows.Forms.TabPage PhongBan;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TabPage DeAn;
+        private System.Windows.Forms.Label lbpb;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.DataGridView dgvPhongBan;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView dgvDeAn;
     }
 }
