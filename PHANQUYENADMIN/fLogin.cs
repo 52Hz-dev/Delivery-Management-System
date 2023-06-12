@@ -74,14 +74,23 @@ namespace PHANQUYENADMIN
                 nhanvien.ShowDialog();
                 this.Show();
             }
-            // New code12345932
+            if (role == "Truong phong")
+            {
+                fTruongPhong truongphong=new fTruongPhong ();
+                this.Hide();
+                truongphong.ShowDialog();   
+                this.Show ();
+            }
             if (role == "Ban giam doc")
             {
                 //
             }
             if (role == "Truong de an")
             {
-                //
+                fTRUONGDEAN fTDA = new fTRUONGDEAN();
+                this.Hide();
+                fTDA.ShowDialog();
+                this.Show();
             }
             if (role == "Nhan su")
             {
@@ -92,9 +101,17 @@ namespace PHANQUYENADMIN
             }
             if (role == "Tai chinh")
             {
-               //
+                fTAICHINH fTC = new fTAICHINH();
+                this.Hide();
+                fTC.ShowDialog();
+                this.Show();
             }
             return 1;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

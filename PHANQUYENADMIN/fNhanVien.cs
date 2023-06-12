@@ -19,13 +19,8 @@ namespace PHANQUYENADMIN
         {
             InitializeComponent();
             loadTasks();
-        }
-
-        private void NhanVien_Click(object sender, EventArgs e)
-        {
 
         }
-
         private void fNhanVien_Load(object sender, EventArgs e)
         {
 
@@ -44,13 +39,18 @@ namespace PHANQUYENADMIN
             lbSDT.Text = dt.Rows[0]["SODT"].ToString();
             lbMaNV.Text = dt.Rows[0]["MANV"].ToString();
             //
-            txtNgaySinh.Text = lbNgaySinh.Text;
+            txtNgaySinh.Text = myDateTimeValue.ToString("MM/dd/yyyy");
             txtDiaChi.Text= dt.Rows[0]["DIACHI"].ToString();
             txtSDT.Text= dt.Rows[0]["SODT"].ToString();
             if(lbVaiTro.Text=="QL truc tiep")
             {
                 loadDanhSachNhanVien();
             }
+            //load phong ban
+            DataTable dt2 = NhanVienDAO.loadPB();
+            dgvPhongBan.DataSource = dt2;
+            DataTable dt3 = NhanVienDAO.loadDA();
+            dgvDeAn.DataSource = dt3;
         }
         private void loadTasks()
         {
@@ -69,31 +69,6 @@ namespace PHANQUYENADMIN
                 dgvDanhSachNhanVien.DataSource = dt;
             }
         }
-        private void dvgNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             control = (control + 3) % 2;
@@ -113,13 +88,15 @@ namespace PHANQUYENADMIN
                 try
                 {
                     DateTime date = Convert.ToDateTime
-                    (txtNgaySinh.Text);
+                    (txtNgaySinh.Value);
                     String ngaysinh=date.ToString("yyyy-MM-dd");
+                    MessageBox.Show(ngaysinh);
                     NhanVienDAO.update_Inf(ngaysinh, txtDiaChi.Text, txtSDT.Text);
                     MessageBox.Show("Cập nhật thông tin thành công");
                 }
                 catch (Exception d)
                 {
+                    MessageBox.Show(d.Message);
                     MessageBox.Show("Có lỗi xảy ra vui lòng thử lại sau");
                     return;
                 }
@@ -175,7 +152,17 @@ namespace PHANQUYENADMIN
             this.Show();
         }
 
-        private void panel6_Paint(object sender, PaintEventArgs e)
+        private void PhongBan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbpb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvPhongBan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
