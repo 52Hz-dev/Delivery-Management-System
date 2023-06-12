@@ -82,6 +82,12 @@
     <Compile Include="DAO\AdminstratorDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="DTO\GrantRoleForm.cs" />
     <Compile Include="DTO\GrantTableForm.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
@@ -141,6 +147,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fAdministrator.resx">
       <DependentUpon>fAdministrator.cs</DependentUpon>
     </EmbeddedResource>
