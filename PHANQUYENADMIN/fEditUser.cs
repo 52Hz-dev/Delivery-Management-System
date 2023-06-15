@@ -14,9 +14,9 @@ namespace PHANQUYENADMIN
 {
     public partial class fEditUser : Form
     {
-        private List<GrantTableForm> newGrantTable=new List<GrantTableForm>();
-        private List<GrantRoleForm> newGrantRole = new List<GrantRoleForm>();
-        private List<GrantRoleForm> newGrantPrivilege = new List<GrantRoleForm>();
+        private Dictionary<String,GrantTableForm> newGrantTable=new Dictionary<String, GrantTableForm>();
+        private Dictionary<String, GrantRoleForm> newGrantRole = new Dictionary<String, GrantRoleForm>();
+        private Dictionary<String, GrantRoleForm> newGrantPrivilege = new Dictionary<String, GrantRoleForm>();
         public fEditUser()
         {
             InitializeComponent();
@@ -73,7 +73,9 @@ namespace PHANQUYENADMIN
                         cell.Value = cell.TrueValue;
                     }
                 }
-                newGrantRole.Add(getValue(dgvtabRole.Rows[e.RowIndex]));
+                GrantRoleForm form = getValue(dgvtabRole.Rows[e.RowIndex]);
+                newGrantRole.Remove(form.RoleName);
+                newGrantRole.Add(form.RoleName,form);
             }
         }
 
@@ -108,7 +110,9 @@ namespace PHANQUYENADMIN
                         dgvTabSystemPrivilege.Rows[e.RowIndex].Cells[2].Value = cell.FalseValue;
                         cell.Value = cell.TrueValue;
                     }
-                    newGrantPrivilege.Add(getValue(dgvTabSystemPrivilege.Rows[e.RowIndex]));
+                    GrantRoleForm form = getValue(dgvtabRole.Rows[e.RowIndex]);
+                    newGrantPrivilege.Remove(form.RoleName);
+                    newGrantPrivilege.Add(form.RoleName,getValue(dgvTabSystemPrivilege.Rows[e.RowIndex]));
                 }
             }
         }
@@ -126,7 +130,9 @@ namespace PHANQUYENADMIN
                 {
                     cell.Value = cell.TrueValue;
                 }
-                newGrantTable.Add(getTableValue(dgvTabSecurable.Rows[e.RowIndex]));
+                GrantTableForm form = getTableValue(dgvTabSecurable.Rows[e.RowIndex]);
+                newGrantTable.Remove(form.TableName);
+                newGrantTable.Add(form.TableName,getTableValue(dgvTabSecurable.Rows[e.RowIndex]));
             }
         }
         private GrantRoleForm getValue(DataGridViewRow dataGridViewRow)
@@ -153,8 +159,8 @@ namespace PHANQUYENADMIN
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            AdminstratorDAO.Role2User(fAdministrator.curUser, newGrantRole);
-            AdminstratorDAO.Privilege2User(fAdministrator.curUser, newGrantPrivilege);
+            AdminstratorDAO.Role2User(fAdministrator.curUser, newGrantRole.Values.ToList());
+            AdminstratorDAO.Privilege2User(fAdministrator.curUser, newGrantPrivilege.Values.ToList());
             if(txtPassword.Text!=null)
             AdminstratorDAO.changeUserPassword(fAdministrator.curUser,txtPassword.Text,txtConfirmPassword.Text);
             MessageBox.Show("Edit sucessfully!");
