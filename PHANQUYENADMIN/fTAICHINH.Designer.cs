@@ -30,10 +30,6 @@
         {
             this.Tabcontrol = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.GV_PhanCong = new System.Windows.Forms.DataGridView();
-            this.printPreviewControl1 = new System.Windows.Forms.PrintPreviewControl();
-            this.GV_NhanVien = new System.Windows.Forms.DataGridView();
             this.txt_PhuCap = new System.Windows.Forms.TextBox();
             this.txt_Luong = new System.Windows.Forms.TextBox();
             this.BT_Update = new System.Windows.Forms.Button();
@@ -42,11 +38,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_MaNV = new System.Windows.Forms.TextBox();
             this.LB_Update = new System.Windows.Forms.Label();
+            this.GV_NhanVien = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.GV_PhanCong = new System.Windows.Forms.DataGridView();
+            this.printPreviewControl1 = new System.Windows.Forms.PrintPreviewControl();
             this.Tabcontrol.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GV_NhanVien)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_PhanCong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GV_NhanVien)).BeginInit();
             this.SuspendLayout();
             // 
             // Tabcontrol
@@ -78,53 +78,6 @@
             this.tabPage1.Text = "Nhân viên";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.GV_PhanCong);
-            this.tabPage2.Controls.Add(this.printPreviewControl1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1096, 528);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Phân công";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // GV_PhanCong
-            // 
-            this.GV_PhanCong.AllowUserToAddRows = false;
-            this.GV_PhanCong.AllowUserToDeleteRows = false;
-            this.GV_PhanCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GV_PhanCong.Location = new System.Drawing.Point(3, 6);
-            this.GV_PhanCong.Name = "GV_PhanCong";
-            this.GV_PhanCong.ReadOnly = true;
-            this.GV_PhanCong.RowHeadersWidth = 62;
-            this.GV_PhanCong.RowTemplate.Height = 28;
-            this.GV_PhanCong.Size = new System.Drawing.Size(555, 516);
-            this.GV_PhanCong.TabIndex = 1;
-            // 
-            // printPreviewControl1
-            // 
-            this.printPreviewControl1.Location = new System.Drawing.Point(673, 137);
-            this.printPreviewControl1.Name = "printPreviewControl1";
-            this.printPreviewControl1.Size = new System.Drawing.Size(8, 8);
-            this.printPreviewControl1.TabIndex = 0;
-            // 
-            // GV_NhanVien
-            // 
-            this.GV_NhanVien.AllowUserToAddRows = false;
-            this.GV_NhanVien.AllowUserToDeleteRows = false;
-            this.GV_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GV_NhanVien.Location = new System.Drawing.Point(-4, 0);
-            this.GV_NhanVien.Name = "GV_NhanVien";
-            this.GV_NhanVien.ReadOnly = true;
-            this.GV_NhanVien.RowHeadersWidth = 62;
-            this.GV_NhanVien.RowTemplate.Height = 28;
-            this.GV_NhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GV_NhanVien.Size = new System.Drawing.Size(700, 525);
-            this.GV_NhanVien.TabIndex = 0;
-            this.GV_NhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txt_PhuCap
             // 
@@ -199,6 +152,53 @@
             this.LB_Update.Text = "Cập nhật thông tin";
             this.LB_Update.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // GV_NhanVien
+            // 
+            this.GV_NhanVien.AllowUserToAddRows = false;
+            this.GV_NhanVien.AllowUserToDeleteRows = false;
+            this.GV_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GV_NhanVien.Location = new System.Drawing.Point(-4, 0);
+            this.GV_NhanVien.Name = "GV_NhanVien";
+            this.GV_NhanVien.ReadOnly = true;
+            this.GV_NhanVien.RowHeadersWidth = 62;
+            this.GV_NhanVien.RowTemplate.Height = 28;
+            this.GV_NhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GV_NhanVien.Size = new System.Drawing.Size(700, 525);
+            this.GV_NhanVien.TabIndex = 0;
+            this.GV_NhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.GV_PhanCong);
+            this.tabPage2.Controls.Add(this.printPreviewControl1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1096, 528);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Phân công";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // GV_PhanCong
+            // 
+            this.GV_PhanCong.AllowUserToAddRows = false;
+            this.GV_PhanCong.AllowUserToDeleteRows = false;
+            this.GV_PhanCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GV_PhanCong.Location = new System.Drawing.Point(3, 6);
+            this.GV_PhanCong.Name = "GV_PhanCong";
+            this.GV_PhanCong.ReadOnly = true;
+            this.GV_PhanCong.RowHeadersWidth = 62;
+            this.GV_PhanCong.RowTemplate.Height = 28;
+            this.GV_PhanCong.Size = new System.Drawing.Size(555, 516);
+            this.GV_PhanCong.TabIndex = 1;
+            // 
+            // printPreviewControl1
+            // 
+            this.printPreviewControl1.Location = new System.Drawing.Point(673, 137);
+            this.printPreviewControl1.Name = "printPreviewControl1";
+            this.printPreviewControl1.Size = new System.Drawing.Size(8, 8);
+            this.printPreviewControl1.TabIndex = 0;
+            // 
             // fTAICHINH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -211,9 +211,9 @@
             this.Tabcontrol.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GV_NhanVien)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GV_PhanCong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GV_NhanVien)).EndInit();
             this.ResumeLayout(false);
 
         }

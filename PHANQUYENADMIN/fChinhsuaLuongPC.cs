@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PHANQUYENADMIN.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,12 @@ namespace PHANQUYENADMIN
             txtMANV.Text = fTableNhanVien.MANV;
             txtLuong.Text = fTableNhanVien.LUONG;
             txtPhuCap.Text = fTableNhanVien.PHUCAP;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (AdminstratorDAO.updateNHANVIEN(txtMANV.Text, txtLuong.Text, txtPhuCap.Text) == 1)
+                MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

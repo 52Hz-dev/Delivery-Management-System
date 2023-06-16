@@ -66,20 +66,22 @@ namespace PHANQUYENADMIN
                 return 0;
             }
             else
+            if (role == "Admin")
+            {
+                fAdministrator fAdmin = new fAdministrator();
+                this.Hide();
+                fAdmin.ShowDialog();
+                this.Show();
+            }
+            else
             {
                 Dashboard form = new Dashboard();
                 this.Hide();
                 form.ShowDialog();
                 this.Show();
-            } 
-                
-            //if (role == "Admin")
-            //{
-            //    fAdministrator fAdmin = new fAdministrator();
-            //    this.Hide();
-            //    fAdmin.ShowDialog();
-            //    this.Show();
-            //}
+            }
+
+
             //if(role=="Nhan vien"|| role=="QL truc tiep")
             //{
             //    fNhanVien nhanvien = new fNhanVien();
