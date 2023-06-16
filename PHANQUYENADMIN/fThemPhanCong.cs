@@ -21,12 +21,10 @@ namespace PHANQUYENADMIN
         private void button1_Click(object sender, EventArgs e)
         {
             String manhanvien=textBox1.Text.ToString();
-            String madean=textBox2.Text.ToString();
-            String ngay = textBox3.Text.ToString();
-            String thang = textBox4.Text.ToString();
-            String nam = textBox5.Text.ToString();
+            String madean=txtMADA.Text.ToString();
+
             String check = NhanVienDAO.Execute_pr_CheckNhanVien(manhanvien).ToString();
-            if (manhanvien == "" || madean == "" || ngay == "" || thang == "" || nam == "")
+            if (manhanvien == "" || madean == "" )
             {
                 MessageBox.Show("Nhập thiếu thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
@@ -35,7 +33,10 @@ namespace PHANQUYENADMIN
             {
                 if (check=="1")
                 {
-                    String query = "INSERT INTO ADMIN01.PHANCONG(MANV,MADA,THOIGIAN) VALUES ('" + manhanvien + "','" + madean + "',TO_DATE('" + nam + "-" + thang + "-" + ngay + "','YYYY-MM-DD'))";
+                    DateTime date = Convert.ToDateTime
+                    (txtNGAYBD.Value);
+                    String ngaybd = date.ToString("yyyy-MM-dd");
+                    String query = "INSERT INTO ADMIN01.PHANCONG(MANV,MADA,THOIGIAN) VALUES ('" + manhanvien + "','" + madean + "',TO_DATE('" + ngaybd + "','YYYY-MM-DD'))";
                     int result = DataProvider.Instance.ExecuteNonQuery(query);
                     MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
@@ -46,6 +47,15 @@ namespace PHANQUYENADMIN
                     this.Hide();
                 }    
             }
+        }
+
+        private void fThemPhanCong_Load(object sender, EventArgs e)
+        {
+            String query2 = "Select * from ADMIN01.DEAN";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query2);
+            txtMADA.DataSource = data;
+            txtMADA.DisplayMember = "MADA";
+            txtMADA.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

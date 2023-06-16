@@ -30,10 +30,10 @@ namespace PHANQUYENADMIN
 
         private void btn_DsNVQL_Click(object sender, EventArgs e)
         {
-            fNhanVien_TruongPhong nhanvientruongphong=new fNhanVien_TruongPhong();  
-            this.Hide();
-            nhanvientruongphong.ShowDialog();
-            this.Show();
+            //fNhanVien_TruongPhong nhanvientruongphong=new fNhanVien_TruongPhong();  
+            //this.Hide();
+            //nhanvientruongphong.ShowDialog();
+            //this.Show();
         }
 
         private void btn_PhanCongInf_Click(object sender, EventArgs e)

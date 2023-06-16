@@ -79,5 +79,39 @@ namespace PHANQUYENADMIN.DAO
             string result = DataProvider.Instance.ExecuteScalar(query).ToString();
             return result;
         }
+        public static DataTable readNHANVIEN()
+        {
+            String query = null;
+            if (fLogin.ROLE == "Nhan su")
+            {
+                query = "SELECT * FROM ADMIN01.VIEW_NHANVIEN_NS";
+            }
+            else if (fLogin.ROLE == "Truong phong")
+            {
+                query = "Select * from ADMIN01.NHANVIEN";
+            }
+            else if (fLogin.ROLE == "Nhan vien")
+            {
+                query = "SELECT * FROM ADMIN01.vw_NHANVIEN_XemThongTinCaNhan";
+            }
+            else if (fLogin.ROLE == "QL truc tiep")
+            {
+                query = "SELECT * FROM ADMIN01.vw_QLTRUCTIEP_XemThongTinNhanVien";
+            }
+            else if (fLogin.ROLE == "Tai chinh")
+            {
+                query = "Select * from ADMIN01.NHANVIEN";
+            }
+            else if (fLogin.ROLE == "Truong de an")
+            {
+                query = "SELECT * FROM ADMIN01.vw_NHANVIEN_XemThongTinCaNhan";
+            }
+            else if (fLogin.ROLE == "Ban giam doc")
+            {
+                query = "SELECT * FROM ADMIN01.NHANVIEN";
+            }
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
     }
 }

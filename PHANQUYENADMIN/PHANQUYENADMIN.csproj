@@ -97,6 +97,12 @@
     <Compile Include="fAdministrator.Designer.cs">
       <DependentUpon>fAdministrator.cs</DependentUpon>
     </Compile>
+    <Compile Include="fChinhsuaLuongPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChinhsuaLuongPC.Designer.cs">
+      <DependentUpon>fChinhsuaLuongPC.cs</DependentUpon>
+    </Compile>
     <Compile Include="fCreateRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,12 @@
     </Compile>
     <Compile Include="fEditUser.Designer.cs">
       <DependentUpon>fEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fInformation.Designer.cs">
+      <DependentUpon>fInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
@@ -145,17 +157,47 @@
     <Compile Include="fNhanVien.Designer.cs">
       <DependentUpon>fNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="fNhanVien_TruongPhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fNhanVien_TruongPhong.Designer.cs">
-      <DependentUpon>fNhanVien_TruongPhong.cs</DependentUpon>
-    </Compile>
     <Compile Include="fPhanCong_TruongPhong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fPhanCong_TruongPhong.Designer.cs">
       <DependentUpon>fPhanCong_TruongPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTableDeAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTableDeAn.Designer.cs">
+      <DependentUpon>fTableDeAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTableNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTableNhanVien.Designer.cs">
+      <DependentUpon>fTableNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTablePhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTablePhanCong.Designer.cs">
+      <DependentUpon>fTablePhanCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTablePhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTablePhongBan.Designer.cs">
+      <DependentUpon>fTablePhongBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fThemDeAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThemDeAn.Designer.cs">
+      <DependentUpon>fThemDeAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fThemNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThemNhanVien.Designer.cs">
+      <DependentUpon>fThemNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="fThemPhanCong.cs">
       <SubType>Form</SubType>
@@ -168,6 +210,12 @@
     </Compile>
     <Compile Include="fTAICHINH.Designer.cs">
       <DependentUpon>fTAICHINH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fThemPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThemPhongBan.Designer.cs">
+      <DependentUpon>fThemPhongBan.cs</DependentUpon>
     </Compile>
     <Compile Include="fThongTinNhanVien_QL.cs">
       <SubType>Form</SubType>
@@ -195,6 +243,9 @@
     <EmbeddedResource Include="fAdministrator.resx">
       <DependentUpon>fAdministrator.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fChinhsuaLuongPC.resx">
+      <DependentUpon>fChinhsuaLuongPC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fCreateRole.resx">
       <DependentUpon>fCreateRole.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +261,9 @@
     <EmbeddedResource Include="fEditUser.resx">
       <DependentUpon>fEditUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fInformation.resx">
+      <DependentUpon>fInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,17 +273,35 @@
     <EmbeddedResource Include="fNhanVien.resx">
       <DependentUpon>fNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fNhanVien_TruongPhong.resx">
-      <DependentUpon>fNhanVien_TruongPhong.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="fPhanCong_TruongPhong.resx">
       <DependentUpon>fPhanCong_TruongPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTableDeAn.resx">
+      <DependentUpon>fTableDeAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTableNhanVien.resx">
+      <DependentUpon>fTableNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTablePhanCong.resx">
+      <DependentUpon>fTablePhanCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTablePhongBan.resx">
+      <DependentUpon>fTablePhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThemDeAn.resx">
+      <DependentUpon>fThemDeAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThemNhanVien.resx">
+      <DependentUpon>fThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fThemPhanCong.resx">
       <DependentUpon>fThemPhanCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fTAICHINH.resx">
       <DependentUpon>fTAICHINH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThemPhongBan.resx">
+      <DependentUpon>fThemPhongBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fThongTinNhanVien_QL.resx">
       <DependentUpon>fThongTinNhanVien_QL.cs</DependentUpon>
@@ -242,19 +314,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -266,10 +338,39 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\users-alt.png" />
+    <None Include="Resources\users-alt100.png" />
+    <None Include="Resources\users-alt50.png" />
+    <None Include="Resources\users-alt %281%29.png" />
+    <None Include="Resources\users-alt %282%29.png" />
+    <None Include="Resources\envelope.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\home %281%29.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\list.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\exit %281%29.png" />
+    <None Include="Resources\user %281%29.png" />
+    <None Include="Resources\bell.png" />
+    <None Include="Resources\list %281%29.png" />
+    <None Include="Resources\calendar %281%29.png" />
+    <None Include="Resources\home %282%29.png" />
+    <None Include="Resources\users-alt %283%29.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\pencil %281%29.png" />
+    <None Include="Resources\add %285%29.png" />
+    <None Include="Resources\add %287%29.png" />
+    <None Include="Resources\pencil %282%29.png" />
+    <None Include="Resources\cross.png" />
+    <None Include="Resources\trash.png" />
+    <None Include="Resources\refresh.png" />
     <Content Include="src\acc.png" />
     <Content Include="src\close.png" />
     <Content Include="src\lock_96px.png" />
     <Content Include="src\logged-in.png" />
+    <Content Include="Resources\login.png" />
     <Content Include="src\login.png" />
     <Content Include="src\Multimedia_%28253%29.jpg" />
     <Content Include="src\pass.png" />

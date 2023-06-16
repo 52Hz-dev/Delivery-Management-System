@@ -28,19 +28,19 @@ namespace PHANQUYENADMIN
         {    
             String manhanvien= label8.Text.ToString();
             String madean= label9.Text.ToString();
-            String ngay = textBox1.Text.ToString();
-            String thang = textBox2.Text.ToString();
-            String nam=textBox3.Text.ToString();
+
             String check = NhanVienDAO.Execute_pr_CheckNhanVien(manhanvien).ToString();
-            if (manhanvien=="" || madean=="" || ngay=="" || thang=="" || nam=="")
+            if (manhanvien=="" || madean=="" )
             {
                 MessageBox.Show("Nhập thiếu thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
             }    
             else
             {
-                
-                String query = "UPDATE ADMIN01.PHANCONG SET THOIGIAN=TO_DATE('" + nam + "-" + thang + "-" + ngay + "','YYYY-MM-DD')";
+                DateTime date = Convert.ToDateTime
+                    (txtNGAYBD.Value);
+                String ngaybd = date.ToString("yyyy-MM-dd");
+                String query = "UPDATE ADMIN01.PHANCONG SET THOIGIAN=TO_DATE('" + ngaybd  + "','YYYY-MM-DD')";
                 int result = DataProvider.Instance.ExecuteNonQuery(query);
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();

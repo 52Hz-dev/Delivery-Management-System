@@ -15,6 +15,7 @@ namespace PHANQUYENADMIN
     public partial class fLogin : Form
     {
         public static String user;
+        public static String ROLE;
         public fLogin()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace PHANQUYENADMIN
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            DataProvider.Instance = null;
             string username= textUsername.Text;
             string password= textPassword.Text;
             if(username!=null && password != null)
@@ -35,7 +37,9 @@ namespace PHANQUYENADMIN
                 if (DataProvider.getInstance(username, password) != null)
                 {
                     user = username;
+                    ROLE = AdminstratorDAO.get_Logged_in_Role();
                     checkUser();
+                    
                 }
                 else
                 {
@@ -55,57 +59,66 @@ namespace PHANQUYENADMIN
         int checkUser()
         {
             String role=AdminstratorDAO.get_Logged_in_Role();
+            ROLE = role;
             if (role == null)
             {
                 MessageBox.Show("Có lỗi xảy ra. Xin thử lại sau ít phút");
                 return 0;
             }
-            if (role == "Admin")
+            else
             {
-                fAdministrator fAdmin = new fAdministrator();
+                Dashboard form = new Dashboard();
                 this.Hide();
-                fAdmin.ShowDialog();
+                form.ShowDialog();
                 this.Show();
-            }
-            if(role=="Nhan vien"|| role=="QL truc tiep")
-            {
-                fNhanVien nhanvien = new fNhanVien();
-                this.Hide();
-                nhanvien.ShowDialog();
-                this.Show();
-            }
-            if (role == "Truong phong")
-            {
-                fTruongPhong truongphong=new fTruongPhong ();
-                this.Hide();
-                truongphong.ShowDialog();   
-                this.Show ();
-            }
-            if (role == "Ban giam doc")
-            {
-                //
-            }
-            if (role == "Truong de an")
-            {
-                fTRUONGDEAN fTDA = new fTRUONGDEAN();
-                this.Hide();
-                fTDA.ShowDialog();
-                this.Show();
-            }
-            if (role == "Nhan su")
-            {
-                fNhanSu nhanSu = new fNhanSu();
-                this.Hide();
-                nhanSu.ShowDialog();
-                this.Show();
-            }
-            if (role == "Tai chinh")
-            {
-                fTAICHINH fTC = new fTAICHINH();
-                this.Hide();
-                fTC.ShowDialog();
-                this.Show();
-            }
+            } 
+                
+            //if (role == "Admin")
+            //{
+            //    fAdministrator fAdmin = new fAdministrator();
+            //    this.Hide();
+            //    fAdmin.ShowDialog();
+            //    this.Show();
+            //}
+            //if(role=="Nhan vien"|| role=="QL truc tiep")
+            //{
+            //    fNhanVien nhanvien = new fNhanVien();
+            //    this.Hide();
+            //    nhanvien.ShowDialog();
+            //    this.Show();
+            //}
+            //if (role == "Truong phong")
+            //{
+            //    fTruongPhong truongphong=new fTruongPhong ();
+            //    this.Hide();
+            //    truongphong.ShowDialog();   
+            //    this.Show ();
+            //}
+            //if (role == "Ban giam doc")
+            //{
+            //    //
+            //}
+            //if (role == "Truong de an")
+            //{
+            //    fTRUONGDEAN fTDA = new fTRUONGDEAN();
+            //    this.Hide();
+            //    fTDA.ShowDialog();
+            //    this.Show();
+            //}
+            //if (role == "Nhan su")
+            //{
+            //    fNhanSu nhanSu = new fNhanSu();
+            //    this.Hide();
+            //    nhanSu.ShowDialog();
+            //    this.Show();
+            //}
+            //if (role == "Tai chinh")
+            //{
+            //    fTAICHINH fTC = new fTAICHINH();
+            //    this.Hide();
+            //    fTC.ShowDialog();
+            //    this.Show();
+            //}
             return 1;
         }
 
