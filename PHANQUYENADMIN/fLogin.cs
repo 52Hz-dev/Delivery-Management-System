@@ -29,7 +29,7 @@ namespace PHANQUYENADMIN
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance = null;
+            
             string username= textUsername.Text;
             string password= textPassword.Text;
             if(username!=null && password != null)
@@ -71,6 +71,7 @@ namespace PHANQUYENADMIN
                 fAdministrator fAdmin = new fAdministrator();
                 this.Hide();
                 fAdmin.ShowDialog();
+                DataProvider.close();
                 this.Show();
             }
             else
@@ -78,6 +79,7 @@ namespace PHANQUYENADMIN
                 Dashboard form = new Dashboard();
                 this.Hide();
                 form.ShowDialog();
+                DataProvider.close();
                 this.Show();
             }
 

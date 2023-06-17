@@ -28,6 +28,13 @@ namespace PHANQUYENADMIN.DAO
             }
             return Instance;
         }
+
+        public static void close()
+        {
+            Instance.conn.Close();
+            Instance.conn = null;
+            Instance = null;
+        }
         private DataProvider(String username,String passowrd)
         {
 
