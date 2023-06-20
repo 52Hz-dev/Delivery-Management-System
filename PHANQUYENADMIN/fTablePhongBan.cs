@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,7 +33,10 @@ namespace PHANQUYENADMIN
                 btnReset.Visible = false;
                 btnCreate.Visible = false;
                 btnEdit.Visible = false;
-            }    
+            }
+            int x = label1.Size.Width / 2;
+            int y = label1.Size.Height;
+            label1.Location = new Point(panel2.Size.Width/2 - x, panel2.Size.Height - y);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
