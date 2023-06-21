@@ -401,7 +401,7 @@ namespace PHANQUYENADMIN.DAO
 
         public static int updateNHANVIEN(string MANV, string LUONG, string PHUCAP)
         {
-            String query = "UPDATE ADMIN01.NHANVIEN SET LUONG=" + LUONG + ", PHUCAP=" + PHUCAP + " WHERE MANV='" + MANV + "'";
+            String query = "UPDATE ADMIN01.vw_TAICHINH_Xem_NHANVIEN SET LUONG=" + LUONG + ", PHUCAP=" + PHUCAP + " WHERE MANV='" + MANV + "'";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result;
 
