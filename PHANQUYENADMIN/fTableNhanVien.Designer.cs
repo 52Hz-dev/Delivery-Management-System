@@ -41,17 +41,20 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanvien)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.dgvNhanvien);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -69,10 +72,10 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 95);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1181, 206);
+            this.panel3.Size = new System.Drawing.Size(1181, 96);
             this.panel3.TabIndex = 8;
             // 
             // btnEdit
@@ -162,15 +165,15 @@
             this.dgvNhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhanvien.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvNhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhanvien.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvNhanvien.Location = new System.Drawing.Point(0, 301);
+            this.dgvNhanvien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvNhanvien.Location = new System.Drawing.Point(0, 0);
             this.dgvNhanvien.Name = "dgvNhanvien";
             this.dgvNhanvien.ReadOnly = true;
             this.dgvNhanvien.RowHeadersVisible = false;
             this.dgvNhanvien.RowHeadersWidth = 62;
             this.dgvNhanvien.RowTemplate.Height = 28;
             this.dgvNhanvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNhanvien.Size = new System.Drawing.Size(1181, 561);
+            this.dgvNhanvien.Size = new System.Drawing.Size(1181, 671);
             this.dgvNhanvien.TabIndex = 7;
             this.dgvNhanvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -209,6 +212,15 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dgvNhanvien);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 191);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1181, 671);
+            this.panel4.TabIndex = 9;
+            // 
             // fTableNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -225,6 +237,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -244,5 +257,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Panel panel4;
     }
 }

@@ -39,9 +39,11 @@ namespace PHANQUYENADMIN
             {
                 btnCreate.Visible = false;
                 if (fLogin.ROLE != "Tai chinh") { btnEdit.Visible = false; }
-            }    
-            
+            }
 
+            int x = label1.Size.Width / 2;
+            int y = label1.Size.Height;
+            label1.Location = new Point(panel2.Size.Width / 2 - x, panel2.Size.Height - y);
         }
 
         private void btnOK_Click(object sender, EventArgs e)

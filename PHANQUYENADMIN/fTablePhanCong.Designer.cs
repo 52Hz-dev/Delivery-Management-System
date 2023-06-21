@@ -35,20 +35,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbNoti = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhanCong)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel3.Controls.Add(this.btnEdit);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 95);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1066, 187);
+            this.panel3.Size = new System.Drawing.Size(1066, 95);
             this.panel3.TabIndex = 14;
             // 
             // btnEdit
@@ -56,7 +60,7 @@
             this.btnEdit.BackColor = System.Drawing.Color.Aqua;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Image = global::PHANQUYENADMIN.Properties.Resources.pencil;
-            this.btnEdit.Location = new System.Drawing.Point(472, 28);
+            this.btnEdit.Location = new System.Drawing.Point(465, 20);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(160, 49);
             this.btnEdit.TabIndex = 15;
@@ -71,15 +75,15 @@
             this.dgvPhanCong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhanCong.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvPhanCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhanCong.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvPhanCong.Location = new System.Drawing.Point(0, 282);
+            this.dgvPhanCong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPhanCong.Location = new System.Drawing.Point(0, 0);
             this.dgvPhanCong.Name = "dgvPhanCong";
             this.dgvPhanCong.ReadOnly = true;
             this.dgvPhanCong.RowHeadersVisible = false;
             this.dgvPhanCong.RowHeadersWidth = 62;
             this.dgvPhanCong.RowTemplate.Height = 28;
             this.dgvPhanCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPhanCong.Size = new System.Drawing.Size(1066, 576);
+            this.dgvPhanCong.Size = new System.Drawing.Size(1066, 668);
             this.dgvPhanCong.TabIndex = 13;
             this.dgvPhanCong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhanCong_CellContentClick);
             // 
@@ -122,6 +126,38 @@
             this.lbNoti.AutoSize = true;
             this.lbNoti.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbNoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNoti.Location = new System.Drawing.Point(412, 297);
+            this.lbNoti.Name = "lbNoti";
+            this.lbNoti.Size = new System.Drawing.Size(246, 26);
+            this.lbNoti.TabIndex = 15;
+            this.lbNoti.Text = "Hiện chưa có phân công";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1066, 858);
+            this.panel1.TabIndex = 16;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.lbNoti);
+            this.panel4.Controls.Add(this.dgvPhanCong);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 190);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1066, 668);
+            this.panel4.TabIndex = 15;
+            // 
+            // lbNoti
+            // 
+            this.lbNoti.AutoSize = true;
+            this.lbNoti.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbNoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNoti.Location = new System.Drawing.Point(411, 493);
             this.lbNoti.Name = "lbNoti";
             this.lbNoti.Size = new System.Drawing.Size(246, 26);
@@ -133,10 +169,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1066, 858);
-            this.Controls.Add(this.lbNoti);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.dgvPhanCong);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "fTablePhanCong";
             this.Text = "fTablePhanCong";
             this.Load += new System.EventHandler(this.fTablePhanCong_Load);
@@ -145,8 +178,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -159,5 +194,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbNoti;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel4;
     }
 }

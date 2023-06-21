@@ -29,7 +29,10 @@ namespace PHANQUYENADMIN
             if (fLogin.ROLE != "Truong phong")
             {
                 btnEdit.Visible = false;
-            }    
+            }
+            int x = label1.Size.Width / 2;
+            int y = label1.Size.Height;
+            label1.Location = new Point(panel2.Size.Width / 2 - x, panel2.Size.Height - y);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
