@@ -387,7 +387,7 @@ namespace PHANQUYENADMIN.DAO
 
         public static DataTable TAICHINH_select_NHANVIEN()
         {
-            String query = "select * from ADMIN01.NHANVIEN" ;
+            String query = "select * from ADMIN01.vw_TAICHINH_Xem_NHANVIEN;";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }

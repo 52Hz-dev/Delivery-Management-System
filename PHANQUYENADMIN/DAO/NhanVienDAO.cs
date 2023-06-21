@@ -100,7 +100,7 @@ namespace PHANQUYENADMIN.DAO
             }
             else if (fLogin.ROLE == "Tai chinh")
             {
-                query = "Select * from ADMIN01.NHANVIEN";
+                query = "select * from ADMIN01.vw_TAICHINH_Xem_NHANVIEN";
             }
             else if (fLogin.ROLE == "Truong de an")
             {

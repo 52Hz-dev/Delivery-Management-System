@@ -52,7 +52,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 95);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1158, 78);
+            this.panel3.Size = new System.Drawing.Size(1158, 183);
             this.panel3.TabIndex = 11;
             // 
             // btnEdit
@@ -109,14 +109,14 @@
             this.dgvPhongBan.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvPhongBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhongBan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvPhongBan.Location = new System.Drawing.Point(0, 173);
+            this.dgvPhongBan.Location = new System.Drawing.Point(0, 278);
             this.dgvPhongBan.Name = "dgvPhongBan";
             this.dgvPhongBan.ReadOnly = true;
             this.dgvPhongBan.RowHeadersVisible = false;
             this.dgvPhongBan.RowHeadersWidth = 62;
             this.dgvPhongBan.RowTemplate.Height = 28;
             this.dgvPhongBan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPhongBan.Size = new System.Drawing.Size(1158, 682);
+            this.dgvPhongBan.Size = new System.Drawing.Size(1158, 577);
             this.dgvPhongBan.TabIndex = 10;
             this.dgvPhongBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhongBan_CellContentClick);
             // 

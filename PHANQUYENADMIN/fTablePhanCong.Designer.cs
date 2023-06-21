@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.dgvPhanCong = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbNoti = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbNoti = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhanCong)).BeginInit();
             this.panel2.SuspendLayout();
@@ -48,8 +48,23 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 95);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1066, 77);
+            this.panel3.Size = new System.Drawing.Size(1066, 187);
             this.panel3.TabIndex = 14;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.Aqua;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Image = global::PHANQUYENADMIN.Properties.Resources.pencil;
+            this.btnEdit.Location = new System.Drawing.Point(472, 28);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(160, 49);
+            this.btnEdit.TabIndex = 15;
+            this.btnEdit.Text = " Chỉnh sửa";
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click_1);
             // 
             // dgvPhanCong
             // 
@@ -57,14 +72,14 @@
             this.dgvPhanCong.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvPhanCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhanCong.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvPhanCong.Location = new System.Drawing.Point(0, 172);
+            this.dgvPhanCong.Location = new System.Drawing.Point(0, 282);
             this.dgvPhanCong.Name = "dgvPhanCong";
             this.dgvPhanCong.ReadOnly = true;
             this.dgvPhanCong.RowHeadersVisible = false;
             this.dgvPhanCong.RowHeadersWidth = 62;
             this.dgvPhanCong.RowTemplate.Height = 28;
             this.dgvPhanCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPhanCong.Size = new System.Drawing.Size(1066, 686);
+            this.dgvPhanCong.Size = new System.Drawing.Size(1066, 576);
             this.dgvPhanCong.TabIndex = 13;
             this.dgvPhanCong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhanCong_CellContentClick);
             // 
@@ -90,32 +105,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "DANH SÁCH PHÂN CÔNG";
             // 
-            // lbNoti
-            // 
-            this.lbNoti.AutoSize = true;
-            this.lbNoti.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbNoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNoti.Location = new System.Drawing.Point(411, 493);
-            this.lbNoti.Name = "lbNoti";
-            this.lbNoti.Size = new System.Drawing.Size(246, 26);
-            this.lbNoti.TabIndex = 15;
-            this.lbNoti.Text = "Hiện chưa có phân công";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.Aqua;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Image = global::PHANQUYENADMIN.Properties.Resources.pencil;
-            this.btnEdit.Location = new System.Drawing.Point(472, 28);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(160, 49);
-            this.btnEdit.TabIndex = 15;
-            this.btnEdit.Text = " Chỉnh sửa";
-            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click_1);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -127,6 +116,17 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // lbNoti
+            // 
+            this.lbNoti.AutoSize = true;
+            this.lbNoti.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbNoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNoti.Location = new System.Drawing.Point(411, 493);
+            this.lbNoti.Name = "lbNoti";
+            this.lbNoti.Size = new System.Drawing.Size(246, 26);
+            this.lbNoti.TabIndex = 15;
+            this.lbNoti.Text = "Hiện chưa có phân công";
             // 
             // fTablePhanCong
             // 

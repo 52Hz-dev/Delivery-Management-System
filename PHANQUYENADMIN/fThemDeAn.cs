@@ -57,7 +57,7 @@ namespace PHANQUYENADMIN
                 DateTime date = Convert.ToDateTime
                     (txtNgayBD.Value);
                 String ngaybd = date.ToString("yyyy-MM-dd");
-                AdminstratorDAO.TRUONGDEAN_add_DEAN(txtMADA.Text, txtTen.Text, ngaybd, txtMAPB.SelectedText);
+                AdminstratorDAO.TRUONGDEAN_add_DEAN(txtMADA.Text, txtTen.Text, ngaybd, txtMAPB.Text);
                 MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
@@ -73,7 +73,7 @@ namespace PHANQUYENADMIN
                 DateTime date = Convert.ToDateTime
                     (txtNgayBD.Value);
                 String ngaybd = date.ToString("yyyy-MM-dd");
-                if (AdminstratorDAO.updateDEAN(txtMADA.Text, txtTen.Text, ngaybd, txtMAPB.SelectedText) == 1)
+                if (AdminstratorDAO.updateDEAN(txtMADA.Text, txtTen.Text, ngaybd, txtMAPB.Text) == 1)
                     MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
