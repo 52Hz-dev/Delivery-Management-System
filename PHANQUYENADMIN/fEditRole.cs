@@ -123,6 +123,8 @@ namespace PHANQUYENADMIN
                 if (cell.Value == cell.TrueValue)
                 {
                     cell.Value = cell.FalseValue;
+                    if (e.ColumnIndex == 4)
+                        dgvSecurable.Rows[e.RowIndex].Cells[5].Value = cell.FalseValue;
                 }
                 else
                 {

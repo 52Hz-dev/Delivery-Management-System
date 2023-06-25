@@ -69,7 +69,6 @@
             this.colSelectSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colUpdateSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colInsertSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colDeleteSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colGrantOption = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colWithGrant = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colTabRevoke = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -397,7 +396,6 @@
             this.colSelectSecurable,
             this.colUpdateSecurable,
             this.colInsertSecurable,
-            this.colDeleteSecurable,
             this.colGrantOption,
             this.colWithGrant,
             this.colTabRevoke});
@@ -422,6 +420,7 @@
             this.dgvTabSecurable.RowHeadersVisible = false;
             this.dgvTabSecurable.RowHeadersWidth = 51;
             this.dgvTabSecurable.RowTemplate.Height = 24;
+            this.dgvTabSecurable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTabSecurable.Size = new System.Drawing.Size(730, 321);
             this.dgvTabSecurable.TabIndex = 2;
             this.dgvTabSecurable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTabSecurable_CellContentClick);
@@ -485,18 +484,6 @@
             this.colInsertSecurable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colInsertSecurable.TrueValue = "x";
             this.colInsertSecurable.Width = 125;
-            // 
-            // colDeleteSecurable
-            // 
-            this.colDeleteSecurable.FalseValue = " ";
-            this.colDeleteSecurable.HeaderText = "Delete";
-            this.colDeleteSecurable.MinimumWidth = 6;
-            this.colDeleteSecurable.Name = "colDeleteSecurable";
-            this.colDeleteSecurable.ReadOnly = true;
-            this.colDeleteSecurable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDeleteSecurable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colDeleteSecurable.TrueValue = "x";
-            this.colDeleteSecurable.Width = 125;
             // 
             // colGrantOption
             // 
@@ -581,7 +568,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn colSelectSecurable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colUpdateSecurable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colInsertSecurable;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colDeleteSecurable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colGrantOption;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colWithGrant;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colTabRevoke;
