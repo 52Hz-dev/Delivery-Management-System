@@ -83,46 +83,6 @@ namespace PHANQUYENADMIN
                 this.Show();
             }
 
-
-            //if(role=="Nhan vien"|| role=="QL truc tiep")
-            //{
-            //    fNhanVien nhanvien = new fNhanVien();
-            //    this.Hide();
-            //    nhanvien.ShowDialog();
-            //    this.Show();
-            //}
-            //if (role == "Truong phong")
-            //{
-            //    fTruongPhong truongphong=new fTruongPhong ();
-            //    this.Hide();
-            //    truongphong.ShowDialog();   
-            //    this.Show ();
-            //}
-            //if (role == "Ban giam doc")
-            //{
-            //    //
-            //}
-            //if (role == "Truong de an")
-            //{
-            //    fTRUONGDEAN fTDA = new fTRUONGDEAN();
-            //    this.Hide();
-            //    fTDA.ShowDialog();
-            //    this.Show();
-            //}
-            //if (role == "Nhan su")
-            //{
-            //    fNhanSu nhanSu = new fNhanSu();
-            //    this.Hide();
-            //    nhanSu.ShowDialog();
-            //    this.Show();
-            //}
-            //if (role == "Tai chinh")
-            //{
-            //    fTAICHINH fTC = new fTAICHINH();
-            //    this.Hide();
-            //    fTC.ShowDialog();
-            //    this.Show();
-            //}
             return 1;
         }
 

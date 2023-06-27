@@ -58,6 +58,7 @@ namespace PHANQUYENADMIN
                 int result = DataProvider.Instance.ExecuteNonQuery(query);
                 MessageBox.Show("Xóa phân công thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 PhanCongLoad();
+                fTablePhanCong.loadtablePC();
             }
             else
             {

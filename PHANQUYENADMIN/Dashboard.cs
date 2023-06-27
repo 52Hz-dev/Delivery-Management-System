@@ -136,5 +136,16 @@ namespace PHANQUYENADMIN
             lbNV.Location = new Point(94-x, 18-y);
             label2.Text = fLogin.user;
         }
+
+        private void btnDX_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnThongbao_Click(object sender, EventArgs e)
+        {
+            callForm(new fTableThongBao());
+            ActivateButton(sender);
+        }
     }
 }

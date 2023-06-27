@@ -11,6 +11,13 @@ namespace PHANQUYENADMIN.DAO
 {
     internal class NhanVienDAO
     {
+        public static DataTable loadTB()
+        {
+            String query = "SELECT * FROM ADMIN01.THONGBAO";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+
         //  NhanVien +PhanCong
         public static DataTable loadStaff()
         {
@@ -38,7 +45,7 @@ namespace PHANQUYENADMIN.DAO
         }
         public static DataTable loadTasks()
         {
-            String query = "SELECT * FROM ADMIN01.vw_NHANVIEN_XemThongTinPhanCong";
+            String query = "SELECT * FROM ADMIN01.PHANCONG";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
@@ -50,7 +57,7 @@ namespace PHANQUYENADMIN.DAO
         }
         public static DataTable loadDA()
         {
-            String query = "SELECT * FROM ADMIN01.vw_NHANVIEN_XemDeAn";
+            String query = "SELECT * FROM ADMIN01.DEAN";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
@@ -88,7 +95,7 @@ namespace PHANQUYENADMIN.DAO
             }
             else if (fLogin.ROLE == "Truong phong")
             {
-                query = "Select * from ADMIN01.NHANVIEN";
+                query = "Select * from ADMIN01.vw_TRUONGPHONG_Xem_NHANVIEN";
             }
             else if (fLogin.ROLE == "Nhan vien")
             {
@@ -108,7 +115,41 @@ namespace PHANQUYENADMIN.DAO
             }
             else if (fLogin.ROLE == "Ban giam doc")
             {
-                query = "SELECT * FROM ADMIN01.NHANVIEN";
+                query = "select * from ADMIN01.vw_TAICHINH_Xem_NHANVIEN";
+            }
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+        public static DataTable filteredNHANVIEN(string manv)
+        {
+            String query = null;
+            if (fLogin.ROLE == "Nhan su")
+            {
+                query = "SELECT * FROM ADMIN01.VIEW_NHANVIEN_NS where MANV = '"+manv+"'";
+            }
+            else if (fLogin.ROLE == "Truong phong")
+            {
+                query = "Select * from ADMIN01.vw_TRUONGPHONG_Xem_NHANVIEN where MANV = '" + manv + "'";
+            }
+            else if (fLogin.ROLE == "Nhan vien")
+            {
+                query = "SELECT * FROM ADMIN01.vw_NHANVIEN_XemThongTinCaNhan where MANV = '" + manv + "'";
+            }
+            else if (fLogin.ROLE == "QL truc tiep")
+            {
+                query = "SELECT * FROM ADMIN01.vw_QLTRUCTIEP_XemThongTinNhanVien where MANV = '" + manv + "'";
+            }
+            else if (fLogin.ROLE == "Tai chinh")
+            {
+                query = "select * from ADMIN01.vw_TAICHINH_Xem_NHANVIEN where MANV = '" + manv + "'";
+            }
+            else if (fLogin.ROLE == "Truong de an")
+            {
+                query = "SELECT * FROM ADMIN01.vw_NHANVIEN_XemThongTinCaNhan where MANV = '" + manv + "'";
+            }
+            else if (fLogin.ROLE == "Ban giam doc")
+            {
+                query = "select * from ADMIN01.vw_TAICHINH_Xem_NHANVIEN where MANV = '" + manv + "'";
             }
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;

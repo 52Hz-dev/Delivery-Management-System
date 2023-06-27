@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            dgvNhanvien = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMANV = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dgvNhanvien = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(dgvNhanvien)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanvien)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,6 +62,32 @@
             this.panel1.Size = new System.Drawing.Size(1181, 862);
             this.panel1.TabIndex = 1;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(dgvNhanvien);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 191);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1181, 671);
+            this.panel4.TabIndex = 9;
+            // 
+            // dgvNhanvien
+            // 
+            dgvNhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgvNhanvien.BackgroundColor = System.Drawing.SystemColors.Window;
+            dgvNhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvNhanvien.Dock = System.Windows.Forms.DockStyle.Fill;
+            dgvNhanvien.Location = new System.Drawing.Point(0, 0);
+            dgvNhanvien.Name = "dgvNhanvien";
+            dgvNhanvien.ReadOnly = true;
+            dgvNhanvien.RowHeadersVisible = false;
+            dgvNhanvien.RowHeadersWidth = 62;
+            dgvNhanvien.RowTemplate.Height = 28;
+            dgvNhanvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvNhanvien.Size = new System.Drawing.Size(1181, 671);
+            dgvNhanvien.TabIndex = 7;
+            dgvNhanvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -70,7 +96,7 @@
             this.panel3.Controls.Add(this.btnRefresh);
             this.panel3.Controls.Add(this.btnOK);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.txtMANV);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 95);
@@ -141,14 +167,14 @@
             this.label4.Size = new System.Drawing.Size(0, 25);
             this.label4.TabIndex = 4;
             // 
-            // textBox1
+            // txtMANV
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(256, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 30);
-            this.textBox1.TabIndex = 10;
+            this.txtMANV.BackColor = System.Drawing.SystemColors.Info;
+            this.txtMANV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMANV.Location = new System.Drawing.Point(256, 44);
+            this.txtMANV.Name = "txtMANV";
+            this.txtMANV.Size = new System.Drawing.Size(139, 30);
+            this.txtMANV.TabIndex = 10;
             // 
             // label8
             // 
@@ -159,23 +185,6 @@
             this.label8.Size = new System.Drawing.Size(216, 25);
             this.label8.TabIndex = 9;
             this.label8.Text = "Tìm theo mã nhân viên:";
-            // 
-            // dgvNhanvien
-            // 
-            this.dgvNhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvNhanvien.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvNhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhanvien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvNhanvien.Location = new System.Drawing.Point(0, 0);
-            this.dgvNhanvien.Name = "dgvNhanvien";
-            this.dgvNhanvien.ReadOnly = true;
-            this.dgvNhanvien.RowHeadersVisible = false;
-            this.dgvNhanvien.RowHeadersWidth = 62;
-            this.dgvNhanvien.RowTemplate.Height = 28;
-            this.dgvNhanvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNhanvien.Size = new System.Drawing.Size(1181, 671);
-            this.dgvNhanvien.TabIndex = 7;
-            this.dgvNhanvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel2
             // 
@@ -212,15 +221,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.dgvNhanvien);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 191);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1181, 671);
-            this.panel4.TabIndex = 9;
-            // 
             // fTableNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -231,13 +231,13 @@
             this.Text = "fTableNhanVien";
             this.Load += new System.EventHandler(this.fTableNhanVien_Load);
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(dgvNhanvien)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanvien)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -249,9 +249,9 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMANV;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dgvNhanvien;
+        public static System.Windows.Forms.DataGridView dgvNhanvien;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;

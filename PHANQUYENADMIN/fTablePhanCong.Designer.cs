@@ -30,15 +30,15 @@
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.dgvPhanCong = new System.Windows.Forms.DataGridView();
+            dgvPhanCong = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbNoti = new System.Windows.Forms.Label();
+            lbNoti = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhanCong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(dgvPhanCong)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -72,20 +72,20 @@
             // 
             // dgvPhanCong
             // 
-            this.dgvPhanCong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPhanCong.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvPhanCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhanCong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPhanCong.Location = new System.Drawing.Point(0, 0);
-            this.dgvPhanCong.Name = "dgvPhanCong";
-            this.dgvPhanCong.ReadOnly = true;
-            this.dgvPhanCong.RowHeadersVisible = false;
-            this.dgvPhanCong.RowHeadersWidth = 62;
-            this.dgvPhanCong.RowTemplate.Height = 28;
-            this.dgvPhanCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPhanCong.Size = new System.Drawing.Size(1066, 668);
-            this.dgvPhanCong.TabIndex = 13;
-            this.dgvPhanCong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhanCong_CellContentClick);
+            dgvPhanCong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPhanCong.BackgroundColor = System.Drawing.SystemColors.Window;
+            dgvPhanCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPhanCong.Dock = System.Windows.Forms.DockStyle.Fill;
+            dgvPhanCong.Location = new System.Drawing.Point(0, 0);
+            dgvPhanCong.Name = "dgvPhanCong";
+            dgvPhanCong.ReadOnly = true;
+            dgvPhanCong.RowHeadersVisible = false;
+            dgvPhanCong.RowHeadersWidth = 62;
+            dgvPhanCong.RowTemplate.Height = 28;
+            dgvPhanCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvPhanCong.Size = new System.Drawing.Size(1066, 668);
+            dgvPhanCong.TabIndex = 13;
+            dgvPhanCong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(dgvPhanCong_CellContentClick);
             // 
             // panel2
             // 
@@ -123,14 +123,14 @@
             // 
             // lbNoti
             // 
-            this.lbNoti.AutoSize = true;
-            this.lbNoti.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbNoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNoti.Location = new System.Drawing.Point(412, 297);
-            this.lbNoti.Name = "lbNoti";
-            this.lbNoti.Size = new System.Drawing.Size(246, 26);
-            this.lbNoti.TabIndex = 15;
-            this.lbNoti.Text = "Hiện chưa có phân công";
+            lbNoti.AutoSize = true;
+            lbNoti.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            lbNoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbNoti.Location = new System.Drawing.Point(406, 279);
+            lbNoti.Name = "lbNoti";
+            lbNoti.Size = new System.Drawing.Size(246, 26);
+            lbNoti.TabIndex = 15;
+            lbNoti.Text = "Hiện chưa có phân công";
             // 
             // panel1
             // 
@@ -145,24 +145,13 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.lbNoti);
-            this.panel4.Controls.Add(this.dgvPhanCong);
+            this.panel4.Controls.Add(lbNoti);
+            this.panel4.Controls.Add(dgvPhanCong);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 190);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1066, 668);
             this.panel4.TabIndex = 15;
-            // 
-            // lbNoti
-            // 
-            this.lbNoti.AutoSize = true;
-            this.lbNoti.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbNoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNoti.Location = new System.Drawing.Point(411, 493);
-            this.lbNoti.Name = "lbNoti";
-            this.lbNoti.Size = new System.Drawing.Size(246, 26);
-            this.lbNoti.TabIndex = 15;
-            this.lbNoti.Text = "Hiện chưa có phân công";
             // 
             // fTablePhanCong
             // 
@@ -174,7 +163,7 @@
             this.Text = "fTablePhanCong";
             this.Load += new System.EventHandler(this.fTablePhanCong_Load);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhanCong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(dgvPhanCong)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -188,11 +177,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dgvPhanCong;
+        public static System.Windows.Forms.DataGridView dgvPhanCong;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lbNoti;
+        public static System.Windows.Forms.Label lbNoti;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;

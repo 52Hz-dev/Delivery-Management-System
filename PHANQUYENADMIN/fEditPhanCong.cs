@@ -43,6 +43,7 @@ namespace PHANQUYENADMIN
                 String query = "UPDATE ADMIN01.PHANCONG SET THOIGIAN=TO_DATE('" + ngaybd  + "','YYYY-MM-DD')";
                 int result = DataProvider.Instance.ExecuteNonQuery(query);
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                fTablePhanCong.loadtablePC();
                 this.Hide();
                 
             }    

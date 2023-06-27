@@ -29,6 +29,7 @@ namespace PHANQUYENADMIN
         {
             if (AdminstratorDAO.updateNHANVIEN(txtMANV.Text, txtLuong.Text, txtPhuCap.Text) == 1)
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            fTableNhanVien.loadTableNV();
         }
     }
 }

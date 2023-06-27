@@ -39,11 +39,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbNV = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panel_callForm = new System.Windows.Forms.Panel();
             this.panelCallForm = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             btnDX = new System.Windows.Forms.Button();
             btnThongbao = new System.Windows.Forms.Button();
             btnThongtin = new System.Windows.Forms.Button();
@@ -76,6 +76,7 @@
             btnDX.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             btnDX.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             btnDX.UseVisualStyleBackColor = false;
+            btnDX.Click += new System.EventHandler(this.btnDX_Click);
             // 
             // btnThongbao
             // 
@@ -96,6 +97,7 @@
             btnThongbao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             btnThongbao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             btnThongbao.UseVisualStyleBackColor = false;
+            btnThongbao.Click += new System.EventHandler(this.btnThongbao_Click);
             // 
             // btnThongtin
             // 
@@ -225,7 +227,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.panel3);
@@ -234,6 +236,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 194);
             this.panel2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(126, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 32);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "No user";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 25);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Username:";
             // 
             // panelMenu
             // 
@@ -269,26 +291,6 @@
             this.panelCallForm.Name = "panelCallForm";
             this.panelCallForm.Size = new System.Drawing.Size(1083, 956);
             this.panelCallForm.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 114);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 25);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Username:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(126, 108);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 32);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "No user";
             // 
             // Dashboard
             // 

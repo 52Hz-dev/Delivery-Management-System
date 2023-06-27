@@ -30,7 +30,11 @@ namespace PHANQUYENADMIN
         {
             InitializeComponent();
         }
-
+        public static void loadTableNV()
+        {
+            DataTable data = NhanVienDAO.readNHANVIEN();
+            dgvNhanvien.DataSource = data;
+        }
         private void fTableNhanVien_Load(object sender, EventArgs e)
         {
             DataTable data = NhanVienDAO.readNHANVIEN();
@@ -48,13 +52,7 @@ namespace PHANQUYENADMIN
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (fLogin.ROLE == "Truong phong")
-            {
-                String mnv = textBox1.Text.ToString();
-                String query4 = "Select * from ADMIN01.NHANVIEN WHERE MANV='" + mnv + "'";
-                DataTable data = DataProvider.Instance.ExecuteQuery(query4);
-                dgvNhanvien.DataSource = data;
-            }
+                dgvNhanvien.DataSource = NhanVienDAO.filteredNHANVIEN(txtMANV.Text);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

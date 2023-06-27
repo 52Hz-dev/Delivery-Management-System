@@ -39,6 +39,7 @@ namespace PHANQUYENADMIN
                     String query = "INSERT INTO ADMIN01.PHANCONG(MANV,MADA,THOIGIAN) VALUES ('" + manhanvien + "','" + madean + "',TO_DATE('" + ngaybd + "','YYYY-MM-DD'))";
                     int result = DataProvider.Instance.ExecuteNonQuery(query);
                     MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    fTablePhanCong.loadtablePC();
                     this.Hide();
                 }    
                 else

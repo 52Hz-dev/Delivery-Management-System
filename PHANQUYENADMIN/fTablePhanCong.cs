@@ -17,7 +17,15 @@ namespace PHANQUYENADMIN
         {
             InitializeComponent();
         }
-
+        public static void loadtablePC()
+        {
+            DataTable dt = NhanVienDAO.loadTasks();
+            if (dt.Rows.Count != 0)
+            {
+                lbNoti.Visible = false;
+                dgvPhanCong.DataSource = dt;
+            }
+        }
         private void fTablePhanCong_Load(object sender, EventArgs e)
         {
             DataTable dt = NhanVienDAO.loadTasks();

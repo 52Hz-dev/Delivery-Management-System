@@ -39,7 +39,11 @@ namespace PHANQUYENADMIN
             int y = label2.Size.Height;
             label2.Location = new Point(panel4.Size.Width / 2 - x, panel4.Size.Height - y);
         }
-
+        public static void loadTableDA()
+        {
+            DataTable dt3 = NhanVienDAO.loadDA();
+            dgvDeAn.DataSource = dt3;
+        }
         private void btnCreate_Click(object sender, EventArgs e)
         {
             
@@ -92,8 +96,7 @@ namespace PHANQUYENADMIN
         {
             AdminstratorDAO.TRUONGDEAN_remove_DEAN(MADA, TEN, Time, MAPB);
             MessageBox.Show("Xoá thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DataTable dt3 = NhanVienDAO.loadDA();
-            dgvDeAn.DataSource = dt3;
+            loadTableDA();
         }
     }
 }

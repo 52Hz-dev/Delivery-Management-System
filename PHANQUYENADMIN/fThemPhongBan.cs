@@ -47,7 +47,7 @@ namespace PHANQUYENADMIN
                 {
                     if (AdminstratorDAO.createPHONGBAN(txtMAPB.Text, txtTEN.Text, txtTRPH.Text) == 1)
                         MessageBox.Show("Tạo phòng ban mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+                    fTablePhongBan.loadtablePB();
                 }
 
             }
@@ -61,6 +61,7 @@ namespace PHANQUYENADMIN
                 txtTRPH.Text = fTablePhongBan.TRPHG;
                 if (AdminstratorDAO.updatePHONGBAN(txtMAPB.Text, txtTEN.Text, txtTRPH.Text) == 1)
                     MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                fTablePhongBan.loadtablePB();
             }
         }
     }

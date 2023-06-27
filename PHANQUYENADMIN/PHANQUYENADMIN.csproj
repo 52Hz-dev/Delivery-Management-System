@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="DAO\AdminstratorDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\GiamDocDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
@@ -187,6 +188,12 @@
     <Compile Include="fTablePhongBan.Designer.cs">
       <DependentUpon>fTablePhongBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="fTableThongBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTableThongBao.Designer.cs">
+      <DependentUpon>fTableThongBao.cs</DependentUpon>
+    </Compile>
     <Compile Include="fThemDeAn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +223,12 @@
     </Compile>
     <Compile Include="fThemPhongBan.Designer.cs">
       <DependentUpon>fThemPhongBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fThemThongBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThemThongBao.Designer.cs">
+      <DependentUpon>fThemThongBao.cs</DependentUpon>
     </Compile>
     <Compile Include="fThongTinNhanVien_QL.cs">
       <SubType>Form</SubType>
@@ -288,6 +301,9 @@
     <EmbeddedResource Include="fTablePhongBan.resx">
       <DependentUpon>fTablePhongBan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fTableThongBao.resx">
+      <DependentUpon>fTableThongBao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fThemDeAn.resx">
       <DependentUpon>fThemDeAn.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fThemPhongBan.resx">
       <DependentUpon>fThemPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThemThongBao.resx">
+      <DependentUpon>fThemThongBao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fThongTinNhanVien_QL.resx">
       <DependentUpon>fThongTinNhanVien_QL.cs</DependentUpon>

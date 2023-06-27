@@ -24,6 +24,11 @@ namespace PHANQUYENADMIN
             InitializeComponent();
         }
 
+        public static void loadtablePB()
+        {
+            DataTable dt2 = NhanVienDAO.loadPB();
+            dgvPhongBan.DataSource = dt2;
+        }
         private void fTablePhongBan_Load(object sender, EventArgs e)
         {
             DataTable dt2 = NhanVienDAO.loadPB();

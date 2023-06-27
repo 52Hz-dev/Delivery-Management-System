@@ -33,14 +33,14 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.dgvPhongBan = new System.Windows.Forms.DataGridView();
+            dgvPhongBan = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhongBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(dgvPhongBan)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -106,23 +106,23 @@
             // 
             // dgvPhongBan
             // 
-            this.dgvPhongBan.AllowUserToAddRows = false;
-            this.dgvPhongBan.AllowUserToDeleteRows = false;
-            this.dgvPhongBan.AllowUserToOrderColumns = true;
-            this.dgvPhongBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPhongBan.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvPhongBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhongBan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPhongBan.Location = new System.Drawing.Point(0, 0);
-            this.dgvPhongBan.Name = "dgvPhongBan";
-            this.dgvPhongBan.ReadOnly = true;
-            this.dgvPhongBan.RowHeadersVisible = false;
-            this.dgvPhongBan.RowHeadersWidth = 62;
-            this.dgvPhongBan.RowTemplate.Height = 28;
-            this.dgvPhongBan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPhongBan.Size = new System.Drawing.Size(1158, 668);
-            this.dgvPhongBan.TabIndex = 10;
-            this.dgvPhongBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhongBan_CellContentClick);
+            dgvPhongBan.AllowUserToAddRows = false;
+            dgvPhongBan.AllowUserToDeleteRows = false;
+            dgvPhongBan.AllowUserToOrderColumns = true;
+            dgvPhongBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPhongBan.BackgroundColor = System.Drawing.SystemColors.Window;
+            dgvPhongBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPhongBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            dgvPhongBan.Location = new System.Drawing.Point(0, 0);
+            dgvPhongBan.Name = "dgvPhongBan";
+            dgvPhongBan.ReadOnly = true;
+            dgvPhongBan.RowHeadersVisible = false;
+            dgvPhongBan.RowHeadersWidth = 62;
+            dgvPhongBan.RowTemplate.Height = 28;
+            dgvPhongBan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvPhongBan.Size = new System.Drawing.Size(1158, 668);
+            dgvPhongBan.TabIndex = 10;
+            dgvPhongBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(dgvPhongBan_CellContentClick);
             // 
             // panel2
             // 
@@ -173,7 +173,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.dgvPhongBan);
+            this.panel4.Controls.Add(dgvPhongBan);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 187);
             this.panel4.Name = "panel4";
@@ -190,7 +190,7 @@
             this.Text = "fTablePhongBan";
             this.Load += new System.EventHandler(this.fTablePhongBan_Load);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhongBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(dgvPhongBan)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -204,7 +204,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dgvPhongBan;
+        public static System.Windows.Forms.DataGridView dgvPhongBan;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnReset;

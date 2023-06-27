@@ -74,6 +74,7 @@ namespace PHANQUYENADMIN
                     String ngaysinh = date.ToString("yyyy-MM-dd");
                     if (AdminstratorDAO.createNHANVIEN(txtMANV.Text, txtTENNV.Text, txtPHAI.SelectedText, ngaysinh, txtDIACHI.Text, txtSODT.Text, txtVAITRO.SelectedText, txtMAQL.Text, txtPHG.SelectedText) == 1)
                         MessageBox.Show("Tạo nhân viên mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    fTableNhanVien.loadTableNV();
                 }
             }
             else if (fTableNhanVien.button == "Sua")
@@ -83,6 +84,7 @@ namespace PHANQUYENADMIN
                 String ngaysinh = date.ToString("yyyy-MM-dd");
                 if (AdminstratorDAO.updateNHANVIEN(txtMANV.Text, txtTENNV.Text, txtPHAI.SelectedText, ngaysinh, txtDIACHI.Text, txtSODT.Text, txtVAITRO.SelectedText, txtMAQL.Text, txtPHG.SelectedText) == 1)
                     MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                fTableNhanVien.loadTableNV();
             }
         }
     }

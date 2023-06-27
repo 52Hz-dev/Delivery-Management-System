@@ -30,7 +30,7 @@
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.dgvDeAn = new System.Windows.Forms.DataGridView();
+            dgvDeAn = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDeAn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(dgvDeAn)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -62,7 +62,7 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.dgvDeAn);
+            this.panel5.Controls.Add(dgvDeAn);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 93);
             this.panel5.Name = "panel5";
@@ -71,20 +71,20 @@
             // 
             // dgvDeAn
             // 
-            this.dgvDeAn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDeAn.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvDeAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDeAn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDeAn.Location = new System.Drawing.Point(0, 0);
-            this.dgvDeAn.Name = "dgvDeAn";
-            this.dgvDeAn.ReadOnly = true;
-            this.dgvDeAn.RowHeadersVisible = false;
-            this.dgvDeAn.RowHeadersWidth = 62;
-            this.dgvDeAn.RowTemplate.Height = 28;
-            this.dgvDeAn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDeAn.Size = new System.Drawing.Size(1159, 661);
-            this.dgvDeAn.TabIndex = 13;
-            this.dgvDeAn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeAn_CellContentClick);
+            dgvDeAn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDeAn.BackgroundColor = System.Drawing.SystemColors.Window;
+            dgvDeAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDeAn.Dock = System.Windows.Forms.DockStyle.Fill;
+            dgvDeAn.Location = new System.Drawing.Point(0, 0);
+            dgvDeAn.Name = "dgvDeAn";
+            dgvDeAn.ReadOnly = true;
+            dgvDeAn.RowHeadersVisible = false;
+            dgvDeAn.RowHeadersWidth = 62;
+            dgvDeAn.RowTemplate.Height = 28;
+            dgvDeAn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvDeAn.Size = new System.Drawing.Size(1159, 661);
+            dgvDeAn.TabIndex = 13;
+            dgvDeAn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(dgvDeAn_CellContentClick);
             // 
             // panel2
             // 
@@ -214,7 +214,7 @@
             this.Load += new System.EventHandler(this.fTableDeAn_Load);
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDeAn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(dgvDeAn)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -235,7 +235,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridView dgvDeAn;
+        public static System.Windows.Forms.DataGridView dgvDeAn;
         private System.Windows.Forms.Panel panel5;
     }
 }
