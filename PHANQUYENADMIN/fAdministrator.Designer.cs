@@ -145,6 +145,7 @@
             this.dgvUsersys.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsersys.Size = new System.Drawing.Size(1115, 491);
             this.dgvUsersys.TabIndex = 0;
+            this.dgvUsersys.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsersys_CellContentClick);
             // 
             // tabPage2
             // 

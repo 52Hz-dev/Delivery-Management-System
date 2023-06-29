@@ -66,7 +66,7 @@
             this.colSelectSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colUpdateSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colInsertSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colTabGrant = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colTabDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colTabRevoke = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabEditUser.SuspendLayout();
             this.tabUser.SuspendLayout();
@@ -86,6 +86,7 @@
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnApply
             // 
@@ -145,7 +146,7 @@
             this.tabRole.Location = new System.Drawing.Point(4, 25);
             this.tabRole.Name = "tabRole";
             this.tabRole.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRole.Size = new System.Drawing.Size(730, 321);
+            this.tabRole.Size = new System.Drawing.Size(730, 324);
             this.tabRole.TabIndex = 1;
             this.tabRole.Text = "Role";
             this.tabRole.UseVisualStyleBackColor = true;
@@ -362,7 +363,7 @@
             this.colSelectSecurable,
             this.colUpdateSecurable,
             this.colInsertSecurable,
-            this.colTabGrant,
+            this.colTabDelete,
             this.colTabRevoke});
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
@@ -434,13 +435,13 @@
             this.colInsertSecurable.TrueValue = "x";
             this.colInsertSecurable.Width = 125;
             // 
-            // colTabGrant
+            // colTabDelete
             // 
-            this.colTabGrant.HeaderText = "Grant";
-            this.colTabGrant.MinimumWidth = 6;
-            this.colTabGrant.Name = "colTabGrant";
-            this.colTabGrant.TrueValue = "x";
-            this.colTabGrant.Width = 125;
+            this.colTabDelete.HeaderText = "Delete";
+            this.colTabDelete.MinimumWidth = 6;
+            this.colTabDelete.Name = "colTabDelete";
+            this.colTabDelete.TrueValue = "x";
+            this.colTabDelete.Width = 125;
             // 
             // colTabRevoke
             // 
@@ -500,7 +501,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn colSelectSecurable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colUpdateSecurable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colInsertSecurable;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colTabGrant;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colTabDelete;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colTabRevoke;
     }
 }

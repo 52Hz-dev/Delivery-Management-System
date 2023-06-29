@@ -31,28 +31,7 @@ namespace PHANQUYENADMIN.DAO
             }
         }
         
-        public static void changeTablePermission(List<GrantTableForm> grantTables)
-        {
-            foreach(GrantTableForm item in grantTables)
-            {
-                if (item.Select == true)
-                {
-                    // add select permission
-                }
-                if (item.Update == true)
-                {
-                    // add select permission
-                }
-                if (item.Insert == true)
-                {
-                    // add select permission
-                }
-                if (item.grantoption == true)
-                {
-                    // add select permission
-                }
-            }
-        }
+       
         //form nhan su
 
         public static DataTable readPHONGBAN()
@@ -141,7 +120,7 @@ namespace PHANQUYENADMIN.DAO
         }
         public static DataTable readUsersys()
         {
-            String query = "SELECT * FROM dba_users";
+            String query = "SELECT * FROM DBA_users where default_tablespace='MY_TABLESPACE'";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
@@ -206,13 +185,13 @@ namespace PHANQUYENADMIN.DAO
         }
         public static DataTable loadUser()
         {
-            String query = "SELECT username U FROM all_users";
+            String query = "SELECT username FROM dba_users where default_tablespace='MY_TABLESPACE'";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
         public static DataTable loadUserRole()
         {
-            String query = "select ROLE R from DBA_ROLES";
+            String query = "SELECT ROLE R FROM DBA_ROLES WHERE ROLE LIKE 'R%' AND ROLE_ID LIKE '%19%'";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
@@ -278,28 +257,56 @@ namespace PHANQUYENADMIN.DAO
         {
             foreach(GrantTableForm item in grantTables)
             {
+                String revoke = "revoke";
                 String query = "grant ";
                 String select = " select ";
                 String update = " update ";
                 String insert = " insert ";
                 String delete = " delete ";
-                String table = " on " + item.TableName+" to "+user;
+                
 
-                if (item.Select == true)
+                if (item.revoke != true)
                 {
-                    DataProvider.Instance.ExecuteNonQuery(query+select+table);
+                    String table = " on " + item.TableName + " to " + user;
+                    if (item.Select == true)
+                    {
+                        MessageBox.Show(query + select + table);
+                        DataProvider.Instance.ExecuteNonQuery(query + select + table);
+                    }
+                    if (item.Update == true)
+                    {
+                        DataProvider.Instance.ExecuteNonQuery(query + update + table);
+                    }
+                    if (item.Insert == true)
+                    {
+                        DataProvider.Instance.ExecuteNonQuery(query + insert + table);
+                    }
+                    if (item.Delete == true)
+                    {
+                        DataProvider.Instance.ExecuteNonQuery(query + delete + table);
+                    }
                 }
-                if (item.Update == true)
+                else if (item.revoke == true)
                 {
-                    DataProvider.Instance.ExecuteNonQuery(query + update + table);
-                }
-                if (item.Insert == true)
-                {
-                    DataProvider.Instance.ExecuteNonQuery(query + insert + table);
-                }
-                if (item.grantoption == true)
-                {
-                    DataProvider.Instance.ExecuteNonQuery(query + delete + table);
+                    String table = " on " + item.TableName + " from " + user;
+                    if (item.Select == true)
+                    {
+                        MessageBox.Show(query + select + table);
+                        DataProvider.Instance.ExecuteNonQuery(revoke + select + table);
+                    }
+                    if (item.Update == true)
+                    {
+                        MessageBox.Show(revoke + update + table);
+                        DataProvider.Instance.ExecuteNonQuery(revoke + update + table);
+                    }
+                    if (item.Insert == true)
+                    {
+                        DataProvider.Instance.ExecuteNonQuery(revoke + insert + table);
+                    }
+                    if (item.Delete == true)
+                    {
+                        DataProvider.Instance.ExecuteNonQuery(revoke + delete + table);
+                    }
                 }
             }
         }

@@ -126,34 +126,15 @@ namespace PHANQUYENADMIN
                     DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)dgvTabSecurable.Rows[e.RowIndex].Cells[e.ColumnIndex];
                     if (cell.Value == cell.TrueValue)
                     {
-                        if (e.ColumnIndex == 4)
-                        {
-                            dgvTabSecurable.Rows[e.RowIndex].Cells[5].Value = cell.FalseValue;
-
-                        }
+                       
                         cell.Value = cell.FalseValue;
 
                     }
                     else
                     {
-                        cell.Value = cell.TrueValue;
-
-                        if (e.ColumnIndex == 4)
-                        {
-                            dgvTabSecurable.Rows[e.RowIndex].Cells[6].Value = cell.FalseValue;
-                        }
-                        else if (e.ColumnIndex == 6)
-                        {
-                            dgvTabSecurable.Rows[e.RowIndex].Cells[5].Value = cell.FalseValue;
-                            dgvTabSecurable.Rows[e.RowIndex].Cells[4].Value = cell.FalseValue;
-                        }
-                        else if (e.ColumnIndex == 5)
-                        {
-                            if (dgvTabSecurable.Rows[e.RowIndex].Cells[4].Value == cell.FalseValue)
-                            {
-                                cell.Value = cell.FalseValue;
-                            }
-                        }
+                       
+                            cell.Value = cell.TrueValue;
+                        
                     }
 
 
@@ -181,13 +162,12 @@ namespace PHANQUYENADMIN
         {
             string RoleName= dataGridViewRow.Cells[0].Value.ToString();
             DataGridViewCheckBoxCell cell = new DataGridViewCheckBoxCell();
-            bool Select = dataGridViewRow.Cells[1].Value == cell.TrueValue;
-            bool Update= dataGridViewRow.Cells[2].Value == cell.TrueValue;
-            bool Insert= dataGridViewRow.Cells[3].Value == cell.TrueValue;
-            bool Delete= dataGridViewRow.Cells[4].Value == cell.TrueValue;
-            bool Grant= dataGridViewRow.Cells[5].Value == cell.TrueValue;
-            bool Revoke= dataGridViewRow.Cells[6].Value == cell.TrueValue;
-            GrantTableForm result = new GrantTableForm(RoleName, Select, Update, Insert, Grant,Revoke);
+            bool Select = dataGridViewRow.Cells[1].Value != cell.TrueValue;
+            bool Update= dataGridViewRow.Cells[2].Value != cell.TrueValue;
+            bool Insert= dataGridViewRow.Cells[3].Value != cell.TrueValue;
+            bool Delete= dataGridViewRow.Cells[4].Value != cell.TrueValue;      
+            bool Revoke= dataGridViewRow.Cells[5].Value != cell.TrueValue;
+            GrantTableForm result = new GrantTableForm(RoleName, Select, Update, Insert, Delete,Revoke);
             return result;
         }
 
@@ -195,6 +175,7 @@ namespace PHANQUYENADMIN
         {
             AdminstratorDAO.Role2User(fAdministrator.curUser, newGrantRole.Values.ToList());
             AdminstratorDAO.Privilege2User(fAdministrator.curUser, newGrantPrivilege.Values.ToList());
+            AdminstratorDAO.Table2User(fAdministrator.curUser, newGrantTable.Values.ToList());
             if(txtPassword.Text!=null)
             AdminstratorDAO.changeUserPassword(fAdministrator.curUser,txtPassword.Text,txtConfirmPassword.Text);
             MessageBox.Show("Edit sucessfully!");
@@ -207,6 +188,11 @@ namespace PHANQUYENADMIN
         private void tabUser_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

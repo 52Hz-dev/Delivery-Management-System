@@ -12,16 +12,16 @@ namespace PHANQUYENADMIN.DTO
             public bool Select;
             public bool Update;
             public bool Insert;
-             public bool grantoption;
+        public bool Delete;
             public bool revoke;
 
-            public GrantTableForm(string tableName, bool select, bool update, bool insert,bool grant,bool revok)
+            public GrantTableForm(string tableName, bool select, bool update, bool insert,bool del,bool revok)
             {
                 TableName = tableName;
                 Select = select;
                 Update = update;
                 Insert = insert;
-                grantoption = grant;
+                Delete = del;
                 revoke = revok;
             }
         }

@@ -122,13 +122,15 @@ namespace PHANQUYENADMIN
                 DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)dgvSecurable.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 if (cell.Value == cell.TrueValue)
                 {
+
                     cell.Value = cell.FalseValue;
-                    if (e.ColumnIndex == 4)
-                        dgvSecurable.Rows[e.RowIndex].Cells[5].Value = cell.FalseValue;
+
                 }
                 else
                 {
-                    cell.Value = cell.TrueValue;
+                  
+                        cell.Value = cell.TrueValue;
+
                 }
                 GrantTableForm form= getTableValue(dgvSecurable.Rows[e.RowIndex]);
                 newGrantTable.Remove(form.TableName);
@@ -151,13 +153,12 @@ namespace PHANQUYENADMIN
         {
             string RoleName = dataGridViewRow.Cells[0].Value.ToString();
             DataGridViewCheckBoxCell cell=new DataGridViewCheckBoxCell();
-            bool Select = dataGridViewRow.Cells[1].Value == cell.TrueValue;
-            bool Update = dataGridViewRow.Cells[2].Value == cell.TrueValue;
-            bool Insert = dataGridViewRow.Cells[3].Value == cell.TrueValue;
-            bool Delete = dataGridViewRow.Cells[4].Value == cell.TrueValue;
-            bool Option= dataGridViewRow.Cells[5].Value == cell.TrueValue;
-            bool Revoke= dataGridViewRow.Cells[6].Value == cell.TrueValue;
-            GrantTableForm result = new GrantTableForm(RoleName, Select, Update, Insert,Option,Revoke);
+            bool Select = dataGridViewRow.Cells[1].Value != cell.TrueValue;
+            bool Update = dataGridViewRow.Cells[2].Value != cell.TrueValue;
+            bool Insert = dataGridViewRow.Cells[3].Value != cell.TrueValue;
+            bool Delete = dataGridViewRow.Cells[4].Value != cell.TrueValue;
+            bool Revoke= dataGridViewRow.Cells[5].Value != cell.TrueValue;
+            GrantTableForm result = new GrantTableForm(RoleName, Select, Update, Insert, Delete, Revoke);
             return result;
         }
 
@@ -173,5 +174,9 @@ namespace PHANQUYENADMIN
             this.Close();
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
