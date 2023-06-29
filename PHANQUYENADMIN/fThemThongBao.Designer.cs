@@ -34,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaTB = new System.Windows.Forms.TextBox();
-            this.txtND = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -103,14 +103,14 @@
             this.txtMaTB.Size = new System.Drawing.Size(423, 30);
             this.txtMaTB.TabIndex = 74;
             // 
-            // txtND
+            // textBox2
             // 
-            this.txtND.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtND.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtND.Location = new System.Drawing.Point(353, 305);
-            this.txtND.Name = "txtND";
-            this.txtND.Size = new System.Drawing.Size(423, 30);
-            this.txtND.TabIndex = 78;
+            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(353, 305);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(423, 30);
+            this.textBox2.TabIndex = 78;
             // 
             // label5
             // 
@@ -128,7 +128,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 467);
-            this.Controls.Add(this.txtND);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtDT);
             this.Controls.Add(this.txtMaTB);
@@ -152,7 +152,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMaTB;
-        private System.Windows.Forms.TextBox txtND;
+        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label5;
     }
 }

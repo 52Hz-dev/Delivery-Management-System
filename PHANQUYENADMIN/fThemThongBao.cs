@@ -37,7 +37,7 @@ namespace PHANQUYENADMIN
             if (GiamDocDAO.checkMaTB(txtMaTB.Text)==1) MessageBox.Show("Mã thông báo đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
-                GiamDocDAO.createThongBao(txtMaTB.Text, txtDT.Text, txtND.Text);
+                GiamDocDAO.createThongBao(txtMaTB.Text, txtDT.Text, textBox2.Text);
                 MessageBox.Show("Tạo thông báo thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 fTableThongBao.loadTableTB();
             } 

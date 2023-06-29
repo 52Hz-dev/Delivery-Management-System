@@ -85,7 +85,7 @@ namespace PHANQUYENADMIN
 
         private void btnEdit_Click_1(object sender, EventArgs e)
         {
-            button = "Sua";
+            button = "Sua";          
             fThemPhongBan form = new fThemPhongBan();
             form.ShowDialog();
         }
