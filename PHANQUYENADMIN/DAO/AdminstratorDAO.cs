@@ -191,7 +191,7 @@ namespace PHANQUYENADMIN.DAO
         }
         public static DataTable loadUserRole()
         {
-            String query = "SELECT ROLE R FROM DBA_ROLES WHERE ROLE LIKE 'R%' AND ROLE_ID LIKE '%19%'";
+            String query = "SELECT ROLE R FROM DBA_ROLES ";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
