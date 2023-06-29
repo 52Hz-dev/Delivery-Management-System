@@ -30,27 +30,7 @@ namespace PHANQUYENADMIN.DAO
                 return false;
             }
         }
-        public static void changeRole(List<GrantRoleForm> grantRoles)
-        {
-            foreach(GrantRoleForm item in grantRoles)
-            {
-                if(item.Grant==true)
-                {
-                    if (item.AdminOption == true)
-                    {
-                        // add role with admin option
-                    }
-                    else
-                    {
-                        // add role without admin option
-                    }
-                }
-                if (item.Revoke == true)
-                {
-                    // revoke role from user
-                }
-            }
-        }
+        
         public static void changeTablePermission(List<GrantTableForm> grantTables)
         {
             foreach(GrantTableForm item in grantTables)
@@ -67,7 +47,7 @@ namespace PHANQUYENADMIN.DAO
                 {
                     // add select permission
                 }
-                if (item.Delete == true)
+                if (item.grantoption == true)
                 {
                     // add select permission
                 }
@@ -244,7 +224,7 @@ namespace PHANQUYENADMIN.DAO
         }
         public static DataTable loadTable()
         {
-            String query = "SELECT TABLE_NAME FROM DBA_TABLES WHERE TABLESPACE_NAME='USERS'";
+            String query = "SELECT TABLE_NAME FROM DBA_TABLES WHERE TABLESPACE_NAME='MY_TABLESPACE'";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
@@ -317,7 +297,7 @@ namespace PHANQUYENADMIN.DAO
                 {
                     DataProvider.Instance.ExecuteNonQuery(query + insert + table);
                 }
-                if (item.Delete == true)
+                if (item.grantoption == true)
                 {
                     DataProvider.Instance.ExecuteNonQuery(query + delete + table);
                 }

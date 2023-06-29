@@ -155,7 +155,9 @@ namespace PHANQUYENADMIN
             bool Update = dataGridViewRow.Cells[2].Value == cell.TrueValue;
             bool Insert = dataGridViewRow.Cells[3].Value == cell.TrueValue;
             bool Delete = dataGridViewRow.Cells[4].Value == cell.TrueValue;
-            GrantTableForm result = new GrantTableForm(RoleName, Select, Update, Insert, Delete);
+            bool Option= dataGridViewRow.Cells[5].Value == cell.TrueValue;
+            bool Revoke= dataGridViewRow.Cells[6].Value == cell.TrueValue;
+            GrantTableForm result = new GrantTableForm(RoleName, Select, Update, Insert,Option,Revoke);
             return result;
         }
 

@@ -121,18 +121,50 @@ namespace PHANQUYENADMIN
         {
             if (dgvTabSecurable.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
             {
-                DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)dgvTabSecurable.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                if (cell.Value == cell.TrueValue)
+                try
                 {
-                    cell.Value = cell.FalseValue;
+                    DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)dgvTabSecurable.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    if (cell.Value == cell.TrueValue)
+                    {
+                        if (e.ColumnIndex == 4)
+                        {
+                            dgvTabSecurable.Rows[e.RowIndex].Cells[5].Value = cell.FalseValue;
+
+                        }
+                        cell.Value = cell.FalseValue;
+
+                    }
+                    else
+                    {
+                        cell.Value = cell.TrueValue;
+
+                        if (e.ColumnIndex == 4)
+                        {
+                            dgvTabSecurable.Rows[e.RowIndex].Cells[6].Value = cell.FalseValue;
+                        }
+                        else if (e.ColumnIndex == 6)
+                        {
+                            dgvTabSecurable.Rows[e.RowIndex].Cells[5].Value = cell.FalseValue;
+                            dgvTabSecurable.Rows[e.RowIndex].Cells[4].Value = cell.FalseValue;
+                        }
+                        else if (e.ColumnIndex == 5)
+                        {
+                            if (dgvTabSecurable.Rows[e.RowIndex].Cells[4].Value == cell.FalseValue)
+                            {
+                                cell.Value = cell.FalseValue;
+                            }
+                        }
+                    }
+
+
+                    GrantTableForm form = getTableValue(dgvTabSecurable.Rows[e.RowIndex]);
+                    newGrantTable.Remove(form.TableName);
+                    newGrantTable.Add(form.TableName, getTableValue(dgvTabSecurable.Rows[e.RowIndex]));
                 }
-                else
+                catch (Exception t)
                 {
-                    cell.Value = cell.TrueValue;
+                    MessageBox.Show(t.Message);
                 }
-                GrantTableForm form = getTableValue(dgvTabSecurable.Rows[e.RowIndex]);
-                newGrantTable.Remove(form.TableName);
-                newGrantTable.Add(form.TableName,getTableValue(dgvTabSecurable.Rows[e.RowIndex]));
             }
         }
         private GrantRoleForm getValue(DataGridViewRow dataGridViewRow)
@@ -153,7 +185,9 @@ namespace PHANQUYENADMIN
             bool Update= dataGridViewRow.Cells[2].Value == cell.TrueValue;
             bool Insert= dataGridViewRow.Cells[3].Value == cell.TrueValue;
             bool Delete= dataGridViewRow.Cells[4].Value == cell.TrueValue;
-            GrantTableForm result = new GrantTableForm(RoleName, Select, Update, Insert, Delete);
+            bool Grant= dataGridViewRow.Cells[5].Value == cell.TrueValue;
+            bool Revoke= dataGridViewRow.Cells[6].Value == cell.TrueValue;
+            GrantTableForm result = new GrantTableForm(RoleName, Select, Update, Insert, Grant,Revoke);
             return result;
         }
 
