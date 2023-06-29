@@ -167,6 +167,7 @@ namespace PHANQUYENADMIN
         {
             AdminstratorDAO.Role2Role(fAdministrator.curRole,newGrantRole.Values.ToList());
             AdminstratorDAO.Privilege2Role(fAdministrator.curRole,newGrantPrivilege.Values.ToList());
+            AdminstratorDAO.Table2User(fAdministrator.curUser, newGrantTable.Values.ToList());
             newGrantRole.Clear();
             newGrantPrivilege.Clear();
             newGrantTable.Clear();
