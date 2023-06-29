@@ -28,6 +28,7 @@ namespace PHANQUYENADMIN
 
             lbTen.Text= dt.Rows[0]["TENNV"].ToString();
             lbGioiTinh.Text= dt.Rows[0]["PHAI"].ToString();
+            
             DateTime myDateTimeValue = Convert.ToDateTime
                 (dt.Rows[0]["NGAYSINH"].ToString());
             lbNgaySinh.Text = myDateTimeValue.ToString("dd/MM/yyyy");
@@ -39,6 +40,7 @@ namespace PHANQUYENADMIN
             lbSDT.Text = dt.Rows[0]["SODT"].ToString();
             lbMaNV.Text = dt.Rows[0]["MANV"].ToString();
             //
+            
             txtNgaySinh.Text = myDateTimeValue.ToString("MM/dd/yyyy");
             txtDiaChi.Text= dt.Rows[0]["DIACHI"].ToString();
             txtSDT.Text= dt.Rows[0]["SODT"].ToString();

@@ -499,7 +499,7 @@
             // colWithGrant
             // 
             this.colWithGrant.FalseValue = " ";
-            this.colWithGrant.HeaderText = "With Grant";
+            this.colWithGrant.HeaderText = "Grant Option";
             this.colWithGrant.MinimumWidth = 6;
             this.colWithGrant.Name = "colWithGrant";
             this.colWithGrant.TrueValue = "x";
@@ -507,11 +507,13 @@
             // 
             // colTabRevoke
             // 
+            this.colTabRevoke.FalseValue = " ";
             this.colTabRevoke.HeaderText = "Revoke";
             this.colTabRevoke.MinimumWidth = 6;
             this.colTabRevoke.Name = "colTabRevoke";
             this.colTabRevoke.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colTabRevoke.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colTabRevoke.TrueValue = "x";
             this.colTabRevoke.Width = 125;
             // 
             // fEditUser

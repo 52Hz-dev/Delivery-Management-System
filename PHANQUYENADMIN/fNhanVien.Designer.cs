@@ -557,7 +557,7 @@
             this.PhongBan.Controls.Add(this.panel9);
             this.PhongBan.Location = new System.Drawing.Point(4, 34);
             this.PhongBan.Name = "PhongBan";
-            this.PhongBan.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.PhongBan.Padding = new System.Windows.Forms.Padding(3);
             this.PhongBan.Size = new System.Drawing.Size(1018, 629);
             this.PhongBan.TabIndex = 2;
             this.PhongBan.Text = "PhongBan";
