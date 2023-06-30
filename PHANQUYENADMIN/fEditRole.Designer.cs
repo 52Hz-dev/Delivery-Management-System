@@ -36,12 +36,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.tabEditUser = new System.Windows.Forms.TabControl();
@@ -56,10 +56,6 @@
             this.colRevoke = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabSystemPrivilege = new System.Windows.Forms.TabPage();
             this.dgvSystemPrivilege = new System.Windows.Forms.DataGridView();
-            this.colPrivilege = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGrantPrevilege = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colWithAdminPrivilege = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colRevokePrivilege = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabSecurable = new System.Windows.Forms.TabPage();
             this.dgvSecurable = new System.Windows.Forms.DataGridView();
             this.colTableSecurable = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +64,10 @@
             this.colInsertSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colTabGrant = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colTabRevoke = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colPrivilege = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGrantPrevilege = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colWithAdminPrivilege = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colRevokePrivilege = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabEditUser.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.tabRole.SuspendLayout();
@@ -80,18 +80,20 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(659, 388);
+            this.btnCancel.Location = new System.Drawing.Point(741, 485);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(94, 33);
+            this.btnCancel.Size = new System.Drawing.Size(106, 41);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(523, 388);
+            this.btnApply.Location = new System.Drawing.Point(588, 485);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(91, 33);
+            this.btnApply.Size = new System.Drawing.Size(102, 41);
             this.btnApply.TabIndex = 4;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
@@ -103,20 +105,22 @@
             this.tabEditUser.Controls.Add(this.tabRole);
             this.tabEditUser.Controls.Add(this.tabSystemPrivilege);
             this.tabEditUser.Controls.Add(this.tabSecurable);
-            this.tabEditUser.Location = new System.Drawing.Point(31, 29);
+            this.tabEditUser.Location = new System.Drawing.Point(35, 36);
+            this.tabEditUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabEditUser.Name = "tabEditUser";
             this.tabEditUser.SelectedIndex = 0;
-            this.tabEditUser.Size = new System.Drawing.Size(738, 353);
+            this.tabEditUser.Size = new System.Drawing.Size(830, 441);
             this.tabEditUser.TabIndex = 3;
             // 
             // tabUser
             // 
             this.tabUser.Controls.Add(this.label4);
             this.tabUser.Controls.Add(this.label1);
-            this.tabUser.Location = new System.Drawing.Point(4, 25);
+            this.tabUser.Location = new System.Drawing.Point(4, 29);
+            this.tabUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabUser.Name = "tabUser";
-            this.tabUser.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUser.Size = new System.Drawing.Size(730, 324);
+            this.tabUser.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabUser.Size = new System.Drawing.Size(822, 408);
             this.tabUser.TabIndex = 0;
             this.tabUser.Text = "User";
             this.tabUser.UseVisualStyleBackColor = true;
@@ -124,28 +128,29 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(168, 49);
+            this.label4.Location = new System.Drawing.Point(189, 61);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 16);
+            this.label4.Size = new System.Drawing.Size(35, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "N\\A";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 49);
+            this.label1.Location = new System.Drawing.Point(71, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 16);
+            this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Role Name";
             // 
             // tabRole
             // 
             this.tabRole.Controls.Add(this.dgvRole);
-            this.tabRole.Location = new System.Drawing.Point(4, 25);
+            this.tabRole.Location = new System.Drawing.Point(4, 29);
+            this.tabRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabRole.Name = "tabRole";
-            this.tabRole.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRole.Size = new System.Drawing.Size(730, 321);
+            this.tabRole.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabRole.Size = new System.Drawing.Size(822, 408);
             this.tabRole.TabIndex = 1;
             this.tabRole.Text = "Role";
             this.tabRole.UseVisualStyleBackColor = true;
@@ -172,6 +177,7 @@
             this.colWithAdmin,
             this.colRevoke});
             this.dgvRole.Location = new System.Drawing.Point(0, 0);
+            this.dgvRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvRole.Name = "dgvRole";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -189,7 +195,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.InfoText;
             this.dgvRole.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRole.RowTemplate.Height = 24;
-            this.dgvRole.Size = new System.Drawing.Size(730, 321);
+            this.dgvRole.Size = new System.Drawing.Size(821, 401);
             this.dgvRole.TabIndex = 0;
             this.dgvRole.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRole_CellContentClick);
             // 
@@ -237,10 +243,11 @@
             // tabSystemPrivilege
             // 
             this.tabSystemPrivilege.Controls.Add(this.dgvSystemPrivilege);
-            this.tabSystemPrivilege.Location = new System.Drawing.Point(4, 25);
+            this.tabSystemPrivilege.Location = new System.Drawing.Point(4, 29);
+            this.tabSystemPrivilege.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabSystemPrivilege.Name = "tabSystemPrivilege";
-            this.tabSystemPrivilege.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSystemPrivilege.Size = new System.Drawing.Size(730, 324);
+            this.tabSystemPrivilege.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabSystemPrivilege.Size = new System.Drawing.Size(822, 408);
             this.tabSystemPrivilege.TabIndex = 2;
             this.tabSystemPrivilege.Text = "System Privilege";
             this.tabSystemPrivilege.UseVisualStyleBackColor = true;
@@ -271,6 +278,7 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSystemPrivilege.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvSystemPrivilege.Location = new System.Drawing.Point(0, 2);
+            this.dgvSystemPrivilege.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvSystemPrivilege.Name = "dgvSystemPrivilege";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
@@ -289,58 +297,18 @@
             this.dgvSystemPrivilege.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvSystemPrivilege.RowTemplate.Height = 24;
             this.dgvSystemPrivilege.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSystemPrivilege.Size = new System.Drawing.Size(730, 321);
+            this.dgvSystemPrivilege.Size = new System.Drawing.Size(821, 401);
             this.dgvSystemPrivilege.TabIndex = 1;
             this.dgvSystemPrivilege.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSystemPrivilege_CellContentClick_1);
-            // 
-            // colPrivilege
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPrivilege.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colPrivilege.HeaderText = "Privilege";
-            this.colPrivilege.MinimumWidth = 6;
-            this.colPrivilege.Name = "colPrivilege";
-            this.colPrivilege.ReadOnly = true;
-            this.colPrivilege.Width = 350;
-            // 
-            // colGrantPrevilege
-            // 
-            this.colGrantPrevilege.FalseValue = " ";
-            this.colGrantPrevilege.HeaderText = "Grant";
-            this.colGrantPrevilege.MinimumWidth = 6;
-            this.colGrantPrevilege.Name = "colGrantPrevilege";
-            this.colGrantPrevilege.ReadOnly = true;
-            this.colGrantPrevilege.TrueValue = "x";
-            this.colGrantPrevilege.Width = 125;
-            // 
-            // colWithAdminPrivilege
-            // 
-            this.colWithAdminPrivilege.FalseValue = " ";
-            this.colWithAdminPrivilege.HeaderText = "With Admin";
-            this.colWithAdminPrivilege.MinimumWidth = 6;
-            this.colWithAdminPrivilege.Name = "colWithAdminPrivilege";
-            this.colWithAdminPrivilege.ReadOnly = true;
-            this.colWithAdminPrivilege.TrueValue = "x";
-            this.colWithAdminPrivilege.Width = 125;
-            // 
-            // colRevokePrivilege
-            // 
-            this.colRevokePrivilege.FalseValue = " ";
-            this.colRevokePrivilege.HeaderText = "Revoke";
-            this.colRevokePrivilege.MinimumWidth = 6;
-            this.colRevokePrivilege.Name = "colRevokePrivilege";
-            this.colRevokePrivilege.ReadOnly = true;
-            this.colRevokePrivilege.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRevokePrivilege.TrueValue = "x";
-            this.colRevokePrivilege.Width = 125;
             // 
             // tabSecurable
             // 
             this.tabSecurable.Controls.Add(this.dgvSecurable);
-            this.tabSecurable.Location = new System.Drawing.Point(4, 25);
+            this.tabSecurable.Location = new System.Drawing.Point(4, 29);
+            this.tabSecurable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabSecurable.Name = "tabSecurable";
-            this.tabSecurable.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSecurable.Size = new System.Drawing.Size(730, 324);
+            this.tabSecurable.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabSecurable.Size = new System.Drawing.Size(822, 408);
             this.tabSecurable.TabIndex = 3;
             this.tabSecurable.Text = "Securable";
             this.tabSecurable.UseVisualStyleBackColor = true;
@@ -373,6 +341,7 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSecurable.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvSecurable.Location = new System.Drawing.Point(0, 0);
+            this.dgvSecurable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvSecurable.Name = "dgvSecurable";
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
@@ -389,7 +358,7 @@
             this.dgvSecurable.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvSecurable.RowTemplate.Height = 24;
             this.dgvSecurable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSecurable.Size = new System.Drawing.Size(730, 321);
+            this.dgvSecurable.Size = new System.Drawing.Size(821, 401);
             this.dgvSecurable.TabIndex = 2;
             this.dgvSecurable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSecurable_CellContentClick_1);
             // 
@@ -450,14 +419,56 @@
             this.colTabRevoke.TrueValue = "x";
             this.colTabRevoke.Width = 125;
             // 
+            // colPrivilege
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colPrivilege.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colPrivilege.HeaderText = "Privilege";
+            this.colPrivilege.MinimumWidth = 6;
+            this.colPrivilege.Name = "colPrivilege";
+            this.colPrivilege.ReadOnly = true;
+            this.colPrivilege.Width = 250;
+            // 
+            // colGrantPrevilege
+            // 
+            this.colGrantPrevilege.FalseValue = " ";
+            this.colGrantPrevilege.HeaderText = "Grant";
+            this.colGrantPrevilege.MinimumWidth = 6;
+            this.colGrantPrevilege.Name = "colGrantPrevilege";
+            this.colGrantPrevilege.ReadOnly = true;
+            this.colGrantPrevilege.TrueValue = "x";
+            this.colGrantPrevilege.Width = 125;
+            // 
+            // colWithAdminPrivilege
+            // 
+            this.colWithAdminPrivilege.FalseValue = " ";
+            this.colWithAdminPrivilege.HeaderText = "With Admin";
+            this.colWithAdminPrivilege.MinimumWidth = 6;
+            this.colWithAdminPrivilege.Name = "colWithAdminPrivilege";
+            this.colWithAdminPrivilege.ReadOnly = true;
+            this.colWithAdminPrivilege.TrueValue = "x";
+            this.colWithAdminPrivilege.Width = 125;
+            // 
+            // colRevokePrivilege
+            // 
+            this.colRevokePrivilege.FalseValue = " ";
+            this.colRevokePrivilege.HeaderText = "Revoke";
+            this.colRevokePrivilege.MinimumWidth = 6;
+            this.colRevokePrivilege.Name = "colRevokePrivilege";
+            this.colRevokePrivilege.ReadOnly = true;
+            this.colRevokePrivilege.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRevokePrivilege.TrueValue = "x";
+            this.colRevokePrivilege.Width = 125;
+            // 
             // fEditRole
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.tabEditUser);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fEditRole";
             this.Text = "fEditRole";
             this.Load += new System.EventHandler(this.fEditRole_Load);
@@ -492,15 +503,15 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn colGrant;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colWithAdmin;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colRevoke;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrivilege;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colGrantPrevilege;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colWithAdminPrivilege;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colRevokePrivilege;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTableSecurable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colSelectSecurable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colUpdateSecurable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colInsertSecurable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colTabGrant;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colTabRevoke;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrivilege;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colGrantPrevilege;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colWithAdminPrivilege;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colRevokePrivilege;
     }
 }

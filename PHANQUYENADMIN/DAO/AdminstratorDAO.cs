@@ -206,7 +206,7 @@ namespace PHANQUYENADMIN.DAO
         }
         public static DataTable loadUser()
         {
-            String query = "SELECT username U FROM all_users";
+            String query = "SELECT username U FROM DBA_users WHERE default_tablespace='MY_TABLESPACE'";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
