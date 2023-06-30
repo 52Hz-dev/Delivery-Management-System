@@ -69,8 +69,7 @@
             this.colSelectSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colUpdateSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colInsertSecurable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colGrantOption = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colWithGrant = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colTabRevoke = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabEditUser.SuspendLayout();
             this.tabUser.SuspendLayout();
@@ -396,8 +395,7 @@
             this.colSelectSecurable,
             this.colUpdateSecurable,
             this.colInsertSecurable,
-            this.colGrantOption,
-            this.colWithGrant,
+            this.colDelete,
             this.colTabRevoke});
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -443,6 +441,7 @@
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // colTableSecurable
             // 
@@ -485,25 +484,16 @@
             this.colInsertSecurable.TrueValue = "x";
             this.colInsertSecurable.Width = 125;
             // 
-            // colGrantOption
+            // colDelete
             // 
-            this.colGrantOption.FalseValue = " ";
-            this.colGrantOption.HeaderText = "Grant";
-            this.colGrantOption.MinimumWidth = 6;
-            this.colGrantOption.Name = "colGrantOption";
-            this.colGrantOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colGrantOption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colGrantOption.TrueValue = "x";
-            this.colGrantOption.Width = 125;
-            // 
-            // colWithGrant
-            // 
-            this.colWithGrant.FalseValue = " ";
-            this.colWithGrant.HeaderText = "Grant Option";
-            this.colWithGrant.MinimumWidth = 6;
-            this.colWithGrant.Name = "colWithGrant";
-            this.colWithGrant.TrueValue = "x";
-            this.colWithGrant.Width = 125;
+            this.colDelete.FalseValue = " ";
+            this.colDelete.HeaderText = "Delete";
+            this.colDelete.MinimumWidth = 6;
+            this.colDelete.Name = "colDelete";
+            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colDelete.TrueValue = "x";
+            this.colDelete.Width = 125;
             // 
             // colTabRevoke
             // 
@@ -570,8 +560,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn colSelectSecurable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colUpdateSecurable;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colInsertSecurable;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colGrantOption;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colWithGrant;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colDelete;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colTabRevoke;
     }
 }
