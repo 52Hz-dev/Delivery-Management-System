@@ -21,7 +21,8 @@ namespace PHANQUYENADMIN
 
         private void fInformation_Load(object sender, EventArgs e)
         {
-            txtNgaySinh.CustomFormat = "dd/MM/yyyy";
+
+
             DataTable dt = NhanVienDAO.loadStaff();
             lbTen.Text = dt.Rows[0]["TENNV"].ToString();
             lbGioiTinh.Text = dt.Rows[0]["PHAI"].ToString();
@@ -86,7 +87,6 @@ namespace PHANQUYENADMIN
                 lbGioiTinh.Text = dt.Rows[0]["PHAI"].ToString();
                 DateTime myDateTimeValue = Convert.ToDateTime
                 (dt.Rows[0]["NGAYSINH"].ToString());
-                txtNgaySinh.CustomFormat = "dd/MM/yyyy";
                 lbNgaySinh.Text = myDateTimeValue.ToString("dd/MM/yyyy");
                 lbDiaChi.Text = dt.Rows[0]["DIACHI"].ToString();
                 lbVaiTro.Text = dt.Rows[0]["VAITRO"].ToString();
