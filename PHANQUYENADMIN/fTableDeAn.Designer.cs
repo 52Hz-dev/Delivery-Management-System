@@ -52,21 +52,20 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 95);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1159, 416);
+            this.panel3.Size = new System.Drawing.Size(1159, 95);
             this.panel3.TabIndex = 14;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(dgvDeAn);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 93);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 190);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1159, 661);
+            this.panel5.Size = new System.Drawing.Size(1159, 666);
             this.panel5.TabIndex = 16;
             // 
             // dgvDeAn
@@ -82,7 +81,7 @@
             dgvDeAn.RowHeadersWidth = 62;
             dgvDeAn.RowTemplate.Height = 28;
             dgvDeAn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgvDeAn.Size = new System.Drawing.Size(1159, 661);
+            dgvDeAn.Size = new System.Drawing.Size(1159, 666);
             dgvDeAn.TabIndex = 13;
             dgvDeAn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(dgvDeAn_CellContentClick);
             // 
@@ -161,6 +160,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -235,7 +235,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        public static System.Windows.Forms.DataGridView dgvDeAn;
         private System.Windows.Forms.Panel panel5;
+        public static System.Windows.Forms.DataGridView dgvDeAn;
     }
 }

@@ -52,8 +52,7 @@ namespace PHANQUYENADMIN
         {
             if (fTableDeAn.button == "Them")
             {
-                label1.Text = "THÊM ĐỀ ÁN MỚI";
-                btnOK.Text = "OK";
+                
                 DateTime date = Convert.ToDateTime
                     (txtNgayBD.Value);
                 String ngaybd = date.ToString("yyyy-MM-dd");
@@ -63,13 +62,7 @@ namespace PHANQUYENADMIN
             }
             else if (fTableDeAn.button == "Sua")
             {
-                label1.Text = "CHỈNH SỬA THÔNG TIN ĐỀ ÁN";
-                btnOK.Text = "Lưu";
-                txtMADA.ReadOnly = true;
-                txtMADA.Text = fTableDeAn.MADA;
-                txtTen.Text = fTableDeAn.TEN;
-                txtNgayBD.Text = fTableDeAn.Time;
-                txtMAPB.Text = fTableDeAn.MAPB;
+               
                 DateTime date = Convert.ToDateTime
                     (txtNgayBD.Value);
                 String ngaybd = date.ToString("yyyy-MM-dd");

@@ -99,7 +99,7 @@ namespace PHANQUYENADMIN.DAO
         }
         public static int updateNHANVIEN(string MANV, string TENNV, string PHAI, string NGAYSINH, string DIACHI, string SODT, string VAITRO, string MANQL, string PHG)
         {
-            String query = "UPDATE ADMIN01.VIEW_NHANVIEN_NS SET TENNV='"+ TENNV + "', PHAI='"+ PHAI + "', NGAYSINH=TO_DATE('"+ NGAYSINH + "', 'YYYY-MM-DD'), DIACHI='" + DIACHI + "', SODT='"+ SODT + "', VAITRO='"+ VAITRO + "', MANQL='"+ MANQL + "', PHG='"+ PHG + "' WHERE MAPB='" + MANV + "'";
+            String query = "UPDATE ADMIN01.VIEW_NHANVIEN_NS SET TENNV='"+ TENNV + "', PHAI='"+ PHAI + "', NGAYSINH=TO_DATE('"+ NGAYSINH + "', 'YYYY-MM-DD'), DIACHI='" + DIACHI + "', SODT='"+ SODT + "', VAITRO='"+ VAITRO + "', MANQL='"+ MANQL + "', PHG='"+ PHG + "' WHERE MANV='" + MANV + "'";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result;
 
@@ -168,7 +168,7 @@ namespace PHANQUYENADMIN.DAO
         {
             String query = "alter session set \"_ORACLE_SCRIPT\" = TRUE";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
-            query = " create user " + username + " IDENTIFIED BY " + pw;
+            query = " create user " + username + " IDENTIFIED BY " + pw + " DEFAULT TABLESPACE my_tablespace";
             result = DataProvider.Instance.ExecuteNonQuery(query);
         }
         public static int checkRoleName(string rolename)
@@ -192,7 +192,7 @@ namespace PHANQUYENADMIN.DAO
         }
         public static DataTable loadUserRole()
         {
-            String query = "SELECT ROLE R FROM DBA_ROLES ";
+            String query = "SELECT ROLE R FROM DBA_ROLES where ROLE LIKE 'R%' ";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }

@@ -97,8 +97,11 @@ namespace PHANQUYENADMIN
                 VAITRO = dgvNhanvien.Rows[e.RowIndex].Cells["VAITRO"].FormattedValue.ToString();
                 MAQL = dgvNhanvien.Rows[e.RowIndex].Cells["MANQL"].FormattedValue.ToString();
                 PHG = dgvNhanvien.Rows[e.RowIndex].Cells["PHG"].FormattedValue.ToString();
-                LUONG = dgvNhanvien.Rows[e.RowIndex].Cells["LUONG"].FormattedValue.ToString();
-                PHUCAP = dgvNhanvien.Rows[e.RowIndex].Cells["PHUCAP"].FormattedValue.ToString();
+                if (fLogin.ROLE != "QL truc tiep")
+                {
+                    LUONG = dgvNhanvien.Rows[e.RowIndex].Cells["LUONG"].FormattedValue.ToString();
+                    PHUCAP = dgvNhanvien.Rows[e.RowIndex].Cells["PHUCAP"].FormattedValue.ToString();
+                }
             }
         }
 
