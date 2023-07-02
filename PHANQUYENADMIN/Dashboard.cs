@@ -130,6 +130,9 @@ namespace PHANQUYENADMIN
                 case "Nhan vien":
                     lbNV.Text = "NHÂN VIÊN";
                     break;
+                case "Ban giam doc":
+                    lbNV.Text = "GIÁM ĐỐC";
+                    break;
             }
             int x = lbNV.Size.Width/2;
             int y = lbNV.Size.Height/2;
