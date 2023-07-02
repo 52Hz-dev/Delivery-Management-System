@@ -40,7 +40,7 @@ namespace PHANQUYENADMIN
                 DateTime date = Convert.ToDateTime
                     (txtNGAYBD.Value);
                 String ngaybd = date.ToString("yyyy-MM-dd");
-                String query = "UPDATE ADMIN01.PHANCONG SET THOIGIAN=TO_DATE('" + ngaybd  + "','YYYY-MM-DD')";
+                String query = "UPDATE ADMIN01.PHANCONG SET THOIGIAN=TO_DATE('" + ngaybd  + "','YYYY-MM-DD') where MANV =";
                 int result = DataProvider.Instance.ExecuteNonQuery(query);
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 fTablePhanCong.loadtablePC();

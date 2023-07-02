@@ -160,6 +160,7 @@ namespace PHANQUYENADMIN.DAO
         }
         public static int checkUserName(string username)
         {
+
             String query = "SELECT count(username) FROM all_users where username = '" + username + "'";
             int result = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
             return result;
