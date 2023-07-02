@@ -109,7 +109,7 @@ namespace PHANQUYENADMIN
         {
             switch (fLogin.ROLE)
             {
-                case "Giam doc":
+                case "Ban giam doc":
                     lbNV.Text = "GIÁM ĐỐC";
                     break;
                 case "Truong phong":
@@ -129,9 +129,6 @@ namespace PHANQUYENADMIN
                     break;
                 case "Nhan vien":
                     lbNV.Text = "NHÂN VIÊN";
-                    break;
-                case "Ban giam doc":
-                    lbNV.Text = "GIÁM ĐỐC";
                     break;
             }
             int x = lbNV.Size.Width/2;
