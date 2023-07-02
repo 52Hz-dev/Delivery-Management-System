@@ -72,7 +72,7 @@ namespace PHANQUYENADMIN
                     DateTime date = Convert.ToDateTime
                     (txtNGAYSINH.Value);
                     String ngaysinh = date.ToString("yyyy-MM-dd");
-                    if (AdminstratorDAO.createNHANVIEN(txtMANV.Text, txtTENNV.Text, txtPHAI.SelectedText, ngaysinh, txtDIACHI.Text, txtSODT.Text, txtVAITRO.SelectedText, txtMAQL.Text, txtPHG.SelectedText) == 1)
+                    if (AdminstratorDAO.createNHANVIEN(txtMANV.Text, txtTENNV.Text, txtPHAI.Text, ngaysinh, txtDIACHI.Text, txtSODT.Text, txtVAITRO.Text, txtMAQL.Text, txtPHG.Text) == 1)
                         MessageBox.Show("Tạo nhân viên mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     fTableNhanVien.loadTableNV();
                 }
@@ -82,7 +82,7 @@ namespace PHANQUYENADMIN
                 DateTime date = Convert.ToDateTime
                     (txtNGAYSINH.Value);
                 String ngaysinh = date.ToString("yyyy-MM-dd");
-                if (AdminstratorDAO.updateNHANVIEN(txtMANV.Text, txtTENNV.Text, txtPHAI.SelectedText, ngaysinh, txtDIACHI.Text, txtSODT.Text, txtVAITRO.SelectedText, txtMAQL.Text, txtPHG.SelectedText) == 1)
+                if (AdminstratorDAO.updateNHANVIEN(txtMANV.Text, txtTENNV.Text, txtPHAI.Text, ngaysinh, txtDIACHI.Text, txtSODT.Text, txtVAITRO.Text, txtMAQL.Text, txtPHG.Text) == 1)
                     MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 fTableNhanVien.loadTableNV();
             }

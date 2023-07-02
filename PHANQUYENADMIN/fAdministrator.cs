@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PHANQUYENADMIN
 {
@@ -66,7 +67,6 @@ namespace PHANQUYENADMIN
 
         private void btnEditRole_Click_1(object sender, EventArgs e)
         {
-           
             fEditRole editRole = new fEditRole();
             this.Hide();
             editRole.ShowDialog();

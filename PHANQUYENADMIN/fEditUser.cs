@@ -172,7 +172,7 @@ namespace PHANQUYENADMIN
         }
 
         private void btnApply_Click(object sender, EventArgs e)
-        {
+        { 
             AdminstratorDAO.Role2User(fAdministrator.curUser, newGrantRole.Values.ToList());
             AdminstratorDAO.Privilege2User(fAdministrator.curUser, newGrantPrivilege.Values.ToList());
             AdminstratorDAO.Table2User(fAdministrator.curUser, newGrantTable.Values.ToList());
